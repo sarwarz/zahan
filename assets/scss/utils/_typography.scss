@@ -1,6 +1,60 @@
-$font-url:'https://fonts.googleapis.com/css2?family=Federo&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap';
+// Google Fonts — loaded from theme via $font-url
+$font-url: 'https://fonts.googleapis.com/css2?family=Federo&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap';
 
-:root{
-    --bc-heading-font: "Federo", sans-serif;
-    --bc-body-font: "Figtree", sans-serif;
+/*----------------------------------------
+  Typography scale (rem @ 16px root)
+  Use these tokens sitewide for consistent sizing.
+----------------------------------------*/
+:root {
+  --bc-heading-font: "Federo", sans-serif;
+  --bc-body-font: "Figtree", sans-serif;
+
+  /* Core steps */
+  --bc-fs-xs: 0.75rem; /* 12 */
+  --bc-fs-sm: 0.875rem; /* 14 */
+  --bc-fs-base: 1rem; /* 16 — default body & UI copy */
+  --bc-fs-md: 1.125rem; /* 18 */
+  --bc-fs-lg: 1.25rem; /* 20 */
+  --bc-fs-xl: 1.5rem; /* 24 */
+  --bc-fs-28: 1.75rem; /* 28 — h3 */
+  --bc-fs-2xl: 1.875rem; /* 30 */
+  --bc-fs-3xl: 2rem; /* 32 */
+  --bc-fs-4xl: 2.25rem; /* 36 */
+  --bc-fs-5xl: 2.375rem; /* 38 — h2 */
+  --bc-fs-6xl: 2.5rem; /* 40 — display / post titles */
+  --bc-fs-7xl: 3rem; /* 48 — h1 / section heroes */
+  --bc-fs-8xl: 3.75rem; /* 60 */
+  --bc-fs-9xl: 4.0625rem; /* 65 */
+  --bc-fs-10xl: 5rem; /* 80 */
+  --bc-fs-11xl: 5.125rem; /* 82 */
+  --bc-fs-12xl: 5.625rem; /* 90 */
+
+  /* Mid-step (common in legacy layout) */
+  --bc-fs-25: 1.5625rem; /* 25 */
+  --bc-fs-35: 2.1875rem; /* 35 — large icons / stats */
+  --bc-fs-50: 3.125rem; /* 50 — hero title xl */
+  --bc-fs-52: 3.25rem; /* 52 — hero decorative mobile */
+  --bc-fs-75: 4.6875rem; /* 75 — hero decorative sm */
+
+  /* Line height */
+  --bc-lh-heading: 1.15;
+  --bc-lh-tight: 1.2;
+  --bc-lh-body: 1.625;
+  --bc-lh-relaxed: 1.75;
+  --bc-lh-ui: 1.5;
+
+  /* Overlines / labels (subtitle, eyebrow) */
+  --bc-track-overline: 0.18em;
+
+  /* Semantic sizes — map sections & UI to scale (change scale above to affect all) */
+  --bc-fs-section-title: var(--bc-fs-7xl);
+  --bc-fs-section-title-down: var(--bc-fs-4xl);
+  --bc-fs-section-lead: var(--bc-fs-md);
+  --bc-fs-nav: var(--bc-fs-base); /* 16px — primary nav */
+  --bc-fs-nav-mobile: var(--bc-fs-lg);
+  --bc-fs-card-title: var(--bc-fs-2xl);
+  --bc-fs-card-meta: var(--bc-fs-xs);
+  --bc-fs-ui-label: var(--bc-fs-xs);
+  --bc-lh-section-lead: var(--bc-lh-body);
+  --bc-fs-icon-sm: 1.0625rem; /* compact icon buttons (e.g. back-to-top) */
 }

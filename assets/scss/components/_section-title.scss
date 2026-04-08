@@ -7,18 +7,20 @@
     &-title-wrapper{
         & p{
             font-weight: 400;
-            font-size: 16px;
+            font-size: var(--bc-fs-section-lead);
+            line-height: var(--bc-lh-section-lead);
             color: var(--bc-color-lightn);
         }
     }
     &-title{
         font-weight: 700;
-        font-size: 48px;
+        font-size: var(--bc-fs-section-title);
+        line-height: var(--bc-lh-heading);
         margin-bottom: 15px;
-        color: var(--bc-text-color-1);
+        color: var(--bc-heading-color);
 
         @media #{$lg,$md,$sm,$xs}{
-            font-size: 34px;
+            font-size: var(--bc-fs-section-title-down);
         }
     }
 }

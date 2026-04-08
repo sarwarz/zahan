@@ -1,0 +1,132 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.9 Page hero — title, description, breadcrumb only
+/*----------------------------------------*/
+
+.bc-page-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+  padding: clamp(5.5rem, 11vw, 7.75rem) 0 clamp(2.5rem, 5vw, 3.85rem);
+  border-bottom: 1px solid var(--bc-divider);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        105deg,
+        rgba(var(--bc-rgb-black), 0.88) 0%,
+        rgba(var(--bc-rgb-text-color-3), 0.55) 38%,
+        rgba(var(--bc-rgb-black), 0.45) 62%,
+        rgba(var(--bc-rgb-text-color-3), 0.75) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(var(--bc-rgb-black), 0.4) 0%,
+        transparent 45%,
+        rgba(var(--bc-rgb-black), 0.65) 100%
+      );
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__breadcrumb-shell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.25rem;
+    padding: 0.42rem 1.05rem 0.42rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(var(--bc-rgb-black), 0.45);
+    border: 1px solid var(--bc-border-neutral);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow:
+      var(--bc-shadow-xs),
+      inset 0 1px 0 var(--bc-glass-08);
+  }
+
+  .breadcrumb {
+    --bs-breadcrumb-divider-color: rgba(var(--bc-rgb-color-lightn), 0.4);
+    margin-bottom: 0;
+    padding: 0;
+    font-size: var(--bc-fs-sm);
+    font-weight: 500;
+    justify-content: center;
+  }
+
+  .breadcrumb-item a {
+    color: rgba(var(--bc-rgb-color-lightn), 0.88);
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: var(--bc-text-color-2);
+    }
+  }
+
+  .breadcrumb-item.active {
+    color: var(--bc-heading-color);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  &__title {
+    margin: 0 auto 1rem;
+    max-width: min(36rem, 100%);
+    font-family: var(--bc-heading-font);
+    font-size: clamp(var(--bc-fs-5xl), 4.8vw, var(--bc-fs-7xl));
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.038em;
+    color: var(--bc-heading-color);
+    text-align: center;
+
+    &.bc-gradient-text-color {
+      color: transparent;
+      background: var(--bc-gradient-color-1);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__lead {
+    max-width: min(40rem, 100%);
+    margin: 0 auto 1.5rem;
+    font-size: clamp(var(--bc-fs-md), 1.25vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.72;
+    color: rgba(var(--bc-rgb-color-lightn), 0.88);
+    text-align: center;
+  }
+}
+
+.bc-page-hero.jarallax::before {
+  background:
+    linear-gradient(
+      105deg,
+      rgba(var(--bc-rgb-black), 0.91) 0%,
+      rgba(var(--bc-rgb-text-color-3), 0.62) 36%,
+      rgba(var(--bc-rgb-black), 0.35) 58%,
+      rgba(var(--bc-rgb-text-color-3), 0.82) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(var(--bc-rgb-black), 0.5) 0%,
+      transparent 40%,
+      rgba(var(--bc-rgb-black), 0.72) 100%
+    );
+}

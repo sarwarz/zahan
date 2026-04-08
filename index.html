@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Zahan - Personal Portfolio HTML Template</title>
     <link rel="icon" href="assets/img/logo/zahan-icon.png" type="image/png">
 
@@ -20,114 +20,137 @@
     <!-- Custom Cursor End -->
 
     <!-- Preloader Start -->
-    <div id="preloader">
-    <div class="loader-text">Zahan</div>
+    <div id="preloader" class="bc-preloader" role="status" aria-live="polite" aria-busy="true" aria-label="Loading site">
+        <div class="bc-preloader__ambient" aria-hidden="true"></div>
+        <div class="bc-preloader__grid" aria-hidden="true"></div>
+        <div class="bc-preloader__inner">
+            <div class="bc-preloader__visual" aria-hidden="true">
+                <div class="bc-preloader__orbit"></div>
+                <div class="bc-preloader__core"></div>
+            </div>
+            <p class="bc-preloader__brand">Zahan</p>
+            <div class="bc-preloader__track" aria-hidden="true">
+                <span class="bc-preloader__fill"></span>
+            </div>
+            <span class="bc-preloader__hint">Loading</span>
+        </div>
     </div>
     <!-- Preloader End -->
 
     <!-- Header Start -->
-    <header class="bc-header-wrapper bc-transparent-header pl-100 bc-sticky-black" id="bc-sticky-header">
-        <div class="container-fluid p-0">
-            <div class="row gx-0 align-items-center">
-                <div class="col-lg-12">
-                    <div class="bc-header-content d-flex justify-content-between ">
-                        <div class="bc-logo-area align-content-center">
-                            <a class="bc-logo" href="index.html">
-                                <img src="assets/img/logo/logo.png" alt="logo">
-                            </a>
-                        </div>
-                        <div class="bc-mainmenu-nav align-content-center d-none d-lg-block">
-                            <nav class="bc-mobile-menu-active onepage">
-                                <ul>
-                                    <li><a href="#home">Home</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#service">Service</a></li>
-                                    <li><a href="#portfolio">Portfolio</a></li>
-                                    <li><a href="#testimonial">Testimonial</a></li>
-                                    <li><a href="#blog">Blog</a></li>
-                                    <li><a href="#contact">Contact</a></li>
+    <header class="bc-header-wrapper bc-transparent-header bc-sticky-black" id="bc-sticky-header">
+        <div class="container">
+            <div class="bc-header-content d-flex justify-content-between align-items-center">
+                <div class="bc-logo-area align-content-center">
+                    <a class="bc-logo" href="#home">
+                        <img src="assets/img/logo/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="bc-mainmenu-nav align-content-center d-none d-lg-block">
+                    <nav class="bc-mobile-menu-active onepage" aria-label="Primary">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li class="has-submenu">
+                                <a href="services.html">Services</a>
+                                <ul class="sub-menu">
+                                    <li><a href="service-details.html">Web Development</a></li>
+                                    <li><a href="services.html">All services</a></li>
+                                    <li class="has-submenu">
+                                        <a href="services.html">More</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
-                            </nav>
-                        </div>
-                        <div class="bc-header-right-area align-content-center">
-                            <div class="bc-action-area">
-                                <div class="bc-offcanvas-btn bc-offcanvas-toogle"><i class="far fa-bars"></i></div>
-                            </div>
-                        </div>
+                            </li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="bc-header-right-area align-content-center">
+                    <div class="bc-action-area">
+                        <ul class="bc-header-social" aria-label="Social links">
+                            <li><a href="#" class="bc-header-social__link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="bc-header-social__link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="bc-header-social__link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="bc-header-social__link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <button type="button" class="bc-offcanvas-btn bc-offcanvas-toogle" aria-label="Toggle menu" aria-expanded="false" aria-controls="bc-offcanvas-panel">
+                            <span class="bc-offcanvas-btn__inner" aria-hidden="true">
+                                <span class="bc-offcanvas-btn__line"></span>
+                                <span class="bc-offcanvas-btn__line"></span>
+                                <span class="bc-offcanvas-btn__line"></span>
+                            </span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <!-- Header End -->
-    <!-- Offcanvas Start --> 
-     <div class="bc-offcanvas_wrapper">
+    <!-- Offcanvas Start -->
+    <div class="bc-offcanvas_wrapper" id="bc-offcanvas-panel" role="dialog" aria-modal="true" aria-label="Menu and contact" aria-hidden="true">
         <div class="bc-offcanvas">
+            <div class="bc-offcanvas__shine" aria-hidden="true"></div>
             <div class="bc-offcanvas-header d-flex justify-content-between align-items-center mb-70">
                 <div class="bc-offcanvas-logo">
-                    <a href="#">
-                        <img src="assets/img/logo/logo.png" alt="">
-                    </a>
+                    <a href="#home"><img src="assets/img/logo/logo.png" alt="Zahan home"></a>
                 </div>
                 <div class="bc-offcanvas-close">
-                    <div class="bc-offcanvas-close-toggle">
-                        <i class="fal fa-times"></i>
-                    </div>
+                    <button type="button" class="bc-offcanvas-close-toggle" aria-label="Close menu">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
-            <div class="bc-offcanvas-menu mb-50 d-xl-none"><nav></nav></div>
+            <div class="bc-offcanvas-menu mb-50 d-xl-none"><nav aria-label="Mobile"></nav></div>
             <div class="bc-offcanvas-content mb-40 d-none d-lg-block">
-                <h2 class="bc-offcanvas-title">Hello There!</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ea sint ex optio iste quidem.</p>
+                <h2 class="bc-offcanvas-title">Hello there</h2>
+                <p>I’m Sarwar — thanks for visiting. Use the links to explore the site or reach out from the details below.</p>
             </div>
             <div class="bc-offcanvas-info">
-                <span class="subtile">Contact Inforamtion</span>
+                <span class="subtile">Contact information</span>
                 <div class="bc-link-area">
                     <ul class="bc-link">
                         <li>
                             <span class="bc-link-icon"><i class="far fa-envelope"></i></span>
                             <div class="bc-link-wrap">
-                                <h4 class="bc-link-title">E-mail:</h4>
-                                <a href="#">hello@zahan.com</a>
+                                <h4 class="bc-link-title">E-mail</h4>
+                                <a href="mailto:hello@zahan.com">hello@zahan.com</a>
                             </div>
                         </li>
                         <li>
                             <span class="bc-link-icon"><i class="fas fa-map-marker-alt"></i></span>
                             <div class="bc-link-wrap">
-                                <h4 class="bc-link-title">Location:</h4>
-                                <div>3891 Ranchview Dr. Richardson</div>
+                                <h4 class="bc-link-title">Location</h4>
+                                <div>3891 Ranchview Dr., Richardson</div>
                             </div>
                         </li>
                         <li>
                             <span class="bc-link-icon"><i class="fas fa-phone-alt"></i></span>
                             <div class="bc-link-wrap">
-                                <h4 class="bc-link-title">Phone:</h4>
-                                <a href="#">+8801780882316</a>
+                                <h4 class="bc-link-title">Phone</h4>
+                                <a href="tel:+8801780882316">+880 1780 882316</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-             <div class="bc-social-share-inner mt-50">
-                <span class="subtile">find with me </span>
+            <div class="bc-social-share-inner mt-50">
+                <span class="subtile">Find me online</span>
                 <ul class="bc-social-sahre">
-                    <li>
-                        <a href="#" class="bc-social-btn"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="bc-social-btn"><i class="fab fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="bc-social-btn"><i class="fab fa-github"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="bc-social-btn"><i class="fab fa-twitter"></i></a>
-                    </li>
+                    <li><a href="#" class="bc-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="bc-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" class="bc-social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="#" class="bc-social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
                 </ul>
             </div>
         </div>
-     </div>
-     <div class="bc-offcanvas-overlay"></div>
+    </div>
+    <div class="bc-offcanvas-overlay" aria-hidden="true"></div>
     <!-- Offcanvas End --> 
 
     <div id="smooth-wrapper">
@@ -159,9 +182,9 @@
                                             Hi, I’m <span class="bc-hero-title-color bc-gradient-text-color">Sarwar Zahan</span><br>
                                             <span id="bc-animate-text"></span>
                                         </h1>
-                                        <p>I use animation as a third dimension by which to simplify and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.</p>
-                                        <div class="bc-hero-button-wrap mt-10 d-flex">
-                                            <a href="#" class="bc-btn text-uppercase align-content-center">
+                                        <p class="wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.5s">I use animation as a third dimension by which to simplify and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.</p>
+                                        <div class="bc-hero-button-wrap mt-10 d-flex wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.62s">
+                                            <a href="assets/cv.pdf" class="bc-btn text-uppercase align-content-center" download>
                                                 <span class="bc-btn-wrap">
                                                     <span class="bc-btn-y-1">DOWNLOAD CV</span>
                                                     <span class="bc-btn-y-2">DOWNLOAD CV</span>
@@ -184,99 +207,133 @@
                 </section>
                 <!-- Hero End -->
                 <!-- About Start -->
-                <section class="bc-about-wrapper pt-100 pb-50 p-relative bc-section-bg" id="about">
+                <section class="bc-about-wrapper pt-100 pb-50 p-relative bc-section-bg" id="about" aria-labelledby="about-heading">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-5">
-                                <div class="bc-about-img-box-wrap text-center mb-30 wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                                    <div class="bc-about-thumb mb-30 wow img-custom-anim-top" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                                        <img src="assets/img/testimonial/testimonal-03.jpg" alt="">
+                        <div class="row g-4 g-xl-5 align-items-start">
+                            <div class="col-xl-5 col-lg-5 col-md-12">
+                                <aside class="bc-about-profile wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.15s">
+                                    <div class="bc-about-profile__shine" aria-hidden="true"></div>
+                                    <div class="bc-about-profile__media">
+                                        <div class="bc-about-profile__img-ring wow img-custom-anim-top" data-wow-duration="1.2s" data-wow-delay="0.2s">
+                                            <img src="assets/img/testimonial/testimonal-03.jpg" class="bc-about-profile__img" width="280" height="302" alt="Portrait of Md Sarwar Zahan" loading="lazy">
+                                            <span class="bc-about-profile__status" title="Available for projects" aria-hidden="true"></span>
+                                        </div>
                                     </div>
-                                    <div class="bc-about-author-info">
-                                        <h3 class="bc-about-author-name">Md Sarwar Zahan</h3>
-                                        <span class="bc-about-author-degi bc-gradient-text-color">Web Developer</span>
-                                    </div>
-                                    <div class="bc-about-author-contact mt-15">
-                                        <a href="#" class="bc-about-author-email">hello@sarwarzahan.com</a>
-                                        <span class="bc-about-author-address">Based in San Francisco, CA</span>
-                                    </div>
-                                    <div class="bc-about-social-share mt-30">
-                                        <ul class="bc-social-sahre justify-content-center">
+                                    <div class="bc-about-profile__body">
+                                        <p class="bc-about-profile__badge wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.12s">
+                                            <span class="bc-about-profile__status bc-about-profile__status--inline" aria-hidden="true"></span>
+                                            Open to freelance &amp; full-time roles
+                                        </p>
+                                        <h3 class="bc-about-profile__name wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">Md Sarwar Zahan</h3>
+                                        <p class="bc-about-profile__role bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.26s">Full-stack &amp; AI Developer</p>
+                                        <ul class="bc-about-profile__meta list-unstyled wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.32s">
                                             <li>
-                                                <a href="#" class="bc-social-btn"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="mailto:hello@sarwarzahan.com" class="bc-about-profile__link">
+                                                    <span class="bc-about-profile__icon" aria-hidden="true"><i class="far fa-envelope"></i></span>
+                                                    <span>hello@sarwarzahan.com</span>
+                                                </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="bc-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                                                <a href="tel:+14155550123" class="bc-about-profile__link">
+                                                    <span class="bc-about-profile__icon" aria-hidden="true"><i class="fas fa-phone-alt"></i></span>
+                                                    <span>+1 (415) 555-0123</span>
+                                                </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="bc-social-btn"><i class="fab fa-github"></i></a>
+                                                <span class="bc-about-profile__link bc-about-profile__link--static">
+                                                    <span class="bc-about-profile__icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                                                    <span>San Francisco, CA · PST (UTC−8)</span>
+                                                </span>
                                             </li>
                                             <li>
-                                                <a href="#" class="bc-social-btn"><i class="fab fa-twitter"></i></a>
+                                                <span class="bc-about-profile__link bc-about-profile__link--static">
+                                                    <span class="bc-about-profile__icon" aria-hidden="true"><i class="far fa-clock"></i></span>
+                                                    <span>Typically replies within 24h · Mon–Fri</span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="bc-about-profile__link bc-about-profile__link--static">
+                                                    <span class="bc-about-profile__icon" aria-hidden="true"><i class="fas fa-language"></i></span>
+                                                    <span>English · বাংলা (Bengali)</span>
+                                                </span>
                                             </li>
                                         </ul>
+                                        <div class="bc-about-profile__tags wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s" aria-label="Core technologies">
+                                            <span class="bc-about-profile__tag">React</span>
+                                            <span class="bc-about-profile__tag">Node.js</span>
+                                            <span class="bc-about-profile__tag">Python</span>
+                                            <span class="bc-about-profile__tag">TypeScript</span>
+                                            <span class="bc-about-profile__tag">AWS</span>
+                                            <span class="bc-about-profile__tag">ML / LLMs</span>
+                                        </div>
+                                        <div class="bc-about-profile__actions wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.45s">
+                                            <a href="assets/cv.pdf" class="bc-about-profile__cv" download>
+                                                <i class="fas fa-file-download" aria-hidden="true"></i>
+                                                Download CV
+                                            </a>
+                                        </div>
+                                        <ul class="bc-about-profile__social bc-social-sahre justify-content-center wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                            <li><a href="#" class="bc-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" class="bc-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a href="#" class="bc-social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                                            <li><a href="#" class="bc-social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                        </ul>
                                     </div>
-                                </div>
+                                </aside>
                             </div>
-                            <div class="col-lg-8 col-md-7">
-                                <div class="bc-about-content-wrap">
-                                    <div class="bc-section-title-wrapper mb-20 wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s"> 
-                                        <h2 class="bc-section-title bc-gradient-text-color ">Empower Code Intelligence</h2>
-                                        <p>Hello! I'm Sarwar Zahan, an AI Developer with 10 years of experience in designing and developing intelligent systems. My expertise spans machine learning, natural language processing, computer vision, and data analysis. Driven by curiosity, I transform complex data into smart solutions.</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-6">
-                                            <div class="bc-about-expart-area mb-20 d-none d-xl-block wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">
-                                                <div class="bc-about-expart-text mb-10 d-flex">
-                                                    <span>26</span>
-                                                    <h3>Years of <br> Expreience</h3>
+                            <div class="col-xl-7 col-lg-7 col-md-12">
+                                <div class="bc-about-main">
+                                    <header class="bc-about-main__header mb-4 mb-xl-5">
+                                        <p class="bc-about-main__eyebrow wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.05s">Introduction</p>
+                                        <h2 id="about-heading" class="bc-about-main__title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Empower Code Intelligence</h2>
+                                        <div class="bc-about-main__prose wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.15s">
+                                            <p>Hello, I’m Sarwar Zahan — a developer who blends <strong>full-stack engineering</strong> with <strong>AI-driven products</strong>. Over <strong>10+ years</strong>, I’ve shipped systems spanning APIs, interfaces, ML workflows, and data pipelines. I care about clarity, performance, and outcomes you can measure.</p>
+                                        </div>
+                                    </header>
+
+                                    <div class="row g-3 g-xl-4 bc-about-main__stats">
+                                        <div class="col-xl-6 d-flex flex-column">
+                                            <div class="bc-about-spotlight wow bcFadeInUp flex-grow-1" data-wow-duration="1s" data-wow-delay="0.2s">
+                                                <div class="bc-about-spotlight__shine" aria-hidden="true"></div>
+                                                <div class="bc-about-spotlight__head">
+                                                    <span class="bc-about-spotlight__num">10+</span>
+                                                    <h3 class="bc-about-spotlight__label">Years of <br> experience</h3>
                                                 </div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati explicabo, laudantium neque autem accusamus quo aliquam molestias modi ab aut necessitatibus consequatur!</p>
+                                                <p class="bc-about-spotlight__text">From prototypes to production: mentoring, architecture reviews, and hands-on delivery across web, cloud, and intelligent features.</p>
                                             </div>
                                         </div>
-                                        <div class="col-xl-6">
-                                            <div class="bc-about-fact-area wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <div class="bc-fact">
-                                                            <span class="bc-fact-count"><span class="counter">20</span>K+</span>
-                                                            <p>Project Complete</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="bc-fact">
-                                                            <span class="bc-fact-count"><span class="counter">10</span>K+</span>
-                                                            <p>Our Product</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="bc-fact">
-                                                            <span class="bc-fact-count"><span class="counter">200</span>+</span>
-                                                            <p>Clients Reviews</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="bc-fact">
-                                                            <span class="bc-fact-count"><span class="counter">2</span>K+</span>
-                                                            <p>Satisfied Client</p>
-                                                        </div>
-                                                    </div>
+                                        <div class="col-xl-6 d-flex flex-column">
+                                            <div class="bc-about-facts-grid flex-grow-1">
+                                                <div class="bc-fact wow bcFadeInUp" data-wow-duration="0.65s" data-wow-delay="0.05s">
+                                                    <span class="bc-fact-count"><span class="counter">7</span>K+</span>
+                                                    <p>Projects delivered</p>
+                                                </div>
+                                                <div class="bc-fact wow bcFadeInUp" data-wow-duration="0.65s" data-wow-delay="0.1s">
+                                                    <span class="bc-fact-count"><span class="counter">3</span>K+</span>
+                                                    <p>Products &amp; modules</p>
+                                                </div>
+                                                <div class="bc-fact wow bcFadeInUp" data-wow-duration="0.65s" data-wow-delay="0.15s">
+                                                    <span class="bc-fact-count"><span class="counter">78</span>+</span>
+                                                    <p>Client reviews</p>
+                                                </div>
+                                                <div class="bc-fact wow bcFadeInUp" data-wow-duration="0.65s" data-wow-delay="0.2s">
+                                                    <span class="bc-fact-count"><span class="counter">1</span>K+</span>
+                                                    <p>Happy clients</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="bc-cta-area text-center wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="1s">
-                                                <h3 class="bc-cta-title text-white mb-10">Have a project idea in mind?</h3>
-                                                <p class="bc-cta-subtitle text-white mb-20">Let’s collaborate to build something amazing together.</p>
-                                                <a href="#" class="bc-btn">
-                                                    <span class="bc-btn-wrap">
-                                                        <span class="bc-btn-y-1">Start a Project <i class="fas fa-arrow-right"></i></span>
-                                                        <span class="bc-btn-y-2">Start a Project <i class="fas fa-arrow-right"></i></span>
-                                                    </span>
-                                                </a>
-                                            </div>
+
+                                    <div class="bc-about-cta wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.35s">
+                                        <div class="bc-about-cta__inner">
+                                            <h3 class="bc-about-cta__title wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.05s">Have a project in mind?</h3>
+                                            <p class="bc-about-cta__subtitle wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">Let’s collaborate and ship something polished, fast, and built to last.</p>
+                                            <a href="contact.html" class="bc-btn bc-about-cta__btn wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.16s">
+                                                <span class="bc-btn-wrap">
+                                                    <span class="bc-btn-y-1">Start a project <i class="fas fa-arrow-right"></i></span>
+                                                    <span class="bc-btn-y-2">Start a project <i class="fas fa-arrow-right"></i></span>
+                                                </span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -286,323 +343,353 @@
                 </section>
                 <!-- About End -->
                 <!-- Services Start -->
-                <section class="bc-service-wrapper pt-50 pb-50" id="service">
-                    <div class="container">
-                        <div class="bc-section-title-wrapper text-center mb-50"> 
-                            <h2 class="bc-section-title bc-gradient-text-color ">Our Services</h2>
-                            <p>Per ipsum ultrices sollicitudin iaculis platea facilisi semper aliquam up <br> senectus cursus vivamus volutpat penatibus</p>
+                <section class="bc-service-wrapper pt-50 pb-50 p-relative" id="service" aria-labelledby="services-heading">
+                    <div class="container bc-service-wrapper__inner">
+                        <div class="bc-section-title-wrapper text-center mb-50">
+                            <h2 id="services-heading" class="bc-section-title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">Our Services</h2>
+                            <p class="wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Strategy, design, engineering, and growth — crafted with clarity and built to scale.</p>
+                            <p class="mb-0 mt-3 wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.14s"><a href="services.html" class="bc-svc-page-card__link d-inline-flex">View all services <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a></p>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-4 col-md-6 mb-30">
-                                <div class="bc-service wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                                    <div class="bc-service-icon">
-                                        <span><i class="fas fa-briefcase"></i></span>
+                        <div class="row g-4">
+                            <div class="col-xl-4 col-md-6">
+                                <article class="bc-service wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+                                    <div class="bc-service__glow" aria-hidden="true"></div>
+                                    <div class="bc-service__sheen" aria-hidden="true"></div>
+                                    <div class="bc-service__top">
+                                        <span class="bc-service__index" aria-hidden="true">01</span>
+                                        <div class="bc-service-icon">
+                                            <span class="bc-service-icon__inner"><i class="fas fa-briefcase" aria-hidden="true"></i></span>
+                                        </div>
                                     </div>
                                     <div class="bc-service-text">
                                         <h2 class="bc-service-title">
-                                            <a href="#">Business Stratagy</a>
+                                            <a href="service-details.html">Business Strategy</a>
                                         </h2>
-                                        <p>I throw myself down among the tall grass by the stream as I  lie close to the earth.</p>
-                                        <a href="#" class="bc-service-btn" data-bs-toggle="modal" data-bs-target="#serviceModal1"><i class="fas fa-arrow-right"></i></a>
+                                        <p>Discovery, positioning, and roadmaps that connect business goals with product outcomes.</p>
+                                        <a href="service-details.html" class="bc-service-btn" aria-label="Learn more: Business Strategy">
+                                            <span class="bc-service-btn__text">Learn more</span>
+                                            <span class="bc-service-btn__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
                                     </div>
-                                    <a href="#" class="bc-service-over-link" data-bs-toggle="modal" data-bs-target="#serviceModal1"></a>
-                                </div>
+                                    <a href="service-details.html" class="bc-service-over-link" tabindex="-1" aria-hidden="true">&nbsp;</a>
+                                </article>
                             </div>
-                            <div class="col-xl-4 col-md-6 mb-30">
-                                <div class="bc-service wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                                    <div class="bc-service-icon">
-                                        <span><i class="fas fa-code"></i></span>
+                            <div class="col-xl-4 col-md-6">
+                                <article class="bc-service wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.15s">
+                                    <div class="bc-service__glow" aria-hidden="true"></div>
+                                    <div class="bc-service__sheen" aria-hidden="true"></div>
+                                    <div class="bc-service__top">
+                                        <span class="bc-service__index" aria-hidden="true">02</span>
+                                        <div class="bc-service-icon">
+                                            <span class="bc-service-icon__inner"><i class="fas fa-mobile-alt" aria-hidden="true"></i></span>
+                                        </div>
                                     </div>
                                     <div class="bc-service-text">
                                         <h2 class="bc-service-title">
-                                            <a href="#">App Development</a>
+                                            <a href="service-details.html">App Development</a>
                                         </h2>
-                                        <p>I throw myself down among the tall grass by the stream as I  lie close to the earth.</p>
-                                        <a href="#" class="bc-service-btn" data-bs-toggle="modal" data-bs-target="#serviceModal1"><i class="fas fa-arrow-right"></i></a>
+                                        <p>Native and cross-platform apps with polished UX, solid architecture, and maintainable code.</p>
+                                        <a href="service-details.html" class="bc-service-btn" aria-label="Learn more: App Development">
+                                            <span class="bc-service-btn__text">Learn more</span>
+                                            <span class="bc-service-btn__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
                                     </div>
-                                    <a href="#" class="bc-service-over-link" data-bs-toggle="modal" data-bs-target="#serviceModal1"></a>
-                                </div>
+                                    <a href="service-details.html" class="bc-service-over-link" tabindex="-1" aria-hidden="true">&nbsp;</a>
+                                </article>
                             </div>
-                            <div class="col-xl-4 col-md-6 mb-30">
-                                <div class="bc-service wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">
-                                    <div class="bc-service-icon">
-                                        <span><i class="fas fa-drafting-compass"></i></span>
+                            <div class="col-xl-4 col-md-6">
+                                <article class="bc-service wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                                    <div class="bc-service__glow" aria-hidden="true"></div>
+                                    <div class="bc-service__sheen" aria-hidden="true"></div>
+                                    <div class="bc-service__top">
+                                        <span class="bc-service__index" aria-hidden="true">03</span>
+                                        <div class="bc-service-icon">
+                                            <span class="bc-service-icon__inner"><i class="fas fa-code" aria-hidden="true"></i></span>
+                                        </div>
                                     </div>
                                     <div class="bc-service-text">
                                         <h2 class="bc-service-title">
-                                            <a href="#">Web Development</a>
+                                            <a href="service-details.html">Web Development</a>
                                         </h2>
-                                        <p>I throw myself down among the tall grass by the stream as I  lie close to the earth.</p>
-                                        <a href="#" class="bc-service-btn" data-bs-toggle="modal" data-bs-target="#serviceModal1"><i class="fas fa-arrow-right"></i></a>
+                                        <p>Fast, secure sites and web apps — APIs, dashboards, and integrations that scale with you.</p>
+                                        <a href="service-details.html" class="bc-service-btn" aria-label="Learn more: Web Development">
+                                            <span class="bc-service-btn__text">Learn more</span>
+                                            <span class="bc-service-btn__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
                                     </div>
-                                    <a href="#" class="bc-service-over-link" data-bs-toggle="modal" data-bs-target="#serviceModal1"></a>
-                                </div>
+                                    <a href="service-details.html" class="bc-service-over-link" tabindex="-1" aria-hidden="true">&nbsp;</a>
+                                </article>
                             </div>
-                            <div class="col-xl-4 col-md-6 mb-30">
-                                <div class="bc-service wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.7s">
-                                    <div class="bc-service-icon">
-                                        <span><i class="fas fa-layer-group"></i></span>
+                            <div class="col-xl-4 col-md-6">
+                                <article class="bc-service wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+                                    <div class="bc-service__glow" aria-hidden="true"></div>
+                                    <div class="bc-service__sheen" aria-hidden="true"></div>
+                                    <div class="bc-service__top">
+                                        <span class="bc-service__index" aria-hidden="true">04</span>
+                                        <div class="bc-service-icon">
+                                            <span class="bc-service-icon__inner"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
+                                        </div>
                                     </div>
                                     <div class="bc-service-text">
                                         <h2 class="bc-service-title">
-                                            <a href="#">Web Design</a>
+                                            <a href="service-details.html">Web Design</a>
                                         </h2>
-                                        <p>I throw myself down among the tall grass by the stream as I  lie close to the earth.</p>
-                                        <a href="#" class="bc-service-btn" data-bs-toggle="modal" data-bs-target="#serviceModal1"><i class="fas fa-arrow-right"></i></a>
+                                        <p>UI systems, responsive layouts, and motion that reinforce your brand without sacrificing usability.</p>
+                                        <a href="service-details.html" class="bc-service-btn" aria-label="Learn more: Web Design">
+                                            <span class="bc-service-btn__text">Learn more</span>
+                                            <span class="bc-service-btn__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
                                     </div>
-                                    <a href="#" class="bc-service-over-link" data-bs-toggle="modal" data-bs-target="#serviceModal1"></a>
-                                </div>
+                                    <a href="service-details.html" class="bc-service-over-link" tabindex="-1" aria-hidden="true">&nbsp;</a>
+                                </article>
                             </div>
-                            <div class="col-xl-4 col-md-6 mb-30">
-                                <div class="bc-service wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-                                    <div class="bc-service-icon">
-                                        <span><i class="fas fa-bullseye"></i></span>
+                            <div class="col-xl-4 col-md-6">
+                                <article class="bc-service wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                                    <div class="bc-service__glow" aria-hidden="true"></div>
+                                    <div class="bc-service__sheen" aria-hidden="true"></div>
+                                    <div class="bc-service__top">
+                                        <span class="bc-service__index" aria-hidden="true">05</span>
+                                        <div class="bc-service-icon">
+                                            <span class="bc-service-icon__inner"><i class="fas fa-bullseye" aria-hidden="true"></i></span>
+                                        </div>
                                     </div>
                                     <div class="bc-service-text">
                                         <h2 class="bc-service-title">
-                                            <a href="#">Digital Marketing</a>
+                                            <a href="service-details.html">Digital Marketing</a>
                                         </h2>
-                                        <p>I throw myself down among the tall grass by the stream as I  lie close to the earth.</p>
-                                        <a href="#" class="bc-service-btn" data-bs-toggle="modal" data-bs-target="#serviceModal1"><i class="fas fa-arrow-right"></i></a>
+                                        <p>SEO, campaigns, and analytics so the right audience finds you and every click tells a story.</p>
+                                        <a href="service-details.html" class="bc-service-btn" aria-label="Learn more: Digital Marketing">
+                                            <span class="bc-service-btn__text">Learn more</span>
+                                            <span class="bc-service-btn__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
                                     </div>
-                                    <a href="#" class="bc-service-over-link" data-bs-toggle="modal" data-bs-target="#serviceModal1"></a>
-                                </div>
+                                    <a href="service-details.html" class="bc-service-over-link" tabindex="-1" aria-hidden="true">&nbsp;</a>
+                                </article>
                             </div>
-                            <div class="col-xl-4 col-md-6 mb-30">
-                                <div class="bc-service wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.9s">
-                                    <div class="bc-service-icon">
-                                        <span><i class="fas fa-pen-alt"></i></span>
+                            <div class="col-xl-4 col-md-6">
+                                <article class="bc-service wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.35s">
+                                    <div class="bc-service__glow" aria-hidden="true"></div>
+                                    <div class="bc-service__sheen" aria-hidden="true"></div>
+                                    <div class="bc-service__top">
+                                        <span class="bc-service__index" aria-hidden="true">06</span>
+                                        <div class="bc-service-icon">
+                                            <span class="bc-service-icon__inner"><i class="fas fa-pen-alt" aria-hidden="true"></i></span>
+                                        </div>
                                     </div>
                                     <div class="bc-service-text">
                                         <h2 class="bc-service-title">
-                                            <a href="#">Content Writing</a>
+                                            <a href="service-details.html">Content Writing</a>
                                         </h2>
-                                        <p>I throw myself down among the tall grass by the stream as I  lie close to the earth.</p>
-                                        <a href="#" class="bc-service-btn" data-bs-toggle="modal" data-bs-target="#serviceModal1"><i class="fas fa-arrow-right"></i></a>
+                                        <p>Clear copy for landing pages, blogs, and product UI — tone-led and conversion-aware.</p>
+                                        <a href="service-details.html" class="bc-service-btn" aria-label="Learn more: Content Writing">
+                                            <span class="bc-service-btn__text">Learn more</span>
+                                            <span class="bc-service-btn__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
                                     </div>
-                                    <a href="#" class="bc-service-over-link" data-bs-toggle="modal" data-bs-target="#serviceModal1"></a>
-                                </div>
+                                    <a href="service-details.html" class="bc-service-over-link" tabindex="-1" aria-hidden="true">&nbsp;</a>
+                                </article>
                             </div>
                         </div>
                     </div>
                 </section>
                 <!-- Services End -->  
-                <!-- Portfolio Start --> 
-                <section class="bc-portfolio-wrapper pt-50 pb-50 bc-section-bg" id="portfolio">
-                    <div class="container">
-                        <div class="bc-section-title-wrapper text-center mb-50"> 
-                            <h2 class="bc-section-title bc-gradient-text-color ">Our Projects</h2>
-                            <p>Per ipsum ultrices sollicitudin iaculis platea facilisi semper aliquam up <br> senectus cursus vivamus volutpat penatibus</p>
-                        </div>
-                        <div class="bc-portfolio-content wow slideinup" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="bc-portfolio-filter d-sm-flex justify-content-center mb-40">
-                                        <button class="active" data-filter="*">All</button>
-                                        <button data-filter=".web">Web Design</button>
-                                        <button data-filter=".graphic">Graphic Design</button>
-                                        <button data-filter=".markting">Content Markting</button>
-                                    </div>
+                <!-- Portfolio Start -->
+                <section class="bc-portfolio-wrapper pt-50 pb-50 bc-section-bg" id="portfolio" aria-labelledby="portfolio-heading">
+                    <div class="container bc-portfolio-wrapper__inner">
+                        <header class="bc-section-title-wrapper text-center mb-50">
+                            <h2 id="portfolio-heading" class="bc-section-title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">Our Projects</h2>
+                            <p class="bc-portfolio-lead wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Selected work across product, brand, and growth — crafted for clarity, speed, and measurable impact.</p>
+                            <p class="mb-0 mt-3 wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.14s"><a href="projects.html" class="bc-svc-page-card__link d-inline-flex">View all projects <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a></p>
+                        </header>
+                        <div class="bc-portfolio-content">
+                            <div class="bc-portfolio-filter-wrap wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.08s">
+                                <div class="bc-portfolio-filter" role="group" aria-label="Filter projects by category">
+                                    <button type="button" class="active" data-filter="*">All</button>
+                                    <button type="button" data-filter=".web">Web</button>
+                                    <button type="button" data-filter=".graphic">Brand &amp; graphic</button>
+                                    <button type="button" data-filter=".marketing">Content &amp; marketing</button>
                                 </div>
                             </div>
-                            <div class="row grid">
+                            <div class="row grid g-4">
                                 <div class="col-xl-4 col-md-6 grid-item web">
-                                    <div class="bc-portfolio-item mb-30">
-                                        <div class="bc-portfolio-thumb-wrapper">
-                                            <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-01.jpg" alt="Web Design">
-                                                </div>
+                                    <article class="bc-portfolio-item wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.05s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: Fintech dashboard &amp; design system"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-01.jpg" alt="Fintech dashboard project preview" width="600" height="450" loading="lazy">
                                             </div>
-                                             <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-01.jpg" alt="Web Design">
-                                                </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
                                             </div>
                                         </div>
-                                        <div class="bc-portfolio-item-text pt-30">
-                                            <h2 class="bc-portfolio-title">Mobile app landing design & Services</h2>
-                                            <div class="bc-portfolio-action d-xl-flex d-sm-flex justify-content-between pt-20 align-items-center">
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">Fintech dashboard &amp; design system</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Unified analytics UI, tokens, and components that cut build time for new screens.</p>
+                                            <div class="bc-portfolio-action">
                                                 <div class="bc-portfolio-category">
-                                                    <span>Application</span>
-                                                    <span>Web Design</span>
+                                                    <span>Product</span>
+                                                    <span>UI / UX</span>
                                                 </div>
-                                                <div class="bc-portfolio-btn">
-                                                    <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal">
-                                                         <span class="bc-btn-wrap">
-                                                            <span class="bc-btn-y-1">View Details</span>
-                                                            <span class="bc-btn-y-2">View Details</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </div>
                                 <div class="col-xl-4 col-md-6 grid-item graphic">
-                                    <div class="bc-portfolio-item mb-30">
-                                        <div class="bc-portfolio-thumb-wrapper">
-                                            <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-02.jpg" alt="Web Design">
-                                                </div>
+                                    <article class="bc-portfolio-item wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: Identity &amp; visual language"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-02.jpg" alt="Brand identity project preview" width="600" height="450" loading="lazy">
                                             </div>
-                                             <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-02.jpg" alt="Web Design">
-                                                </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
                                             </div>
                                         </div>
-                                        <div class="bc-portfolio-item-text pt-30">
-                                            <h2 class="bc-portfolio-title">Porro alias laboriosam quod rerum voluptates deserunt.</h2>
-                                            <div class="bc-portfolio-action d-xl-flex d-sm-flex justify-content-between pt-20 align-items-center">
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">Identity &amp; visual language</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Logo, palette, and type system applied across web, print, and social touchpoints.</p>
+                                            <div class="bc-portfolio-action">
                                                 <div class="bc-portfolio-category">
-                                                    <span>Application</span>
-                                                    <span>Web Design</span>
+                                                    <span>Branding</span>
+                                                    <span>Guidelines</span>
                                                 </div>
-                                                <div class="bc-portfolio-btn">
-                                                    <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal">
-                                                         <span class="bc-btn-wrap">
-                                                            <span class="bc-btn-y-1">View Details</span>
-                                                            <span class="bc-btn-y-2">View Details</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </div>
-                                <div class="col-xl-4 col-md-6 grid-item markting">
-                                    <div class="bc-portfolio-item mb-30">
-                                        <div class="bc-portfolio-thumb-wrapper">
-                                            <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-03.jpg" alt="Web Design">
-                                                </div>
+                                <div class="col-xl-4 col-md-6 grid-item marketing">
+                                    <article class="bc-portfolio-item wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.15s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: SaaS launch &amp; content engine"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-03.jpg" alt="SaaS marketing project preview" width="600" height="450" loading="lazy">
                                             </div>
-                                             <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-03.jpg" alt="Web Design">
-                                                </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
                                             </div>
                                         </div>
-                                        <div class="bc-portfolio-item-text pt-30">
-                                            <h2 class="bc-portfolio-title">Mobile app landing design & app maintain</h2>
-                                            <div class="bc-portfolio-action d-xl-flex d-sm-flex justify-content-between pt-20 align-items-center">
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">SaaS launch &amp; content engine</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Landing narrative, blog templates, and email flows for a coordinated go‑to‑market.</p>
+                                            <div class="bc-portfolio-action">
                                                 <div class="bc-portfolio-category">
-                                                    <span>Application</span>
-                                                    <span>Web Design</span>
+                                                    <span>Content</span>
+                                                    <span>Growth</span>
                                                 </div>
-                                                <div class="bc-portfolio-btn">
-                                                    <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal">
-                                                         <span class="bc-btn-wrap">
-                                                            <span class="bc-btn-y-1">View Details</span>
-                                                            <span class="bc-btn-y-2">View Details</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </div>
                                 <div class="col-xl-4 col-md-6 grid-item web">
-                                    <div class="bc-portfolio-item mb-30">
-                                        <div class="bc-portfolio-thumb-wrapper">
-                                            <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-04.jpg" alt="Web Design">
-                                                </div>
+                                    <article class="bc-portfolio-item wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: E‑commerce experience rebuild"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-04.jpg" alt="E-commerce project preview" width="600" height="450" loading="lazy">
                                             </div>
-                                             <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-04.jpg" alt="Web Design">
-                                                </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
                                             </div>
                                         </div>
-                                        <div class="bc-portfolio-item-text pt-30">
-                                            <h2 class="bc-portfolio-title">Mobile app landing design & app maintain</h2>
-                                            <div class="bc-portfolio-action d-xl-flex d-sm-flex justify-content-between pt-20 align-items-center">
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">E‑commerce experience rebuild</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Checkout refinement, PDP structure, and faster loads without losing brand polish.</p>
+                                            <div class="bc-portfolio-action">
                                                 <div class="bc-portfolio-category">
-                                                    <span>Application</span>
-                                                    <span>Web Design</span>
+                                                    <span>Web app</span>
+                                                    <span>Performance</span>
                                                 </div>
-                                                <div class="bc-portfolio-btn">
-                                                    <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal">
-                                                         <span class="bc-btn-wrap">
-                                                            <span class="bc-btn-y-1">View Details</span>
-                                                            <span class="bc-btn-y-2">View Details</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </div>
                                 <div class="col-xl-4 col-md-6 grid-item graphic">
-                                    <div class="bc-portfolio-item mb-30">
-                                        <div class="bc-portfolio-thumb-wrapper">
-                                            <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-05.jpg" alt="Web Design">
-                                                </div>
+                                    <article class="bc-portfolio-item wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: Packaging &amp; campaign art"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-05.jpg" alt="Packaging design project preview" width="600" height="450" loading="lazy">
                                             </div>
-                                             <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-05.jpg" alt="Web Design">
-                                                </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
                                             </div>
                                         </div>
-                                        <div class="bc-portfolio-item-text pt-30">
-                                            <h2 class="bc-portfolio-title">Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
-                                            <div class="bc-portfolio-action d-xl-flex d-sm-flex justify-content-between pt-20 align-items-center">
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">Packaging &amp; campaign art</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Shelf‑ready packaging plus paid and organic assets tuned for each channel.</p>
+                                            <div class="bc-portfolio-action">
                                                 <div class="bc-portfolio-category">
-                                                    <span>Application</span>
-                                                    <span>Web Design</span>
+                                                    <span>Print</span>
+                                                    <span>Social</span>
                                                 </div>
-                                                <div class="bc-portfolio-btn">
-                                                    <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal">
-                                                         <span class="bc-btn-wrap">
-                                                            <span class="bc-btn-y-1">View Details</span>
-                                                            <span class="bc-btn-y-2">View Details</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </div>
-                                <div class="col-xl-4 col-md-6 grid-item markting">
-                                    <div class="bc-portfolio-item mb-30">
-                                        <div class="bc-portfolio-thumb-wrapper">
-                                            <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-06.jpg" alt="Web Design">
-                                                </div>
+                                <div class="col-xl-4 col-md-6 grid-item marketing">
+                                    <article class="bc-portfolio-item wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: Editorial site &amp; SEO program"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-06.jpg" alt="Editorial and SEO project preview" width="600" height="450" loading="lazy">
                                             </div>
-                                             <div class="bc-portfolio-thumb">
-                                                <div class="bc-portfolio-thumb-inner">
-                                                    <img src="assets/img/portfolio/portfolio-06.jpg" alt="Web Design">
-                                                </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
                                             </div>
                                         </div>
-                                        <div class="bc-portfolio-item-text pt-30">
-                                            <h2 class="bc-portfolio-title">Logo design creativity & Application</h2>
-                                            <div class="bc-portfolio-action d-xl-flex d-sm-flex justify-content-between pt-20 align-items-center">
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">Editorial site &amp; SEO program</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Topic clusters, schema, and a reading experience built for long‑form authority.</p>
+                                            <div class="bc-portfolio-action">
                                                 <div class="bc-portfolio-category">
-                                                    <span>Application</span>
-                                                    <span>Web Design</span>
+                                                    <span>Editorial</span>
+                                                    <span>SEO</span>
                                                 </div>
-                                                <div class="bc-portfolio-btn">
-                                                    <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal">
-                                                         <span class="bc-btn-wrap">
-                                                            <span class="bc-btn-y-1">View Details</span>
-                                                            <span class="bc-btn-y-2">View Details</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </div>
                             </div>
                         </div>
@@ -610,149 +697,216 @@
                 </section>
                 <!-- Portfolio End --> 
                 <!-- Testimonial Start -->
-                <section class="bc-testimonial-wrapper pt-50 pb-50 jarallax" data-background="assets/img/section-bg.jpg" id="testimonial">
-                    <div class="container">
-                        <div class="bc-section-title-wrapper text-center mb-50 p-relative z-index-1"> 
-                            <h2 class="bc-section-title bc-gradient-text-color ">Happy & Satisfied Face</h2>
-                            <p>Per ipsum ultrices sollicitudin iaculis platea facilisi semper aliquam up <br> senectus cursus vivamus volutpat penatibus</p>
+                <section class="bc-testimonial-wrapper jarallax" data-background="assets/img/section-bg.jpg" id="testimonial" aria-labelledby="testimonial-heading">
+                    <div class="container position-relative z-index-1">
+                        <div class="bc-section-title-wrapper text-center bc-testimonial-header">
+                            <h2 id="testimonial-heading" class="bc-section-title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">What clients say</h2>
+                            <p class="bc-testimonial-lead wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Trusted feedback from partners and teams we’ve shipped products with — clear communication, reliable delivery, and thoughtful craft.</p>
                         </div>
 
-                        <div class="swiper bc-testimonial-active p-relative">
+                        <div class="bc-testimonial-slider-wrap wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.12s">
+                        <div class="swiper bc-testimonial-active">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <div class="bc-testimonial-item d-flex justify-content-center align-items-center">
-                                        <div class="testimoinal-thumb p-relative d-none d-xl-block">
-                                            <img src="assets/img/testimonial/testimonal-03.jpg" alt="">
-                                            <div class="testimoinal-thumb-bg"></div>
-                                        </div>
-                                        <div class="testimoinal-content">
-                                            <img src="assets/img/testimonial/quote-left.png" alt="">
-                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci autem sunt debitis, blanditiis eveniet odit ad repudiandae excepturi distinctio quidem itaque accusamus hic, quo impedit reiciendis alias tempora illum ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                            <div class="testimoinal-author-info">
-                                                <h3 class="testimoinal-author-name">John Copper</h3>
-                                                <span class="testimoinal-author-degi">UI/UX Designer</span>
+                                    <article class="bc-testimonial-item">
+                                        <div class="bc-testimonial-card">
+                                            <div class="row g-0 align-items-stretch">
+                                                <div class="col-lg-4 d-none d-lg-block">
+                                                    <div class="bc-testimonial-photo-frame">
+                                                        <img src="assets/img/testimonial/testimonal-03.jpg" alt="Portrait of John Copper" width="400" height="480" loading="lazy">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="bc-testimonial-body">
+                                                        <div class="bc-testimonial-photo bc-testimonial-photo--mobile d-lg-none">
+                                                            <img src="assets/img/testimonial/testimonal-03.jpg" alt="" width="72" height="72" loading="lazy">
+                                                        </div>
+                                                        <div class="bc-testimonial-quote-icon" aria-hidden="true"><i class="fas fa-quote-left"></i></div>
+                                                        <blockquote class="bc-testimonial-quote">
+                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci autem sunt debitis, blanditiis eveniet odit ad repudiandae excepturi distinctio quidem itaque accusamus hic, quo impedit reiciendis alias tempora illum ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                                            <footer class="bc-testimonial-author">
+                                                                <cite class="bc-testimonial-name">John Copper</cite>
+                                                                <span class="bc-testimonial-role">UI/UX Designer</span>
+                                                            </footer>
+                                                        </blockquote>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="bc-testimonial-item d-flex justify-content-center align-items-center">
-                                        <div class="testimoinal-thumb p-relative d-none d-xl-block">
-                                            <img src="assets/img/testimonial/testimonal-03.jpg" alt="">
-                                            <div class="testimoinal-thumb-bg"></div>
-                                        </div>
-                                        <div class="testimoinal-content">
-                                            <img src="assets/img/testimonial/quote-left.png" alt="">
-                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci autem sunt debitis, blanditiis eveniet odit ad repudiandae excepturi distinctio quidem itaque accusamus hic, quo impedit reiciendis alias tempora illum ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                            <div class="testimoinal-author-info">
-                                                <h3 class="testimoinal-author-name">John Copper</h3>
-                                                <span class="testimoinal-author-degi">UI/UX Designer</span>
+                                    <article class="bc-testimonial-item">
+                                        <div class="bc-testimonial-card">
+                                            <div class="row g-0 align-items-stretch">
+                                                <div class="col-lg-4 d-none d-lg-block">
+                                                    <div class="bc-testimonial-photo-frame">
+                                                        <img src="assets/img/testimonial/testimonal-03.jpg" alt="Portrait of John Copper" width="400" height="480" loading="lazy">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="bc-testimonial-body">
+                                                        <div class="bc-testimonial-photo bc-testimonial-photo--mobile d-lg-none">
+                                                            <img src="assets/img/testimonial/testimonal-03.jpg" alt="" width="72" height="72" loading="lazy">
+                                                        </div>
+                                                        <div class="bc-testimonial-quote-icon" aria-hidden="true"><i class="fas fa-quote-left"></i></div>
+                                                        <blockquote class="bc-testimonial-quote">
+                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci autem sunt debitis, blanditiis eveniet odit ad repudiandae excepturi distinctio quidem itaque accusamus hic, quo impedit reiciendis alias tempora illum ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                                            <footer class="bc-testimonial-author">
+                                                                <cite class="bc-testimonial-name">John Copper</cite>
+                                                                <span class="bc-testimonial-role">UI/UX Designer</span>
+                                                            </footer>
+                                                        </blockquote>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="bc-testimonial-item d-flex justify-content-center align-items-center">
-                                        <div class="testimoinal-thumb p-relative d-none d-xl-block">
-                                            <img src="assets/img/testimonial/testimonal-03.jpg" alt="">
-                                            <div class="testimoinal-thumb-bg"></div>
-                                        </div>
-                                        <div class="testimoinal-content">
-                                            <img src="assets/img/testimonial/quote-left.png" alt="">
-                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci autem sunt debitis, blanditiis eveniet odit ad repudiandae excepturi distinctio quidem itaque accusamus hic, quo impedit reiciendis alias tempora illum ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                            <div class="testimoinal-author-info">
-                                                <h3 class="testimoinal-author-name">John Copper</h3>
-                                                <span class="testimoinal-author-degi">UI/UX Designer</span>
+                                    <article class="bc-testimonial-item">
+                                        <div class="bc-testimonial-card">
+                                            <div class="row g-0 align-items-stretch">
+                                                <div class="col-lg-4 d-none d-lg-block">
+                                                    <div class="bc-testimonial-photo-frame">
+                                                        <img src="assets/img/testimonial/testimonal-03.jpg" alt="Portrait of John Copper" width="400" height="480" loading="lazy">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="bc-testimonial-body">
+                                                        <div class="bc-testimonial-photo bc-testimonial-photo--mobile d-lg-none">
+                                                            <img src="assets/img/testimonial/testimonal-03.jpg" alt="" width="72" height="72" loading="lazy">
+                                                        </div>
+                                                        <div class="bc-testimonial-quote-icon" aria-hidden="true"><i class="fas fa-quote-left"></i></div>
+                                                        <blockquote class="bc-testimonial-quote">
+                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci autem sunt debitis, blanditiis eveniet odit ad repudiandae excepturi distinctio quidem itaque accusamus hic, quo impedit reiciendis alias tempora illum ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                                            <footer class="bc-testimonial-author">
+                                                                <cite class="bc-testimonial-name">John Copper</cite>
+                                                                <span class="bc-testimonial-role">UI/UX Designer</span>
+                                                            </footer>
+                                                        </blockquote>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </div>
                             </div>
-                            <div class="bc-testimonial-btn d-flex">
-                                <div class="bc-testimonial-btn-prev"><i class="fas fa-arrow-left"></i></div>
-                                <div class="bc-testimonial-btn-next"><i class="fas fa-arrow-right"></i></div>
-                                
+                            <div class="bc-testimonial-toolbar d-flex flex-wrap align-items-center justify-content-between gap-3">
+                                <div class="bc-testimonial-pagination"></div>
+                                <div class="bc-testimonial-btn d-flex align-items-center gap-2">
+                                    <div class="bc-testimonial-btn-prev" role="button" tabindex="0" aria-label="Previous testimonial"><i class="fas fa-arrow-left" aria-hidden="true"></i></div>
+                                    <div class="bc-testimonial-btn-next" role="button" tabindex="0" aria-label="Next testimonial"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
+                                </div>
                             </div>
-                            <div class="bc-testimonial-pagination d-flex justify-content-center"></div>
+                        </div>
                         </div>
                     </div>
                 </section>
                 <!-- Testimonial End -->
                 <!-- Education Start -->
-                <section class="bc-education-wrapper pt-80 pb-50 bc-section-bg">
+                <section class="bc-education-wrapper bc-section-bg" id="education" aria-labelledby="education-heading">
                     <div class="container">
-                        <div class="bc-section-title-wrapper text-center mb-50"> 
-                            <h2 class="bc-section-title bc-gradient-text-color ">Education</h2>
-                            <p>Per ipsum ultrices sollicitudin iaculis platea facilisi semper aliquam up <br> senectus cursus vivamus volutpat penatibus</p>
+                        <div class="bc-section-title-wrapper text-center bc-education-intro">
+                            <p class="bc-education-eyebrow wow bcFadeInUp" data-wow-duration="0.8s">Academic journey</p>
+                            <h2 id="education-heading" class="bc-section-title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">Education</h2>
+                            <p class="bc-education-sub wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Degrees and programs that shaped my foundation in computing, engineering, and problem-solving.</p>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12 mb-30">
-                                <div class="bc-education-item d-flex align-items-center gap-3 text-center wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                                    <div class="bc-education-number"> 01</div>
-                                    <div class="bc-education-title">
-                                        <span>Bsc in CSE</span>
-                                        <span>(2020-2025)</span>
-                                    </div>
-                                    <div class="bc-education-institute d-none d-sm-block">
-                                        <h2>Bangladesh University of Business & Technology</h2>
-                                    </div>
-                                    <div class="bc-education-text text-start d-none d-lg-block">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum cumque iusto nostrum quo eveniet asperiores ratione? Ipsa obcaecati natus.</p>
-                                    </div>
-                                    <div class="bc-education-link">
-                                        <a href="#" class="text-center" data-bs-toggle="modal" data-bs-target="#educationModal1"><i class="fas fa-arrow-right"></i></a>
+
+                        <div class="bc-education-timeline" role="list">
+                            <article class="bc-education-card wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.15s" role="listitem">
+                                <div class="bc-education-card__rail" aria-hidden="true">
+                                    <span class="bc-education-card__dot"></span>
+                                    <span class="bc-education-card__line"></span>
+                                </div>
+                                <div class="bc-education-card__surface">
+                                    <div class="bc-education-card__shine" aria-hidden="true"></div>
+                                    <div class="bc-education-card__grid">
+                                        <div class="bc-education-card__badge">
+                                            <span class="bc-education-card__index">01</span>
+                                            <div class="bc-education-card__credential">
+                                                <span class="bc-education-card__degree">BSc in CSE</span>
+                                                <time class="bc-education-card__years" datetime="2020/2025">2020 — 2025</time>
+                                            </div>
+                                        </div>
+                                        <div class="bc-education-card__content">
+                                            <h3 class="bc-education-card__school">Bangladesh University of Business &amp; Technology</h3>
+                                            <p class="bc-education-card__excerpt d-none d-lg-block">Core focus on software engineering, data structures, and modern web systems — with active participation in tech communities and coursework projects.</p>
+                                        </div>
+                                        <a href="about.html" class="bc-education-card__cta" aria-label="View full profile on About">
+                                            <span class="bc-education-card__cta-ring" aria-hidden="true"></span>
+                                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-12 mb-30">
-                                <div class="bc-education-item d-flex align-items-center gap-3 text-center wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                                    <div class="bc-education-number"> 02</div>
-                                    <div class="bc-education-title">
-                                        <span>Bsc in CSE</span>
-                                        <span>(2020-2025)</span>
-                                    </div>
-                                    <div class="bc-education-institute d-none d-sm-block">
-                                        <h2>Bangladesh University of Business & Technology</h2>
-                                    </div>
-                                    <div class="bc-education-text text-start d-none d-lg-block">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum cumque iusto nostrum quo eveniet asperiores ratione? Ipsa obcaecati natus.</p>
-                                    </div>
-                                    <div class="bc-education-link">
-                                        <a href="#" class="text-center" data-bs-toggle="modal" data-bs-target="#educationModal1"><i class="fas fa-arrow-right"></i></a>
+                            </article>
+
+                            <article class="bc-education-card wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.25s" role="listitem">
+                                <div class="bc-education-card__rail" aria-hidden="true">
+                                    <span class="bc-education-card__dot"></span>
+                                    <span class="bc-education-card__line"></span>
+                                </div>
+                                <div class="bc-education-card__surface">
+                                    <div class="bc-education-card__shine" aria-hidden="true"></div>
+                                    <div class="bc-education-card__grid">
+                                        <div class="bc-education-card__badge">
+                                            <span class="bc-education-card__index">02</span>
+                                            <div class="bc-education-card__credential">
+                                                <span class="bc-education-card__degree">BSc in CSE</span>
+                                                <time class="bc-education-card__years" datetime="2020/2025">2020 — 2025</time>
+                                            </div>
+                                        </div>
+                                        <div class="bc-education-card__content">
+                                            <h3 class="bc-education-card__school">Bangladesh University of Business &amp; Technology</h3>
+                                            <p class="bc-education-card__excerpt d-none d-lg-block">Core focus on software engineering, data structures, and modern web systems — with active participation in tech communities and coursework projects.</p>
+                                        </div>
+                                        <a href="about.html" class="bc-education-card__cta" aria-label="View full profile on About">
+                                            <span class="bc-education-card__cta-ring" aria-hidden="true"></span>
+                                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-12 mb-30">
-                                <div class="bc-education-item d-flex align-items-center gap-3 text-center wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
-                                    <div class="bc-education-number"> 03</div>
-                                    <div class="bc-education-title">
-                                        <span>Bsc in CSE</span>
-                                        <span>(2020-2025)</span>
-                                    </div>
-                                    <div class="bc-education-institute d-none d-sm-block">
-                                        <h2>Bangladesh University of Business & Technology</h2>
-                                    </div>
-                                    <div class="bc-education-text text-start d-none d-lg-block">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum cumque iusto nostrum quo eveniet asperiores ratione? Ipsa obcaecati natus.</p>
-                                    </div>
-                                    <div class="bc-education-link">
-                                        <a href="#" class="text-center" data-bs-toggle="modal" data-bs-target="#educationModal1"><i class="fas fa-arrow-right"></i></a>
+                            </article>
+
+                            <article class="bc-education-card wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.35s" role="listitem">
+                                <div class="bc-education-card__rail" aria-hidden="true">
+                                    <span class="bc-education-card__dot"></span>
+                                </div>
+                                <div class="bc-education-card__surface">
+                                    <div class="bc-education-card__shine" aria-hidden="true"></div>
+                                    <div class="bc-education-card__grid">
+                                        <div class="bc-education-card__badge">
+                                            <span class="bc-education-card__index">03</span>
+                                            <div class="bc-education-card__credential">
+                                                <span class="bc-education-card__degree">BSc in CSE</span>
+                                                <time class="bc-education-card__years" datetime="2020/2025">2020 — 2025</time>
+                                            </div>
+                                        </div>
+                                        <div class="bc-education-card__content">
+                                            <h3 class="bc-education-card__school">Bangladesh University of Business &amp; Technology</h3>
+                                            <p class="bc-education-card__excerpt d-none d-lg-block">Core focus on software engineering, data structures, and modern web systems — with active participation in tech communities and coursework projects.</p>
+                                        </div>
+                                        <a href="about.html" class="bc-education-card__cta" aria-label="View full profile on About">
+                                            <span class="bc-education-card__cta-ring" aria-hidden="true"></span>
+                                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
+                            </article>
                         </div>
                     </div>
                 </section>
                 <!-- Education End -->
                 <!-- Skill Start -->
-                <section class="bc-skill-wrapper pt-80 pb-50">
+                <section class="bc-skill-wrapper" id="skills" aria-labelledby="skills-heading">
                     <div class="container">
-                        <div class="row">
+                        <div class="row align-items-center g-5">
                             <div class="col-xl-6">
-                                <div class="bc-section-title-wrapper text-start mb-50"> 
-                                    <h2 class="bc-section-title bc-gradient-text-color ">We develop our skills regularly to keep us updated</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <a href="#" class="bc-btn mt-10">
+                                <div class="bc-skill-intro">
+                                    <p class="bc-skill-eyebrow wow bcFadeInUp" data-wow-duration="0.8s">Technical expertise</p>
+                                    <h2 id="skills-heading" class="bc-section-title bc-gradient-text-color text-start wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">Skills refined through real projects</h2>
+                                    <p class="bc-skill-lead wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">From backend frameworks to presentation layers, I keep tooling sharp with continuous learning, code review, and shipping production-quality work.</p>
+                                    <a href="assets/cv.pdf" class="bc-btn mt-3 wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.15s" download>
                                         <span class="bc-btn-wrap">
                                             <span class="bc-btn-y-1">DOWNLOAD CV</span>
                                             <span class="bc-btn-y-2">DOWNLOAD CV</span>
@@ -761,44 +915,52 @@
                                 </div>
                             </div>
                             <div class="col-xl-6">
-                                <div class="bc-skill-wrap">
-                                    <div class="bc-progress-item">
-                                        <h6>Laravel</h6>
-                                        <div class="bc-progress progress">
-                                            <div class="bc-progress-bar progress-bar wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.3s"  style="width: 85%;">
-                                                <span class="bc-progress-label">85%</span>
+                                <div class="bc-skill-panel wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                                    <div class="bc-skill-panel__shine" aria-hidden="true"></div>
+                                    <div class="bc-skill-panel__inner">
+                                        <div class="bc-skill-row">
+                                            <div class="bc-skill-row__head">
+                                                <span class="bc-skill-row__name">Laravel</span>
+                                                <span class="bc-skill-row__value">85%</span>
+                                            </div>
+                                            <div class="bc-skill-row__track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Laravel proficiency">
+                                                <span class="bc-skill-row__fill" style="--skill-pct: 85%; --skill-i: 0"></span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="bc-progress-item">
-                                        <h6>Wordpress</h6>
-                                        <div class="bc-progress progress">
-                                            <div class="bc-progress-bar progress-bar wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.4s" style="width: 40%;">
-                                                <span class="bc-progress-label">40%</span>
+                                        <div class="bc-skill-row">
+                                            <div class="bc-skill-row__head">
+                                                <span class="bc-skill-row__name">WordPress</span>
+                                                <span class="bc-skill-row__value">40%</span>
+                                            </div>
+                                            <div class="bc-skill-row__track" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="WordPress proficiency">
+                                                <span class="bc-skill-row__fill" style="--skill-pct: 40%; --skill-i: 1"></span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="bc-progress-item">
-                                        <h6>HTML</h6>
-                                        <div class="bc-progress progress">
-                                            <div class="bc-progress-bar progress-bar wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.5s" style="width: 80%;">
-                                                <span class="bc-progress-label">80%</span>
+                                        <div class="bc-skill-row">
+                                            <div class="bc-skill-row__head">
+                                                <span class="bc-skill-row__name">HTML</span>
+                                                <span class="bc-skill-row__value">80%</span>
+                                            </div>
+                                            <div class="bc-skill-row__track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="HTML proficiency">
+                                                <span class="bc-skill-row__fill" style="--skill-pct: 80%; --skill-i: 2"></span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="bc-progress-item">
-                                        <h6>CSS3</h6>
-                                        <div class="bc-progress progress">
-                                            <div class="bc-progress-bar progress-bar wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.6s" style="width: 75%;">
-                                                <span class="bc-progress-label">75%</span>
+                                        <div class="bc-skill-row">
+                                            <div class="bc-skill-row__head">
+                                                <span class="bc-skill-row__name">CSS3</span>
+                                                <span class="bc-skill-row__value">75%</span>
+                                            </div>
+                                            <div class="bc-skill-row__track" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 proficiency">
+                                                <span class="bc-skill-row__fill" style="--skill-pct: 75%; --skill-i: 3"></span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="bc-progress-item">
-                                        <h6>PHP</h6>
-                                        <div class="bc-progress progress">
-                                            <div class="bc-progress-bar progress-bar wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.7s" style="width: 60%;">
-                                                <span class="bc-progress-label">60%</span>
+                                        <div class="bc-skill-row">
+                                            <div class="bc-skill-row__head">
+                                                <span class="bc-skill-row__name">PHP</span>
+                                                <span class="bc-skill-row__value">60%</span>
+                                            </div>
+                                            <div class="bc-skill-row__track" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="PHP proficiency">
+                                                <span class="bc-skill-row__fill" style="--skill-pct: 60%; --skill-i: 4"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -809,155 +971,160 @@
                 </section>
                 <!-- Skill End -->
                 <!-- Blog Start -->
-                <section class="bc-blog-wrapper pt-50 pb-50 bc-section-bg" id="blog">
-                    <div class="container">
-                        <div class="bc-section-title-wrapper text-center mb-60"> 
-                            <h2 class="bc-section-title bc-gradient-text-color ">Our Blogs</h2>
-                            <p>Per ipsum ultrices sollicitudin iaculis platea facilisi semper aliquam up <br> senectus cursus vivamus volutpat penatibus</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-4 col-md-6 mb-15">
-                                <div class="bc-blog-item mb-20 wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                                    <a href="#" class="bc-blog-thumb" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                     <img src="assets/img/blog/blog-01.jpg" alt="Web Design">
-                                    </a>
-
-                                    <div class="bc-blog-item-text pt-30 ">
-                                        <div class="bc-blog-info mb-3 d-flex justify-content-between">
-                                            <div class="bc-blog-categpry"><i class="fal fa-certificate"></i> <a href="#">Web Design</a></div>
-                                            <div class="bc-blog-time"><i class="far fa-clock"></i><span> 2 hour read</span></div>
+                <section class="bc-blog-wrapper pt-50 pb-50 bc-section-bg" id="blog" aria-labelledby="blog-heading">
+                    <div class="container bc-blog-wrapper__inner">
+                        <header class="bc-section-title-wrapper text-center mb-50">
+                            <h2 id="blog-heading" class="bc-section-title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">From the blog</h2>
+                            <p class="bc-blog-lead wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Notes on product craft, frontend performance, and shipping work that lasts.</p>
+                            <p class="mb-0 mt-3 wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.14s"><a href="blog.html" class="bc-svc-page-card__link d-inline-flex">View all posts <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a></p>
+                        </header>
+                        <div class="row g-4">
+                            <div class="col-xl-4 col-md-6 d-flex">
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.08s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Design systems that scale">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-01.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category bc-blog-categpry"><i class="fas fa-layer-group" aria-hidden="true"></i> <a href="blog.html">Design systems</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>8 min read</span></span>
                                         </div>
                                         <h2 class="bc-blog-title">
-                                            Potent be interdum ipsum pellentes code primis laoreet diam per established
+                                            <a href="blog-details.html">Design systems that scale without slowing teams down</a>
                                         </h2>
-                                        <div class="bc-blog-btn mt-4 mb-2">
-                                            <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                                <span class="bc-btn-wrap">
-                                                    <span class="bc-btn-y-1">Read More <i class="fas fa-arrow-right"></i></span>
-                                                    <span class="bc-btn-y-2">Read More <i class="fas fa-arrow-right"></i></span>
-                                                </span>
-                                            </a>
-                                        </div>
+                                        <p class="bc-blog-excerpt">Tokens, components, and governance patterns that keep UI consistent as products grow.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Design systems that scale">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
                                     </div>
-                                </div>
+                                </article>
                             </div>
-                            <div class="col-xl-4 col-md-6 mb-15">
-                                <div class="bc-blog-item mb-20 wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                                    <a href="#" class="bc-blog-thumb" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                        <img src="assets/img/blog/blog-02.jpg" alt="Web Design">
-                                    </a>
-                                    <div class="bc-blog-item-text pt-20 ">
-                                        <div class="bc-blog-info mb-3 d-flex justify-content-between">
-                                            <div class="bc-blog-categpry"><i class="fal fa-certificate"></i> <a href="#">Web Design</a></div>
-                                            <div class="bc-blog-time"><i class="far fa-clock"></i><span> 2 hour read</span></div>
+                            <div class="col-xl-4 col-md-6 d-flex">
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.14s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Shipping faster with CI">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-02.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category bc-blog-categpry"><i class="fas fa-code" aria-hidden="true"></i> <a href="blog.html">Engineering</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>6 min read</span></span>
                                         </div>
                                         <h2 class="bc-blog-title">
-                                            Potent be interdum ipsum pellentes code primis laoreet diam per established
+                                            <a href="blog-details.html">Shipping faster with CI, previews, and sane defaults</a>
                                         </h2>
-                                        <div class="bc-blog-btn mt-4 mb-2">
-                                            <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                                <span class="bc-btn-wrap">
-                                                    <span class="bc-btn-y-1">Read More <i class="fas fa-arrow-right"></i></span>
-                                                    <span class="bc-btn-y-2">Read More <i class="fas fa-arrow-right"></i></span>
-                                                </span>
-                                            </a>
-                                        </div>
+                                        <p class="bc-blog-excerpt">A practical checklist for small teams who want velocity without burning out.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Shipping faster with CI">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
                                     </div>
-                                </div>
+                                </article>
                             </div>
-                            <div class="col-xl-4 col-md-6 mb-15">
-                                <div class="bc-blog-item mb-20 wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
-                                    <a href="#" class="bc-blog-thumb" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                        <img src="assets/img/blog/blog-03.jpg" alt="Web Design">
-                                    </a>
-                                    <div class="bc-blog-item-text pt-30 ">
-                                        <div class="bc-blog-info mb-3 d-flex justify-content-between">
-                                            <div class="bc-blog-categpry"><i class="fal fa-certificate"></i> <a href="#">Web Design</a></div>
-                                            <div class="bc-blog-time"><i class="far fa-clock"></i><span> 2 hour read</span></div>
+                            <div class="col-xl-4 col-md-6 d-flex">
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.2s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Content that converts">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-03.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category bc-blog-categpry"><i class="fas fa-bullhorn" aria-hidden="true"></i> <a href="blog.html">Growth</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>5 min read</span></span>
                                         </div>
                                         <h2 class="bc-blog-title">
-                                            Potent be interdum ipsum pellentes code primis laoreet diam per established
+                                            <a href="blog-details.html">Content that converts: structure, clarity, and one clear CTA</a>
                                         </h2>
-                                        <div class="bc-blog-btn mt-4 mb-2">
-                                            <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                                <span class="bc-btn-wrap">
-                                                    <span class="bc-btn-y-1">Read More <i class="fas fa-arrow-right"></i></span>
-                                                    <span class="bc-btn-y-2">Read More <i class="fas fa-arrow-right"></i></span>
-                                                </span>
-                                            </a>
-                                        </div>
+                                        <p class="bc-blog-excerpt">How we tighten landing copy and measure what actually moves signups.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Content that converts">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
                                     </div>
-                                </div>
+                                </article>
                             </div>
-                            
                         </div>
                     </div>
                 </section>
                 <!-- Blog End -->
                 <!-- Contact Start -->
-                <section class="bc-contact-wrapper pt-50 pb-50" id="contact">
-                    <div class="container">
-                        <div class="row g-5">
-                            <div class="col-xl-4 col-lg-5">
-                                <div class="bc-contact-text-area wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                                    <div class="bc-section-title-wrapper text-start mb-60"> 
-                                        <h2 class="bc-section-title bc-gradient-text-color ">Get Ready To Create Great</h2>
-                                        <p>Per ipsum ultrices sollicitudin iaculis platea facilisi semper aliquam up  senectus cursus vivamus volutpat penatibus.</p>
-                                    </div>
-                                    <div class="bc-link-area">
-                                        <ul class="bc-link">
-                                            <li>
-                                                <span class="bc-link-icon"><i class="far fa-envelope"></i></span>
-                                                <div class="bc-link-wrap">
-                                                    <h4 class="bc-link-title">E-mail:</h4>
-                                                    <a href="#">hello@zahan.com</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <span class="bc-link-icon"><i class="fas fa-map-marker-alt"></i></span>
-                                                <div class="bc-link-wrap">
-                                                    <h4 class="bc-link-title">Location:</h4>
-                                                    <div>3891 Ranchview Dr. Richardson</div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <span class="bc-link-icon"><i class="fas fa-phone-alt"></i></span>
-                                                <div class="bc-link-wrap">
-                                                    <h4 class="bc-link-title">Phone:</h4>
-                                                    <a href="#">+8801780882316</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                <section class="bc-contact-wrapper pt-50 pb-50 bc-section-bg" id="contact" aria-labelledby="contact-heading">
+                    <div class="container bc-contact-wrapper__inner">
+                        <div class="row g-4 g-xl-5 align-items-stretch">
+                            <div class="col-xl-4 col-lg-5 d-flex">
+                                <aside class="bc-contact-aside w-100">
+                                    <div class="bc-contact-aside__glow" aria-hidden="true"></div>
+                                    <h2 id="contact-heading" class="bc-contact-aside__title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.05s">Let’s work together</h2>
+                                    <p class="bc-contact-aside__lead wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.1s">Tell me about your product, timeline, and goals — I’ll reply with next steps and a clear path forward.</p>
+                                    <ul class="bc-contact-info-list list-unstyled mb-0">
+                                        <li class="bc-contact-info-item wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.14s">
+                                            <span class="bc-contact-info-item__icon" aria-hidden="true"><i class="far fa-envelope"></i></span>
+                                            <div class="bc-contact-info-item__body">
+                                                <span class="bc-contact-info-item__label">Email</span>
+                                                <a href="mailto:hello@zahan.com" class="bc-contact-info-item__value">hello@zahan.com</a>
+                                            </div>
+                                        </li>
+                                        <li class="bc-contact-info-item wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
+                                            <span class="bc-contact-info-item__icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                                            <div class="bc-contact-info-item__body">
+                                                <span class="bc-contact-info-item__label">Location</span>
+                                                <span class="bc-contact-info-item__value bc-contact-info-item__value--static">3891 Ranchview Dr., Richardson</span>
+                                            </div>
+                                        </li>
+                                        <li class="bc-contact-info-item wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.26s">
+                                            <span class="bc-contact-info-item__icon" aria-hidden="true"><i class="fas fa-phone-alt"></i></span>
+                                            <div class="bc-contact-info-item__body">
+                                                <span class="bc-contact-info-item__label">Phone</span>
+                                                <a href="tel:+8801780882316" class="bc-contact-info-item__value">+880 1780 882316</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </aside>
                             </div>
-                            <div class="col-xl-8 col-lg-7">
-                                <div class="bc-contact-form wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                                    <h4 class="bc-form-title mb-20">GET IN TOUCH</h4>
-                                    <form class="row g-3 bc-contact-form-wrapper" action="assets/mail.php"  method="post" id="contact-form">
-                                        <div class="col-lg-6 mb-3">
+                            <div class="col-xl-8 col-lg-7 d-flex">
+                                <div class="bc-contact-form w-100">
+                                    <div class="bc-contact-form__head wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.08s">
+                                        <h3 class="bc-contact-form__title">Send a message</h3>
+                                        <p class="bc-contact-form__subtitle">Share a short brief — I usually respond within one business day.</p>
+                                    </div>
+                                    <form class="row g-3 bc-contact-form-wrapper wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.14s" action="assets/mail.php" method="post" id="contact-form">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" autocomplete="name">
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 mb-3">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="number" class="form-control" id="number" name="number" placeholder="Phone Number">
+                                                <input type="tel" class="form-control" id="number" name="number" placeholder="Phone Number" autocomplete="tel" inputmode="tel">
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 mb-3">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" autocomplete="email">
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 mb-3">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+                                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                            <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                                                <textarea class="form-control" name="message" id="message" rows="6" placeholder="Your Message"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -982,7 +1149,7 @@
             <!-- Footer Start -->
             <footer class="bc-footer-wrapper pt-20 pb-20">
                 <div class="container">
-                    <div class="bc-footer text-center">
+                    <div class="bc-footer text-center wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.05s">
                         <p>© 2025. All rights reserved by <a href="https://beepcoder.com/">Beepcoder.</a></p>
                     </div>
                 </div>
@@ -993,157 +1160,10 @@
 
 
     <!-- Back To Top -->
-     <button id="back-to-top"><i class="far fa-arrow-up"></i></button>
-
-    <!-- Service Modal -->
-    <div class="modal fade" id="serviceModal1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg bg-dark text-white position-relative">
-            
-                <!-- Close Button -->
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-4" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1056;"></button>
-                
-                <div class="row g-0">
-                    
-                    <!-- Left Image/Illustration (optional) -->
-                    <div class="col-md-5 d-none d-md-block">
-                    <img src="assets/img/blog/blog-02.jpg" alt="Service Image" class="img-fluid h-100 w-100 object-fit-cover">
-                    </div>
-                    
-                    <!-- Right Text Content -->
-                    <div class="col-md-7 p-4 p-md-5 d-flex flex-column justify-content-center">
-                        <h3 class="mb-3">Business Strategy</h3>
-                        <p class="text-light">Discover how our strategic business solutions can elevate your brand and boost market performance.</p>
-                        
-                        <ul class="list-unstyled mb-4">
-                            <li><i class="fas fa-check-circle me-2 text-success"></i> In-depth market analysis</li>
-                            <li><i class="fas fa-check-circle me-2 text-success"></i> Customized growth strategies</li>
-                            <li><i class="fas fa-check-circle me-2 text-success"></i> Long-term vision planning</li>
-                        </ul>
-
-                        <a href="#" class="bc-btn">Learn More</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal --> 
-    <div class="modal fade" id="portfolioModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-sm-down">
-            <div class="modal-content bg-dark text-white border-0 rounded-4 overflow-hidden">
-            
-                <!-- Close Button -->
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1056;"></button>
-                
-                <div class="modal-body p-0">
-                    <div class="row g-0 flex-column flex-md-row">
-
-                        <!-- Image Section -->
-                        <div class="col-md-6 p-md-4">
-                            <img src="assets/img/portfolio/portfolio-01.jpg" alt="Project Image" class="img-fluid w-100 rounded-3 h-100 object-fit-cover" style="object-fit: cover;">
-                        </div>
-
-                        <!-- Content Section -->
-                        <div class="col-md-6 p-4 p-md-4 d-flex flex-column justify-content-center">
-                            <p class="text-muted mb-2">Featured – Design</p>
-                            <h2 class="fw-bold mb-4">App Design Development.</h2>
-                            <p class="mb-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio assumenda explicabo veniam temporibus eligendi.
-                            </p>
-                            <p class="mb-4">
-                            Dolorum alias suscipit rerum maiores aliquam earum odit, nihil culpa quas iusto hic minus!
-                            </p>
-                            <div class="d-flex flex-column flex-sm-row gap-3">
-                                <button type="button" class="btn btn-outline-light rounded-pill px-4 py-2" data-bs-dismiss="modal" aria-label="Close">
-                                    CLOSE <i class="bi bi-x-lg ms-1"></i>
-                                </button>
-                                <button class="btn btn-outline-light rounded-pill px-4 py-2">
-                                    VIEW PROJECTS <i class="bi bi-arrow-right ms-1"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Education Modal -->
-    <div class="modal fade" id="educationModal1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark text-white rounded-4 shadow-lg overflow-hidden position-relative">
-
-                <!-- Close button -->
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-
-                <div class="row g-0">
-                    <!-- Optional left image -->
-                    <div class="col-md-5 d-none d-md-block">
-                        <img src="assets/img/blog/blog-01.jpg" class="img-fluid h-100 w-100 object-fit-cover" alt="Education Detail">
-                        </div>
-
-                        <!-- Right text content -->
-                        <div class="col-md-7 p-4 p-md-5 d-flex flex-column justify-content-center">
-                        <h3 class="mb-3">BSc in Computer Science</h3>
-                        <h5 class="mb-2 text-secondary">Bangladesh University of Business & Technology</h5>
-                        <p class="text-light-emphasis">(2020 – 2025)</p>
-                        <hr class="border-light opacity-25">
-                        <p class="mb-4">Studied core computing fundamentals such as data structures, software engineering, AI, machine learning, and full-stack web development. Participated in university tech fests, coding contests, and research forums.</p>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check-circle text-success me-2"></i> GPA: 3.85/4.00</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i> Final Year Thesis: AI-powered Learning Platform</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Blog Modal -->
-    <div class="modal fade" id="blogModal1" tabindex="-1"  aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content bg-dark text-white rounded-4 shadow-lg position-relative">
-
-                <!-- Close Button -->
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close"></button>
-
-                <!-- Modal Body (Scrolls if long) -->
-                <div class="modal-body p-4 p-md-5">
-
-                    <!-- Top Image -->
-                    <div class="mb-4">
-                        <img src="assets/img/blog/blog-01.jpg" class="img-fluid rounded-4 w-100" alt="Blog Image">
-                    </div>
-
-                    <!-- Title + Meta -->
-                    <h2 class="mb-3">Potent be interdum ipsum pellentes code primis laoreet</h2>
-                    <div class="d-flex justify-content-between text-light-emphasis small mb-4 flex-wrap gap-2">
-                        <span><i class="fal fa-certificate me-1"></i> Web Design</span>
-                        <span><i class="far fa-clock me-1"></i> 2 hour read</span>
-                    </div>
-
-                    <!-- Blog Content -->
-                    <p class="mb-4">In this article, we dive deep into modern design principles, uncover emerging trends, and share actionable tips to elevate your UI/UX game.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut fermentum leo, et bibendum nulla. Integer posuere ligula ut metus tempor, sed efficitur augue consequat. Donec nec erat a enim sodales efficitur.</p>
-
-                    <h5 class="mt-4">What You’ll Learn:</h5>
-                    <ul class="list-unstyled mb-4">
-                        <li><i class="fas fa-check-circle me-2 text-success"></i> Animation and motion UI tips</li>
-                        <li><i class="fas fa-check-circle me-2 text-success"></i> Responsive layout strategies</li>
-                        <li><i class="fas fa-check-circle me-2 text-success"></i> Best fonts & color palettes for 2025</li>
-                    </ul>
-
-                    <p>Suspendisse non sapien nec lorem volutpat vulputate. Proin placerat, nisl in scelerisque fermentum, urna mauris posuere justo, in pharetra leo lorem nec metus. Curabitur a tristique enim. Morbi fermentum, est eget sollicitudin posuere, sapien nulla feugiat nisl.</p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
+     <button type="button" id="back-to-top" class="bc-backtop" aria-label="Back to top">
+        <span class="bc-backtop__progress" aria-hidden="true"></span>
+        <span class="bc-backtop__inner"><i class="fas fa-arrow-up" aria-hidden="true"></i></span>
+     </button>
 
 <script src="assets/js/jquery-3.7.1.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>

@@ -1,26 +1,148 @@
 @use '../utils' as *;
+
 /*----------------------------------------*/
 /* 2.1 Back to top
 /*----------------------------------------*/
-#back-to-top{
-	position: fixed;
-	right: 50px;
-	bottom: 50px;
-	background: var(--bc-text-color-2);
-	color: #fff;
-	z-index: 9;
-	width: 50px;
-	height: 50px;
-	text-align: center;
-	line-height: 50px;
-	border-radius: 8px;
+
+#back-to-top.bc-backtop {
+  --bc-backtop-progress: 0%;
+  position: fixed;
+  right: clamp(1rem, 4vw, 2.75rem);
+  bottom: clamp(1rem, 4vw, 2.75rem);
+  z-index: 99;
+
+  @media #{$xs} {
+    right: max(0.75rem, env(safe-area-inset-right, 0px));
+    bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+  }
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--bc-heading-color);
+  isolation: isolate;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.45s,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 3px var(--bc-accent-line-strong);
+    border-radius: 50%;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Hover: move only the button vertically — no scale (avoids ring / inner misalignment) */
+  &.show:hover {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  &.show:active {
+    transform: translate3d(0, -2px, 0);
+    transition-duration: 0.12s;
+  }
+
+  .bc-backtop__progress {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    z-index: 0;
+    background: conic-gradient(
+      from 270deg,
+      var(--bc-accent-glass-95) 0%,
+      var(--bc-accent-glass-95) var(--bc-backtop-progress, 0%),
+      var(--bc-glass-12) var(--bc-backtop-progress, 0%)
+    );
+    box-shadow: var(--bc-shadow-accent-glow-sm);
+    transition: box-shadow 0.35s ease;
+    /* Crisp circle edge (reduces conic-gradient seam artifacts in some GPUs) */
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  &:hover .bc-backtop__progress {
+    box-shadow: var(--bc-shadow-accent-glow-md), var(--bc-shadow-xs);
+  }
+
+  .bc-backtop__inner {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bc-gradient-backtop-inner);
+    border: 1px solid var(--bc-glass-09);
+    box-shadow: inset 0 1px 0 var(--bc-divider);
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  &:hover .bc-backtop__inner {
+    background: var(--bc-gradient-backtop-inner-hover);
+    border-color: var(--bc-accent-line);
+    box-shadow: inset 0 1px 0 var(--bc-glass-10);
+  }
+
+  .bc-backtop__inner i {
+    font-size: var(--bc-fs-icon-sm);
+    color: var(--bc-text-color-2);
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.25s ease;
+  }
+
+  &:hover .bc-backtop__inner i {
+    transform: translateY(-2px);
+    color: var(--bc-heading-color);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #back-to-top.bc-backtop,
+  #back-to-top.bc-backtop.show,
+  #back-to-top.bc-backtop.show:hover,
+  #back-to-top.bc-backtop.show:active {
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+
+  #back-to-top.bc-backtop {
     opacity: 0;
     visibility: hidden;
-    transition: .3s;
-    transform: scale(.7);
-    &.show{
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1);
-    }
+  }
+
+  #back-to-top.bc-backtop.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #back-to-top.bc-backtop .bc-backtop__inner i,
+  #back-to-top.bc-backtop .bc-backtop__inner,
+  #back-to-top.bc-backtop .bc-backtop__progress {
+    transition: none !important;
+  }
 }

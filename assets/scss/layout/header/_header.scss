@@ -3,56 +3,163 @@
 /*----------------------------------------*/
 /* 3.1 Header Style 1
 /*----------------------------------------*/
-.bc-header-wrapper{
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-
-    @media #{$lg,$md,$sm,$xs}{
-       padding-left: 15px;
-    }
+.bc-header-wrapper {
+  border-bottom: 1px solid var(--bc-divider);
+  transition:
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .bc-transparent-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
-.bc-logo-area{
-    & a{
-        & img{
-            max-width:150px;
-        }
+.bc-header-content {
+  min-height: 72px;
+  align-items: center;
+
+  @media #{$lg, $md, $sm, $xs} {
+    min-height: 68px;
+  }
+}
+
+.bc-logo-area {
+  a {
+    display: inline-flex;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
     }
+
+    img {
+      max-width: 150px;
+      height: auto;
+    }
+  }
 }
 
+.bc-header-right-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bc-action-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(0.65rem, 1.5vw, 1.1rem);
+}
+
+.bc-header-social {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--bc-header-control-size);
+    height: var(--bc-header-control-size);
+    border-radius: 50%;
+    color: var(--bc-text-color-1);
+    text-decoration: none;
+    border: none;
+    background-color: var(--bc-color-dark-five);
+    box-shadow: none;
+    transition:
+      color 0.3s ease,
+      background-color 0.35s ease,
+      box-shadow 0.35s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.35s ease;
+
+    i {
+      font-size: 0.875rem;
+    }
+
+    &:hover {
+      color: var(--bc-text-color-1);
+      background-color: var(--bc-text-color-2);
+      filter: brightness(1.06);
+      box-shadow: 0 6px 20px rgba(var(--bc-rgb-text-color-2), 0.35);
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: var(--bc-focus-ring-strong);
+    }
+  }
+}
 
 @keyframes bcfadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-  
-.bcfadeInDown {
-    animation: bcfadeInDown 1s ease-out forwards;
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-//  sticky 
+.bcfadeInDown {
+  animation: bcfadeInDown 1s ease-out forwards;
+}
+
 .header-sticky {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-    -webkit-animation: .7s ease-in-out 0s normal none 1 running bcfadeInDown;
-    animation: .7s ease-in-out 0s normal none 1 running bcfadeInDown;
-    box-shadow: 0px 20px 30px rgba(167, 167, 167, 0.1);
-    &.bc-sticky-black{
-        background-color: var(--bc-bg-black-2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  -webkit-animation: 0.65s ease-out 0s normal none 1 running bcfadeInDown;
+  animation: 0.65s ease-out 0s normal none 1 running bcfadeInDown;
+  border-bottom-color: var(--bc-glass-06);
+  box-shadow: var(--bc-shadow-header);
+
+  &.bc-sticky-black {
+    background-color: var(--bc-header-sticky-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bc-header-social__link {
+    transition: none !important;
+
+    &:hover {
+      transform: none !important;
     }
+  }
+
+  .bc-logo-area a,
+  .bc-header-wrapper {
+    transition: none !important;
+  }
+
+  .header-sticky {
+    animation: none !important;
+  }
+
+  .bcfadeInDown {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
 }

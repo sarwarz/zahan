@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Zahan - Personal Portfolio HTML Template</title>
     <link rel="icon" href="assets/img/logo/zahan-icon.png" type="image/png">
 
@@ -26,108 +26,119 @@
     <!-- Preloader End -->
 
     <!-- Header Start -->
-    <header class="bc-header-wrapper bc-transparent-header pl-100 bc-sticky-black" id="bc-sticky-header">
-        <div class="container-fluid p-0">
-            <div class="row gx-0 align-items-center">
-                <div class="col-lg-12">
-                    <div class="bc-header-content d-flex justify-content-between ">
-                        <div class="bc-logo-area align-content-center">
-                            <a class="bc-logo" href="index.html">
-                                <img src="assets/img/logo/logo.png" alt="logo">
-                            </a>
-                        </div>
-                        <div class="bc-mainmenu-nav align-content-center d-none d-lg-block">
-                            <nav class="bc-mobile-menu-active onepage">
-                                <ul>
-                                    <li><a href="#home">Home</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#service">Service</a></li>
-                                    <li><a href="#portfolio">Portfolio</a></li>
-                                    <li><a href="#testimonial">Testimonial</a></li>
-                                    <li><a href="#blog">Blog</a></li>
-                                    <li><a href="#contact">Contact</a></li>
+    <header class="bc-header-wrapper bc-transparent-header bc-sticky-black" id="bc-sticky-header">
+        <div class="container">
+            <div class="bc-header-content d-flex justify-content-between align-items-center">
+                <div class="bc-logo-area align-content-center">
+                    <a class="bc-logo" href="index.html">
+                        <img src="assets/img/logo/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="bc-mainmenu-nav align-content-center d-none d-lg-block">
+                    <nav class="bc-mobile-menu-active onepage" aria-label="Primary">
+                        <ul>
+                            <li><a href="index.html#home">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li class="has-submenu">
+                                <a href="services.html">Services</a>
+                                <ul class="sub-menu">
+                                    <li><a href="service-details.html">Web Development</a></li>
+                                    <li><a href="services.html">All services</a></li>
+                                    <li class="has-submenu">
+                                        <a href="services.html">More</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
-                            </nav>
-                        </div>
-                        <div class="bc-header-right-area align-content-center">
-                            <div class="bc-action-area">
-                                <div class="bc-offcanvas-btn bc-offcanvas-toogle"><i class="far fa-bars"></i></div>
-                            </div>
-                        </div>
+                            </li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="bc-header-right-area align-content-center">
+                    <div class="bc-action-area">
+                        <ul class="bc-header-social" aria-label="Social links">
+                            <li><a href="#" class="bc-header-social__link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="bc-header-social__link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="bc-header-social__link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="bc-header-social__link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <button type="button" class="bc-offcanvas-btn bc-offcanvas-toogle" aria-label="Toggle menu" aria-expanded="false" aria-controls="bc-offcanvas-panel">
+                            <span class="bc-offcanvas-btn__inner" aria-hidden="true">
+                                <span class="bc-offcanvas-btn__line"></span>
+                                <span class="bc-offcanvas-btn__line"></span>
+                                <span class="bc-offcanvas-btn__line"></span>
+                            </span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <!-- Header End -->
-    <!-- Offcanvas Start --> 
-     <div class="bc-offcanvas_wrapper">
+    <!-- Offcanvas Start -->
+    <div class="bc-offcanvas_wrapper" id="bc-offcanvas-panel" role="dialog" aria-modal="true" aria-label="Menu and contact" aria-hidden="true">
         <div class="bc-offcanvas">
+            <div class="bc-offcanvas__shine" aria-hidden="true"></div>
             <div class="bc-offcanvas-header d-flex justify-content-between align-items-center mb-70">
                 <div class="bc-offcanvas-logo">
-                    <a href="#">
-                        <img src="assets/img/logo/logo.png" alt="">
-                    </a>
+                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="Zahan home"></a>
                 </div>
                 <div class="bc-offcanvas-close">
-                    <div class="bc-offcanvas-close-toggle">
-                        <i class="fal fa-times"></i>
-                    </div>
+                    <button type="button" class="bc-offcanvas-close-toggle" aria-label="Close menu">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
-            <div class="bc-offcanvas-menu mb-50 d-xl-none"><nav></nav></div>
+            <div class="bc-offcanvas-menu mb-50 d-xl-none"><nav aria-label="Mobile"></nav></div>
             <div class="bc-offcanvas-content mb-40 d-none d-lg-block">
-                <h2 class="bc-offcanvas-title">Hello There!</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ea sint ex optio iste quidem.</p>
+                <h2 class="bc-offcanvas-title">Hello there</h2>
+                <p>I’m Sarwar — thanks for visiting. Use the links to explore the site or reach out from the details below.</p>
             </div>
             <div class="bc-offcanvas-info">
-                <span class="subtile">Contact Inforamtion</span>
+                <span class="subtile">Contact information</span>
                 <div class="bc-link-area">
                     <ul class="bc-link">
                         <li>
                             <span class="bc-link-icon"><i class="far fa-envelope"></i></span>
                             <div class="bc-link-wrap">
-                                <h4 class="bc-link-title">E-mail:</h4>
-                                <a href="#">hello@zahan.com</a>
+                                <h4 class="bc-link-title">E-mail</h4>
+                                <a href="mailto:hello@zahan.com">hello@zahan.com</a>
                             </div>
                         </li>
                         <li>
                             <span class="bc-link-icon"><i class="fas fa-map-marker-alt"></i></span>
                             <div class="bc-link-wrap">
-                                <h4 class="bc-link-title">Location:</h4>
-                                <div>3891 Ranchview Dr. Richardson</div>
+                                <h4 class="bc-link-title">Location</h4>
+                                <div>3891 Ranchview Dr., Richardson</div>
                             </div>
                         </li>
                         <li>
                             <span class="bc-link-icon"><i class="fas fa-phone-alt"></i></span>
                             <div class="bc-link-wrap">
-                                <h4 class="bc-link-title">Phone:</h4>
-                                <a href="#">+8801780882316</a>
+                                <h4 class="bc-link-title">Phone</h4>
+                                <a href="tel:+8801780882316">+880 1780 882316</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-             <div class="bc-social-share-inner mt-50">
-                <span class="subtile">find with me </span>
+            <div class="bc-social-share-inner mt-50">
+                <span class="subtile">Find me online</span>
                 <ul class="bc-social-sahre">
-                    <li>
-                        <a href="#" class="bc-social-btn"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="bc-social-btn"><i class="fab fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="bc-social-btn"><i class="fab fa-github"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="bc-social-btn"><i class="fab fa-twitter"></i></a>
-                    </li>
+                    <li><a href="#" class="bc-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="bc-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" class="bc-social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="#" class="bc-social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
                 </ul>
             </div>
         </div>
-     </div>
-     <div class="bc-offcanvas-overlay"></div>
+    </div>
+    <div class="bc-offcanvas-overlay" aria-hidden="true"></div>
     <!-- Offcanvas End --> 
 
     <div id="smooth-wrapper">
@@ -135,86 +146,284 @@
 
 
             <main>
-                <!-- Blog Start -->
-                <section class="bc-blog-wrapper pt-80 pb-100" id="blog">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-xl-4 col-md-6 mb-15">
-                                <div class="bc-blog-item mb-20 wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                                    <a href="#" class="bc-blog-thumb" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                     <img src="assets/img/blog/blog-01.jpg" alt="Web Design">
-                                    </a>
-
-                                    <div class="bc-blog-item-text pt-30 ">
-                                        <div class="bc-blog-info mb-3 d-flex justify-content-between">
-                                            <div class="bc-blog-categpry"><i class="fal fa-certificate"></i> <a href="#">Web Design</a></div>
-                                            <div class="bc-blog-time"><i class="far fa-clock"></i><span> 2 hour read</span></div>
-                                        </div>
-                                        <h2 class="bc-blog-title">
-                                            Potent be interdum ipsum pellentes code primis laoreet diam per established
-                                        </h2>
-                                        <div class="bc-blog-btn mt-4 mb-2">
-                                            <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                                <span class="bc-btn-wrap">
-                                                    <span class="bc-btn-y-1">Read More <i class="fas fa-arrow-right"></i></span>
-                                                    <span class="bc-btn-y-2">Read More <i class="fas fa-arrow-right"></i></span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 mb-15">
-                                <div class="bc-blog-item mb-20 wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                                    <a href="#" class="bc-blog-thumb" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                        <img src="assets/img/blog/blog-02.jpg" alt="Web Design">
-                                    </a>
-                                    <div class="bc-blog-item-text pt-20 ">
-                                        <div class="bc-blog-info mb-3 d-flex justify-content-between">
-                                            <div class="bc-blog-categpry"><i class="fal fa-certificate"></i> <a href="#">Web Design</a></div>
-                                            <div class="bc-blog-time"><i class="far fa-clock"></i><span> 2 hour read</span></div>
-                                        </div>
-                                        <h2 class="bc-blog-title">
-                                            Potent be interdum ipsum pellentes code primis laoreet diam per established
-                                        </h2>
-                                        <div class="bc-blog-btn mt-4 mb-2">
-                                            <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                                <span class="bc-btn-wrap">
-                                                    <span class="bc-btn-y-1">Read More <i class="fas fa-arrow-right"></i></span>
-                                                    <span class="bc-btn-y-2">Read More <i class="fas fa-arrow-right"></i></span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 mb-15">
-                                <div class="bc-blog-item mb-20 wow bcFadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
-                                    <a href="#" class="bc-blog-thumb" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                        <img src="assets/img/blog/blog-03.jpg" alt="Web Design">
-                                    </a>
-                                    <div class="bc-blog-item-text pt-30 ">
-                                        <div class="bc-blog-info mb-3 d-flex justify-content-between">
-                                            <div class="bc-blog-categpry"><i class="fal fa-certificate"></i> <a href="#">Web Design</a></div>
-                                            <div class="bc-blog-time"><i class="far fa-clock"></i><span> 2 hour read</span></div>
-                                        </div>
-                                        <h2 class="bc-blog-title">
-                                            Potent be interdum ipsum pellentes code primis laoreet diam per established
-                                        </h2>
-                                        <div class="bc-blog-btn mt-4 mb-2">
-                                            <a class="bc-btn" href="#" data-bs-toggle="modal" data-bs-target="#blogModal1">
-                                                <span class="bc-btn-wrap">
-                                                    <span class="bc-btn-y-1">Read More <i class="fas fa-arrow-right"></i></span>
-                                                    <span class="bc-btn-y-2">Read More <i class="fas fa-arrow-right"></i></span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                <section class="bc-page-hero jarallax bc-section-bg" data-background="assets/img/section-bg.jpg" aria-labelledby="blog-page-heading">
+                    <div class="container bc-page-hero__inner">
+                        <h1 id="blog-page-heading" class="bc-page-hero__title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">Blog</h1>
+                        <p class="bc-page-hero__lead wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Articles on design systems, engineering practice, and growth — same cards as the homepage feed.</p>
+                        <div class="bc-page-hero__breadcrumb-shell wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.14s">
+                            <nav class="bc-breadcrumb" aria-label="Breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                                </ol>
+                            </nav>
                         </div>
+                    </div>
+                </section>
+                <!-- Blog Start -->
+                <section class="bc-blog-wrapper pt-50 pb-100 bc-section-bg" id="blog">
+                    <div class="container bc-blog-wrapper__inner">
+                        <h2 class="visually-hidden">Latest articles</h2>
+                        <div class="bc-blog-toolbar d-flex flex-wrap justify-content-between align-items-center gap-3">
+                            <p class="bc-blog-toolbar__count mb-0" id="bcBlogCount" aria-live="polite">Showing 1–3 of 9</p>
+                            <div class="bc-blog-view-toggle" role="group" aria-label="Article layout">
+                                <button type="button" class="bc-blog-view-btn is-active" id="bcBlogViewGrid" data-bc-blog-view="grid" aria-pressed="true" title="Grid view">
+                                    <i class="fas fa-th-large" aria-hidden="true"></i><span class="visually-hidden">Grid view</span>
+                                </button>
+                                <button type="button" class="bc-blog-view-btn" id="bcBlogViewList" data-bc-blog-view="list" aria-pressed="false" title="List view">
+                                    <i class="fas fa-list-ul" aria-hidden="true"></i><span class="visually-hidden">List view</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row g-4 bc-blog-feed bc-blog-feed--grid" id="bcBlogFeed">
+                            <div class="bc-blog-post col-xl-4 col-md-6 d-flex" data-bc-page="1">
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.08s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Design systems that scale">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-01.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category bc-blog-categpry"><i class="fas fa-layer-group" aria-hidden="true"></i> <a href="blog.html">Design systems</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>8 min read</span></span>
+                                        </div>
+                                        <h2 class="bc-blog-title">
+                                            <a href="blog-details.html">Design systems that scale without slowing teams down</a>
+                                        </h2>
+                                        <p class="bc-blog-excerpt">Tokens, components, and governance patterns that keep UI consistent as products grow.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Design systems that scale">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="bc-blog-post col-xl-4 col-md-6 d-flex" data-bc-page="1">
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.14s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Shipping faster with CI">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-02.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category bc-blog-categpry"><i class="fas fa-code" aria-hidden="true"></i> <a href="blog.html">Engineering</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>6 min read</span></span>
+                                        </div>
+                                        <h2 class="bc-blog-title">
+                                            <a href="blog-details.html">Shipping faster with CI, previews, and sane defaults</a>
+                                        </h2>
+                                        <p class="bc-blog-excerpt">A practical checklist for small teams who want velocity without burning out.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Shipping faster with CI">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="bc-blog-post col-xl-4 col-md-6 d-flex" data-bc-page="1">
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.2s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Content that converts">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-03.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category bc-blog-categpry"><i class="fas fa-bullhorn" aria-hidden="true"></i> <a href="blog.html">Growth</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>5 min read</span></span>
+                                        </div>
+                                        <h2 class="bc-blog-title">
+                                            <a href="blog-details.html">Content that converts: structure, clarity, and one clear CTA</a>
+                                        </h2>
+                                        <p class="bc-blog-excerpt">How we tighten landing copy and measure what actually moves signups.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Content that converts">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="bc-blog-post col-xl-4 col-md-6 d-flex" data-bc-page="2" hidden>
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.08s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: API design first">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-01.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category"><i class="fas fa-plug" aria-hidden="true"></i> <a href="blog.html">APIs</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>7 min read</span></span>
+                                        </div>
+                                        <h2 class="bc-blog-title">
+                                            <a href="blog-details.html">API design first: contracts your frontend can trust</a>
+                                        </h2>
+                                        <p class="bc-blog-excerpt">Versioning, error shapes, and OpenAPI habits that keep web and mobile in sync.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: API design first">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="bc-blog-post col-xl-4 col-md-6 d-flex" data-bc-page="2" hidden>
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.1s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Performance budgets">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-02.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category"><i class="fas fa-tachometer-alt" aria-hidden="true"></i> <a href="blog.html">Performance</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>6 min read</span></span>
+                                        </div>
+                                        <h2 class="bc-blog-title">
+                                            <a href="blog-details.html">Performance budgets that designers and devs both respect</a>
+                                        </h2>
+                                        <p class="bc-blog-excerpt">Setting LCP, CLS, and JS ceilings before the redesign ships.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Performance budgets">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="bc-blog-post col-xl-4 col-md-6 d-flex" data-bc-page="2" hidden>
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.12s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Dark mode tokens">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-03.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category"><i class="fas fa-moon" aria-hidden="true"></i> <a href="blog.html">Design tokens</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>5 min read</span></span>
+                                        </div>
+                                        <h2 class="bc-blog-title">
+                                            <a href="blog-details.html">Dark mode tokens without doubling your component library</a>
+                                        </h2>
+                                        <p class="bc-blog-excerpt">Semantic color ramps and contrast checks that scale across themes.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Dark mode tokens">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="bc-blog-post col-xl-4 col-md-6 d-flex" data-bc-page="3" hidden>
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.08s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Hiring product designers">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-02.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category"><i class="fas fa-users" aria-hidden="true"></i> <a href="blog.html">Team</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>9 min read</span></span>
+                                        </div>
+                                        <h2 class="bc-blog-title">
+                                            <a href="blog-details.html">Hiring product designers when you are still finding product–market fit</a>
+                                        </h2>
+                                        <p class="bc-blog-excerpt">Signals in portfolios and interviews that predict real collaboration.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Hiring product designers">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="bc-blog-post col-xl-4 col-md-6 d-flex" data-bc-page="3" hidden>
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.1s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Email deliverability">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-03.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="blog.html">Lifecycle</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>4 min read</span></span>
+                                        </div>
+                                        <h2 class="bc-blog-title">
+                                            <a href="blog-details.html">Email deliverability checks before you scale campaigns</a>
+                                        </h2>
+                                        <p class="bc-blog-excerpt">DNS, warm-up, and suppression lists explained for builders.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Email deliverability">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="bc-blog-post col-xl-4 col-md-6 d-flex" data-bc-page="3" hidden>
+                                <article class="bc-blog-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.12s">
+                                    <div class="bc-blog-item__glow" aria-hidden="true"></div>
+                                    <div class="bc-blog-item__media">
+                                        <a href="blog-details.html" class="bc-blog-thumb" aria-label="Open article: Analytics hygiene">
+                                            <span class="bc-blog-thumb__inner">
+                                                <img src="assets/img/blog/blog-01.jpg" alt="" width="640" height="400" loading="lazy">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="bc-blog-item-text">
+                                        <div class="bc-blog-meta">
+                                            <span class="bc-blog-category"><i class="fas fa-chart-line" aria-hidden="true"></i> <a href="blog.html">Analytics</a></span>
+                                            <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>6 min read</span></span>
+                                        </div>
+                                        <h2 class="bc-blog-title">
+                                            <a href="blog-details.html">Analytics hygiene: events you will regret not naming consistently</a>
+                                        </h2>
+                                        <p class="bc-blog-excerpt">A lightweight taxonomy for funnels you can trust six months later.</p>
+                                        <a href="blog-details.html" class="bc-blog-read" aria-label="Read article: Analytics hygiene">
+                                            <span class="bc-blog-read__text">Read article</span>
+                                            <span class="bc-blog-read__icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <nav class="bc-blog-pagination-wrap mt-5 pt-4" id="bcBlogPagination" aria-label="Blog pagination">
+                            <ul class="pagination bc-blog-pagination justify-content-center mb-0">
+                                <li class="page-item disabled" id="bcBlogPagePrevLi">
+                                    <a class="page-link" href="#" id="bcBlogPagePrev" data-bc-blog-page-nav="prev" aria-label="Previous page">Prev</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#" data-bc-blog-page-nav="1" aria-label="Page 1" aria-current="page">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#" data-bc-blog-page-nav="2" aria-label="Page 2">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#" data-bc-blog-page-nav="3" aria-label="Page 3">3</a></li>
+                                <li class="page-item" id="bcBlogPageNextLi">
+                                    <a class="page-link" href="#" id="bcBlogPageNext" data-bc-blog-page-nav="next" aria-label="Next page">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </section>
                 <!-- Blog End -->
@@ -222,7 +431,7 @@
             <!-- Footer Start -->
             <footer class="bc-footer-wrapper pt-20 pb-20">
                 <div class="container">
-                    <div class="bc-footer text-center">
+                    <div class="bc-footer text-center wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.05s">
                         <p>© 2025. All rights reserved by <a href="https://beepcoder.com/">Beepcoder.</a></p>
                     </div>
                 </div>
@@ -233,157 +442,10 @@
 
 
     <!-- Back To Top -->
-     <button id="back-to-top"><i class="far fa-arrow-up"></i></button>
-
-    <!-- Service Modal -->
-    <div class="modal fade" id="serviceModal1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg bg-dark text-white position-relative">
-            
-                <!-- Close Button -->
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-4" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1056;"></button>
-                
-                <div class="row g-0">
-                    
-                    <!-- Left Image/Illustration (optional) -->
-                    <div class="col-md-5 d-none d-md-block">
-                    <img src="assets/img/blog/blog-02.jpg" alt="Service Image" class="img-fluid h-100 w-100 object-fit-cover">
-                    </div>
-                    
-                    <!-- Right Text Content -->
-                    <div class="col-md-7 p-4 p-md-5 d-flex flex-column justify-content-center">
-                        <h3 class="mb-3">Business Strategy</h3>
-                        <p class="text-light">Discover how our strategic business solutions can elevate your brand and boost market performance.</p>
-                        
-                        <ul class="list-unstyled mb-4">
-                            <li><i class="fas fa-check-circle me-2 text-success"></i> In-depth market analysis</li>
-                            <li><i class="fas fa-check-circle me-2 text-success"></i> Customized growth strategies</li>
-                            <li><i class="fas fa-check-circle me-2 text-success"></i> Long-term vision planning</li>
-                        </ul>
-
-                        <a href="#" class="bc-btn">Learn More</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal --> 
-    <div class="modal fade" id="portfolioModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-sm-down">
-            <div class="modal-content bg-dark text-white border-0 rounded-4 overflow-hidden">
-            
-                <!-- Close Button -->
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1056;"></button>
-                
-                <div class="modal-body p-0">
-                    <div class="row g-0 flex-column flex-md-row">
-
-                        <!-- Image Section -->
-                        <div class="col-md-6 p-md-4">
-                            <img src="assets/img/portfolio/portfolio-01.jpg" alt="Project Image" class="img-fluid w-100 rounded-3 h-100 object-fit-cover" style="object-fit: cover;">
-                        </div>
-
-                        <!-- Content Section -->
-                        <div class="col-md-6 p-4 p-md-4 d-flex flex-column justify-content-center">
-                            <p class="text-muted mb-2">Featured – Design</p>
-                            <h2 class="fw-bold mb-4">App Design Development.</h2>
-                            <p class="mb-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio assumenda explicabo veniam temporibus eligendi.
-                            </p>
-                            <p class="mb-4">
-                            Dolorum alias suscipit rerum maiores aliquam earum odit, nihil culpa quas iusto hic minus!
-                            </p>
-                            <div class="d-flex flex-column flex-sm-row gap-3">
-                                <button type="button" class="btn btn-outline-light rounded-pill px-4 py-2" data-bs-dismiss="modal" aria-label="Close">
-                                    CLOSE <i class="bi bi-x-lg ms-1"></i>
-                                </button>
-                                <button class="btn btn-outline-light rounded-pill px-4 py-2">
-                                    VIEW PROJECTS <i class="bi bi-arrow-right ms-1"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Education Modal -->
-    <div class="modal fade" id="educationModal1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark text-white rounded-4 shadow-lg overflow-hidden position-relative">
-
-                <!-- Close button -->
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-
-                <div class="row g-0">
-                    <!-- Optional left image -->
-                    <div class="col-md-5 d-none d-md-block">
-                        <img src="assets/img/blog/blog-01.jpg" class="img-fluid h-100 w-100 object-fit-cover" alt="Education Detail">
-                        </div>
-
-                        <!-- Right text content -->
-                        <div class="col-md-7 p-4 p-md-5 d-flex flex-column justify-content-center">
-                        <h3 class="mb-3">BSc in Computer Science</h3>
-                        <h5 class="mb-2 text-secondary">Bangladesh University of Business & Technology</h5>
-                        <p class="text-light-emphasis">(2020 – 2025)</p>
-                        <hr class="border-light opacity-25">
-                        <p class="mb-4">Studied core computing fundamentals such as data structures, software engineering, AI, machine learning, and full-stack web development. Participated in university tech fests, coding contests, and research forums.</p>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check-circle text-success me-2"></i> GPA: 3.85/4.00</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i> Final Year Thesis: AI-powered Learning Platform</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Blog Modal -->
-    <div class="modal fade" id="blogModal1" tabindex="-1"  aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content bg-dark text-white rounded-4 shadow-lg position-relative">
-
-                <!-- Close Button -->
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-1" data-bs-dismiss="modal" aria-label="Close"></button>
-
-                <!-- Modal Body (Scrolls if long) -->
-                <div class="modal-body p-4 p-md-5">
-
-                    <!-- Top Image -->
-                    <div class="mb-4">
-                        <img src="assets/img/blog/blog-01.jpg" class="img-fluid rounded-4 w-100" alt="Blog Image">
-                    </div>
-
-                    <!-- Title + Meta -->
-                    <h2 class="mb-3">Potent be interdum ipsum pellentes code primis laoreet</h2>
-                    <div class="d-flex justify-content-between text-light-emphasis small mb-4 flex-wrap gap-2">
-                        <span><i class="fal fa-certificate me-1"></i> Web Design</span>
-                        <span><i class="far fa-clock me-1"></i> 2 hour read</span>
-                    </div>
-
-                    <!-- Blog Content -->
-                    <p class="mb-4">In this article, we dive deep into modern design principles, uncover emerging trends, and share actionable tips to elevate your UI/UX game.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut fermentum leo, et bibendum nulla. Integer posuere ligula ut metus tempor, sed efficitur augue consequat. Donec nec erat a enim sodales efficitur.</p>
-
-                    <h5 class="mt-4">What You’ll Learn:</h5>
-                    <ul class="list-unstyled mb-4">
-                        <li><i class="fas fa-check-circle me-2 text-success"></i> Animation and motion UI tips</li>
-                        <li><i class="fas fa-check-circle me-2 text-success"></i> Responsive layout strategies</li>
-                        <li><i class="fas fa-check-circle me-2 text-success"></i> Best fonts & color palettes for 2025</li>
-                    </ul>
-
-                    <p>Suspendisse non sapien nec lorem volutpat vulputate. Proin placerat, nisl in scelerisque fermentum, urna mauris posuere justo, in pharetra leo lorem nec metus. Curabitur a tristique enim. Morbi fermentum, est eget sollicitudin posuere, sapien nulla feugiat nisl.</p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
+     <button type="button" id="back-to-top" class="bc-backtop" aria-label="Back to top">
+        <span class="bc-backtop__progress" aria-hidden="true"></span>
+        <span class="bc-backtop__inner"><i class="fas fa-arrow-up" aria-hidden="true"></i></span>
+     </button>
 
 <script src="assets/js/jquery-3.7.1.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>

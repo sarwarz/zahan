@@ -29,6 +29,7 @@
 		2.6 Offcanvas
 		2.7 Preloader
 		2.8 Section Title
+		2.9 Page hero (inner pages)
 	-----------------
     03. HEADER CSS
 	-----------------
@@ -59,6 +60,7 @@
 		6.7 Skill css
 		6.8 Blog css
 		6.9 Contact css
+		6.10 Service pages (listing & single)
 
 
 
@@ -85,12 +87,59 @@
 ---------------------------------*/
 body {
 	font-family: var(--bc-body-font);
-	font-size: 16px;
-	font-weight: normal;
-	color: var( --bc-text-color-1);
-	line-height: 28px;
+	font-size: var(--bc-fs-base);
+	font-weight: 400;
+	color: var(--bc-text-color-1);
+	line-height: var(--bc-lh-body);
 	background-color: var(--bc-color-dark-one);
-	
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+}
+
+/* GSAP ScrollSmoother: avoid rare horizontal bleed from transformed content */
+#smooth-wrapper {
+	overflow-x: hidden;
+}
+
+/*---------------------------------
+	Page scrollbar (theme — edit tokens in _colors.scss)
+---------------------------------*/
+html {
+	scrollbar-gutter: stable;
+	scrollbar-width: thin;
+	scrollbar-color: var(--bc-scrollbar-thumb-fallback) var(--bc-scrollbar-track-bg);
+}
+
+html::-webkit-scrollbar {
+	width: var(--bc-scrollbar-size);
+	height: var(--bc-scrollbar-size);
+}
+
+html::-webkit-scrollbar-track {
+	background: var(--bc-scrollbar-track-bg);
+	border-left: 1px solid var(--bc-scrollbar-track-border);
+	border-radius: 100px;
+}
+
+html::-webkit-scrollbar-thumb {
+	background: var(--bc-scrollbar-thumb-gradient);
+	background-clip: padding-box;
+	border: 3px solid transparent;
+	border-radius: 100px;
+	box-shadow: var(--bc-scrollbar-thumb-glow);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+	background: var(--bc-scrollbar-thumb-hover-gradient);
+	background-clip: padding-box;
+	border: 3px solid transparent;
+	box-shadow: 0 0 20px rgba(var(--bc-rgb-text-color-2), 0.45);
+}
+
+html::-webkit-scrollbar-corner {
+	background: var(--bc-color-dark-one);
 }
 
 a{
@@ -105,34 +154,34 @@ h5,
 h6 {
 	font-family: var(--bc-heading-font);
 	color: var(--bc-heading-color);
-	margin-top: 0px;
+	margin-top: 0;
 	font-weight: 700;
-	line-height: 1.2;
-	// @include tp-transition(color);
+	line-height: var(--bc-lh-heading);
 }
 
 h1 {
-	font-size: 48px;
+	font-size: var(--bc-fs-7xl);
 }
-  
+
 h2 {
-font-size: 38px;
+	font-size: var(--bc-fs-5xl);
 }
 
 h3 {
-font-size: 28px;
+	font-size: var(--bc-fs-28);
 }
 
 h4 {
-font-size: 24px;
+	font-size: var(--bc-fs-xl);
 }
 
 h5 {
-font-size: 18px;
+	font-size: var(--bc-fs-md);
 }
 
 h6 {
-font-size: 16px;
+	font-size: var(--bc-fs-base);
+	font-weight: 600;
 }
 
 ul {
@@ -142,11 +191,11 @@ ul {
 
 p {
 	font-family: var(--bc-body-font);
-	font-size: 16px;
+	font-size: var(--bc-fs-base);
 	font-weight: 400;
 	color: var(--bc-text-color-1);
-	margin-bottom: 15px;
-	line-height: 28px;
+	margin-bottom: 1rem;
+	line-height: var(--bc-lh-body);
 }
 
 
@@ -212,35 +261,33 @@ input[type="tel"],
 input[type="number"],
 input[type="password"],
 input[type="url"],
-textarea{
+textarea {
 	outline: none;
-	background-color: #fff;
+	background-color: var(--bc-form-surface);
 	height: 56px;
 	width: 100%;
-	line-height: 56px;
-	font-size: 14px;
+	line-height: var(--bc-lh-ui);
+	font-size: var(--bc-fs-base);
+	font-family: var(--bc-body-font);
 	color: var(--bc-common-black);
-	padding-left: 26px;
-	padding-right: 26px;
-	border: 1px solid #E0E2E3;
+	padding-left: 1.625rem;
+	padding-right: 1.625rem;
+	border: 1px solid var(--bc-form-border-default);
 
-	// @include tp-placeholder{
-	// 	color: #95999D;
-	// }
-
-	&:focus{
+	&:focus {
 		border-color: var(--bc-text-color-2);
-		&::placeholder{
+		&::placeholder {
 			opacity: 0;
 		}
 	}
-
 }
 
-textarea{
-	line-height: 1.4;
-	padding-top: 17px;
-	padding-bottom: 17px;
+textarea {
+	line-height: var(--bc-lh-ui);
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	height: auto;
+	min-height: 8rem;
 }
 
 *::-moz-selection {
@@ -255,12 +302,12 @@ textarea{
 }
 
 *::-moz-placeholder {
-	color: var(--bc-text-color-1);
-	font-size: 14px;
-	opacity: 1;
+	color: var(--bc-color-lightn);
+	font-size: var(--bc-fs-base);
+	opacity: 0.8;
 }
 *::placeholder {
-	color: var(--bc-text-color-1);
-	font-size: 14px;
-	opacity: 1;
+	color: var(--bc-color-lightn);
+	font-size: var(--bc-fs-base);
+	opacity: 0.8;
 }

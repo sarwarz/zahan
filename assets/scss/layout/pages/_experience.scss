@@ -1,0 +1,204 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.55 Experience — work timeline
+/*----------------------------------------*/
+
+.bc-experience-intro {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bc-experience-eyebrow {
+  font-family: var(--bc-heading-font);
+  font-size: var(--bc-fs-sm);
+  font-weight: 600;
+  letter-spacing: var(--bc-track-overline);
+  text-transform: uppercase;
+  color: var(--bc-text-color-2);
+  margin-bottom: 0.5rem;
+}
+
+.bc-experience-sub {
+  font-size: var(--bc-fs-base);
+  line-height: var(--bc-lh-relaxed);
+  color: var(--bc-color-lightn);
+  margin: 0 auto;
+  max-width: 34rem;
+}
+
+.bc-experience-timeline {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.bc-experience-card {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 0 1.25rem;
+  align-items: stretch;
+  margin-bottom: 1.35rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media #{$xs} {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 0 1rem;
+  }
+}
+
+.bc-experience-card__rail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.35rem;
+}
+
+.bc-experience-card__dot {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bc-gradient-color-1);
+  box-shadow:
+    0 0 0 4px rgba(var(--bc-rgb-text-color-2), 0.2),
+    0 0 24px rgba(var(--bc-rgb-bg-color-2), 0.35);
+  z-index: 1;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.bc-experience-card:hover .bc-experience-card__dot {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 0 5px rgba(var(--bc-rgb-text-color-2), 0.28),
+    0 0 32px rgba(var(--bc-rgb-bg-color-2), 0.45);
+}
+
+.bc-experience-card__line {
+  flex: 1;
+  width: 2px;
+  min-height: 1.25rem;
+  margin-top: 0.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--bc-rgb-text-color-2), 0.45) 0%,
+    rgba(var(--bc-rgb-bg-color-2), 0.12) 100%
+  );
+  border-radius: 2px;
+}
+
+.bc-experience-card:last-child .bc-experience-card__line {
+  display: none;
+}
+
+.bc-experience-card__surface {
+  position: relative;
+  border-radius: 20px;
+  padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3.5vw, 2rem);
+  background: var(--bc-gradient-education-surface);
+  border: 1px solid var(--bc-color-dark-five);
+  box-shadow: var(--bc-shadow-education-surface);
+  backdrop-filter: blur(12px);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.bc-experience-card:hover .bc-experience-card__surface {
+  border-color: var(--bc-accent-line);
+  box-shadow: var(--bc-shadow-education-surface-hover);
+  transform: translateY(-3px);
+}
+
+.bc-experience-card__shine {
+  position: absolute;
+  inset: -40% -20% auto 55%;
+  height: 70%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--bc-accent-glass-10) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  opacity: 0.75;
+  transition: opacity 0.35s ease;
+}
+
+.bc-experience-card:hover .bc-experience-card__shine {
+  opacity: 1;
+}
+
+.bc-experience-card__head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.bc-experience-card__role {
+  margin: 0;
+  font-family: var(--bc-heading-font);
+  font-size: var(--bc-fs-xl);
+  font-weight: 600;
+  color: var(--bc-heading-color);
+  line-height: var(--bc-lh-tight);
+}
+
+.bc-experience-card__dates {
+  font-size: var(--bc-fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--bc-text-color-2);
+  white-space: nowrap;
+}
+
+.bc-experience-card__company {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.75rem;
+  font-size: var(--bc-fs-md);
+  font-weight: 500;
+  color: var(--bc-color-lightn);
+}
+
+.bc-experience-card__list {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.45rem;
+    font-size: var(--bc-fs-base);
+    line-height: var(--bc-lh-relaxed);
+    color: var(--bc-color-lightn);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--bc-gradient-color-1);
+    }
+  }
+}

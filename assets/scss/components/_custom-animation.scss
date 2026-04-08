@@ -33,17 +33,51 @@
 
 
 .bcFadeInUp {
-  opacity: 0; /* Start invisible */
-  animation: bcFadeInUp 2s ease-out forwards; /* 2 seconds duration, ease-out effect */
+  opacity: 0;
+  animation: bcFadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
 @keyframes bcFadeInUp {
   0% {
-      opacity: 0;
-      transform: translateY(30px); /* Start slightly below */
+    opacity: 0;
+    transform: translate3d(0, 36px, 0);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0); /* End at original position */
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Slight horizontal variants for alternating columns / headers */
+.bcFadeInLeft {
+  opacity: 0;
+  animation: bcFadeInLeft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes bcFadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-28px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bcFadeInRight {
+  opacity: 0;
+  animation: bcFadeInRight 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes bcFadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(28px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -168,9 +202,9 @@
       border-left-color: transparent;
     }
     75% {
-      border-top-color: #fff;
-      border-left-color: #fff;
-      border-right-color: #fff;
+      border-top-color: var(--bc-text-color-1);
+      border-left-color: var(--bc-text-color-1);
+      border-right-color: var(--bc-text-color-1);
       border-bottom-color: transparent;
     }
     100% {
@@ -250,4 +284,39 @@
 .fadeInLeft {
     -webkit-animation-name: fadeInLeft;
     animation-name: fadeInLeft;
+}
+
+/* Respect reduced motion: show content, disable scroll-driven effects */
+html.bc-reduced-motion .wow {
+  visibility: visible !important;
+}
+
+html.bc-reduced-motion .bcFadeInUp,
+html.bc-reduced-motion .bcFadeInLeft,
+html.bc-reduced-motion .bcFadeInRight,
+html.bc-reduced-motion .bcfadeInLeft,
+html.bc-reduced-motion .bcSkillInLeft,
+html.bc-reduced-motion .img-custom-anim-right,
+html.bc-reduced-motion .img-custom-anim-left,
+html.bc-reduced-motion .img-custom-anim-top {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bcFadeInUp,
+  .bcFadeInLeft,
+  .bcFadeInRight,
+  .bcfadeInLeft,
+  .bcSkillInLeft,
+  .img-custom-anim-right,
+  .img-custom-anim-left,
+  .img-custom-anim-top {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
 }

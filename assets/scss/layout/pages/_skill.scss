@@ -1,53 +1,197 @@
 @use '../../utils' as *;
 
 /*----------------------------------------*/
-/*  6.7 Skill css
+/*  6.7 Skills — premium panel + animated bars
 /*----------------------------------------*/
-.bc-skill-wrapper{
-  background-repeat: no-repeat;
-}
-.bc-progress {
-  height: 15px;
-  overflow: visible;
-  font-size: 14px;
-  border-radius: 10px;
-  padding: 3px;
-  background: #212428;
-  box-shadow:
-    inset 8px 8px 16px rgba(0, 0, 0, 0.46),
-    inset -8px -8px 16px rgba(56, 62, 69, 0.46);
 
-  &-item {
-    overflow: hidden;
-    margin-bottom: 30px;
+.bc-skill-wrapper {
+  position: relative;
+  padding-top: clamp(3.5rem, 8vw, 5.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+  overflow: hidden;
+  background-color: var(--bc-color-dark-two);
 
-    h6 {
-      margin-bottom: 15px;
-      color: #c3cedd;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      opacity: 0.9;
-      font-weight: 400;
-    }
-  }
-
-  &-bar {
-    overflow: visible;
-    position: relative;
-    border-radius: 14px;
-    background: var(--bc-gradient-color-1);
-  }
-
-  &-label {
+  &::before {
+    content: "";
     position: absolute;
-    right: -7px;
-    top: -26px;
-    font-weight: 400;
-    color: #c3cedd;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.9;
+    width: min(420px, 85vw);
+    height: min(420px, 85vw);
+    left: -15%;
+    top: 20%;
+    background: radial-gradient(
+      circle,
+      var(--bc-accent-glass-08) 0%,
+      transparent 68%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.bc-skill-intro {
+  max-width: 34rem;
+}
+
+.bc-skill-eyebrow {
+  font-family: var(--bc-heading-font);
+  font-size: var(--bc-fs-sm);
+  font-weight: 600;
+  letter-spacing: var(--bc-track-overline);
+  text-transform: uppercase;
+  color: var(--bc-text-color-2);
+  margin-bottom: 0.5rem;
+}
+
+.bc-skill-lead {
+  font-size: var(--bc-fs-base);
+  line-height: var(--bc-lh-relaxed);
+  color: var(--bc-color-lightn);
+  margin-bottom: 0;
+}
+
+/* Glass panel */
+.bc-skill-panel {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bc-gradient-skill-panel);
+  border: 1px solid var(--bc-divider);
+  box-shadow: var(--bc-shadow-card-lg), inset 0 1px 0 var(--bc-glass-06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.bc-skill-panel:hover {
+  border-color: var(--bc-accent-glass-15);
+  box-shadow: var(--bc-shadow-card-hover), 0 0 0 1px var(--bc-accent-glass-08),
+    inset 0 1px 0 var(--bc-glass-08);
+}
+
+.bc-skill-panel__shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 40%,
+    var(--bc-glass-05) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bc-skill-panel:hover .bc-skill-panel__shine {
+  transform: translateX(100%);
+}
+
+.bc-skill-panel__inner {
+  position: relative;
+  z-index: 2;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+/* Skill row */
+.bc-skill-row__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.bc-skill-row__name {
+  font-family: var(--bc-heading-font);
+  font-size: var(--bc-fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bc-text-color-1);
+}
+
+.bc-skill-row__value {
+  font-size: var(--bc-fs-sm);
+  font-weight: 600;
+  color: var(--bc-text-color-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.bc-skill-row__track {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--bc-skill-track-bg);
+  box-shadow: var(--bc-shadow-inset-dark), inset 0 -1px 0 var(--bc-glass-04);
+  overflow: hidden;
+}
+
+/* Fill: width-based so it works with parent transforms (WOW bcFadeInUp uses translateY).
+   Trigger when the panel gets `.animated` — nested row WOW was unreliable. */
+.bc-skill-row__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 0;
+  max-width: 100%;
+  border-radius: inherit;
+  background: var(--bc-gradient-color-1);
+  box-shadow:
+    0 0 16px var(--bc-accent-glass-35),
+    inset 0 1px 0 var(--bc-glass-25);
+  transition: width 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(0.2s + var(--skill-i, 0) * 0.09s);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--bc-glass-20),
+      transparent
+    );
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.bc-skill-panel.wow.animated .bc-skill-row__fill,
+.bc-skill-panel.bc-skill-panel--inview .bc-skill-row__fill {
+  width: var(--skill-pct);
+}
+
+/* WOW off (mobile in your main.js) or small screens: show full bars */
+@media (max-width: 767px) {
+  .bc-skill-row__fill {
+    width: var(--skill-pct);
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bc-skill-row__fill {
+    width: var(--skill-pct) !important;
+    transition: none !important;
+  }
+
+  .bc-skill-panel__shine {
+    transition: none;
+    transform: none;
   }
 }

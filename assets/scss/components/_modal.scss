@@ -1,0 +1,286 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  Bootstrap modals — premium glass UI + motion
+/*----------------------------------------*/
+
+@keyframes bc-modal-body-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-backdrop {
+  --bs-backdrop-bg: var(--bc-modal-backdrop-bg);
+  --bs-backdrop-opacity: 1;
+  background-color: var(--bc-modal-backdrop-bg) !important;
+  transition:
+    opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter 0.45s ease,
+    -webkit-backdrop-filter 0.45s ease;
+}
+
+.modal-backdrop.show {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.bc-modal {
+  &.modal.fade .modal-dialog {
+    transform: none;
+    transition: none;
+  }
+
+  .modal-dialog {
+    perspective: 1200px;
+  }
+
+  &.modal.fade .modal-content {
+    opacity: 0;
+    transform: scale(0.94) translateY(1.25rem);
+    transition:
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.45s ease;
+    will-change: transform, opacity;
+  }
+
+  &.modal.show .modal-content {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  .modal-content {
+    position: relative;
+    overflow: hidden;
+    color: var(--bc-color-lightn);
+    background: var(--bc-modal-surface-bg) !important;
+    border: 1px solid var(--bc-divider-medium) !important;
+    border-radius: var(--bc-modal-radius) !important;
+    box-shadow: var(--bc-modal-shadow) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--bc-modal-accent-bar);
+      opacity: 0.95;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -35%;
+      right: -25%;
+      width: min(70%, 420px);
+      height: 55%;
+      background: radial-gradient(ellipse at center, var(--bc-accent-glass-12) 0%, transparent 68%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  .modal-content > *:not(.btn-close) {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Clear floating close control on narrow screens (stacked columns) */
+  @media (max-width: 767.98px) {
+    .modal-content > .row.g-0 {
+      padding-top: 2.5rem;
+    }
+  }
+
+  .modal-dialog-scrollable .modal-body {
+    padding-top: clamp(2.75rem, 5vw, 3.25rem) !important;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: clamp(0.85rem, 2.5vw, 1.15rem);
+    right: clamp(0.85rem, 2.5vw, 1.15rem);
+    z-index: 10 !important;
+    width: 48px;
+    height: 48px;
+    margin: 0 !important;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--bc-divider-medium);
+    background: var(--bc-glass-06) !important;
+    opacity: 1 !important;
+    box-shadow: inset 0 1px 0 var(--bc-glass-08);
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.35s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+      border-color: var(--bc-accent-line);
+      background: var(--bc-accent-glass-12) !important;
+      box-shadow: inset 0 1px 0 var(--bc-glass-10);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: var(--bc-focus-ring);
+    }
+  }
+
+  &.modal.show .modal-content > :not(.btn-close) {
+    animation: bc-modal-body-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: var(--bc-heading-font);
+    color: var(--bc-heading-color);
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(var(--bc-fs-2xl), 2.5vw, var(--bc-fs-4xl));
+    line-height: var(--bc-lh-heading);
+  }
+
+  h3 {
+    font-size: clamp(var(--bc-fs-xl), 2vw, var(--bc-fs-3xl));
+    line-height: var(--bc-lh-heading);
+  }
+
+  h5.text-secondary,
+  .text-secondary {
+    color: var(--bc-text-muted) !important;
+  }
+
+  .text-muted,
+  .text-light,
+  .text-light-emphasis {
+    color: var(--bc-color-lightn) !important;
+  }
+
+  .text-success {
+    color: var(--bc-text-color-2) !important;
+  }
+
+  hr.border-light,
+  hr.opacity-25 {
+    border-color: var(--bc-divider) !important;
+    opacity: 1 !important;
+  }
+
+  .modal-body {
+    font-size: var(--bc-fs-base);
+    line-height: var(--bc-lh-relaxed);
+  }
+
+  .modal-body p,
+  .modal-content > .row p {
+    font-size: var(--bc-fs-base);
+    line-height: var(--bc-lh-relaxed);
+  }
+
+  img {
+    border-radius: clamp(12px, 2vw, 18px);
+  }
+
+  .btn-outline-light {
+    --bs-btn-color: var(--bc-heading-color);
+    --bs-btn-border-color: var(--bc-divider-medium);
+    --bs-btn-hover-color: var(--bc-text-color-2);
+    --bs-btn-hover-bg: var(--bc-accent-glass-08);
+    --bs-btn-hover-border-color: var(--bc-accent-line);
+    --bs-btn-focus-shadow-rgb: var(--bc-rgb-text-color-2);
+    font-family: var(--bc-heading-font);
+    font-weight: 600;
+    font-size: var(--bc-fs-sm);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 999px !important;
+    padding: 0.55rem 1.35rem !important;
+    transition:
+      color 0.3s ease,
+      background 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.25s ease,
+      box-shadow 0.35s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--bc-shadow-accent-hover);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  .bc-btn {
+    margin-top: 0.25rem;
+  }
+
+  &.modal-fullscreen-sm-down .modal-content {
+    @media (max-width: 575.98px) {
+      border-radius: 0 !important;
+      min-height: 100dvh;
+
+      &::before {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-backdrop {
+    transition: opacity 0.15s ease;
+  }
+
+  .modal-backdrop.show {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .bc-modal.modal.fade .modal-content,
+  .bc-modal.modal.show .modal-content {
+    transition: opacity 0.2s ease;
+    transform: none;
+  }
+
+  .bc-modal.modal.show .modal-content > :not(.btn-close) {
+    animation: none;
+  }
+
+  .bc-modal .btn-close:hover {
+    transform: none;
+  }
+
+  .bc-modal .btn-outline-light:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

@@ -4,7 +4,8 @@
 /*  2.2 Breadcrumb
 /*----------------------------------------*/
 .bc-breadcrumb {
-    font-size: 16px;
+    font-size: var(--bc-fs-base);
+    line-height: var(--bc-lh-ui);
     a {
         color: var(--bc-color-lightn);
         text-decoration: none;

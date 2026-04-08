@@ -1,159 +1,514 @@
 @use '../../utils' as *;
 
-/*----------------------------------------*/
-/*  4.1 Main menu css
-/*----------------------------------------*/
-.bc-mainmenu-nav{
-    & ul{
+/* Modern nav motion (panel + items) */
+$bc-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+$bc-ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
 
-        & li{
-            display: inline-block; 
-            position: relative;
-            & .sub-menu{
-                position: absolute;
-                top: 105%;
-                width: 170px;
-                left: 0;
-                background: #fff;
-                padding: 16px 0;
-                opacity: 0;
-                visibility: hidden;
-                @include transition(.3s);
-                box-shadow: 0px 20px 30px rgba(1, 15, 28, 0.1);
-                z-index: 999;
+@keyframes bc-nav-item-down {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-                & li{
-                    margin-right: 0px;
-                    padding: 5px 15px;
-                    display: block;
-                    & a{
-                        padding: 0;
-                        color: var(--bc-bg-black-1);
-                        &:hover{
-                            color:var(--bc-bg-color-1);
-                        }
-                    }
-
-                    & .sub-menu{
-                        left: 100%;
-                        top: 105%;
-                        opacity: 0;
-                        visibility: hidden;
-                    }
-
-                    &:hover{
-                        & > a{
-                            color: var(--bc-bg-color-1);
-                        }
-                        & > .sub-menu{
-                            opacity: 1;
-                            visibility: visible;
-                            top:0;
-                        }
-                    }
-                }
-            }
-
-            list-style: none;
-            margin-right: 42px;
-
-            & a{
-                color: var(--bc-text-color-1);
-                font-family: var(--bc-heading-font);
-                padding: 36px 0px;
-                font-weight: 700;
-                transition: 0.5s all ease-in-out;
-                font-size: 18px;
-                &:hover{
-                    color:var(--bc-bg-color-1);
-                }
-            }
-
-            &:hover{
-
-                 & .sub-menu{
-                    opacity: 1;
-                    visibility: visible;
-                    top: 60px;
-                }
-            }
-
-        
-        }
-
-        @media #{$xl} {
-            li .sub-menu {
-                width: 170px;
-            }
-        }
-
-        @media #{$lg} {
-            li .sub-menu {
-                width: 150px;
-            }
-        }
-    }
+@keyframes bc-nav-item-side {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /*----------------------------------------*/
-/*  3.2 Mobile Menu
+/*  4.1 Main menu — desktop + multilevel
+/*----------------------------------------*/
+
+.bc-mainmenu-nav {
+  nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(0.35rem, 0.9vw, 0.75rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav > ul > li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+
+    > a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      color: rgba(var(--bc-rgb-white), 0.88);
+      font-family: var(--bc-heading-font);
+      padding: 0.5rem 1rem;
+      margin: 1.15rem 0;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      font-size: var(--bc-fs-nav);
+      text-decoration: none;
+      border-radius: 0;
+      overflow: hidden;
+      isolation: isolate;
+      transition:
+        color 0.3s $bc-ease-out-expo,
+        transform 0.35s $bc-ease-spring;
+
+      /* Match .sub-menu a — sliding accent wash */
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(
+          105deg,
+          var(--bc-accent-glass-18) 0%,
+          var(--bc-accent-glass-06) 45%,
+          transparent 75%
+        );
+        opacity: 0;
+        transform: translateX(-100%);
+        transition:
+          opacity 0.35s ease,
+          transform 0.45s $bc-ease-out-expo;
+        z-index: -1;
+      }
+
+      &:hover,
+      &:focus-visible {
+        color: var(--bc-text-color-1);
+        transform: translateX(4px);
+
+        &::before {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &.has-submenu > a {
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 0.4em;
+        height: 0.4em;
+        margin-left: 0.45em;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-0.08em);
+        opacity: 0.5;
+        flex-shrink: 0;
+        transition:
+          transform 0.45s $bc-ease-spring,
+          opacity 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: rotate(225deg) translateY(0.1em);
+        opacity: 1;
+      }
+    }
+  }
+
+  .sub-menu {
+    position: absolute;
+    top: calc(100% - 6px);
+    left: 0;
+    min-width: 15rem;
+    margin: 0;
+    padding: 0.65rem 0;
+    list-style: none;
+    z-index: 1000;
+
+    background: linear-gradient(
+      165deg,
+      rgba(var(--bc-rgb-text-color-3), 0.94) 0%,
+      rgba(1, 10, 16, 0.92) 100%
+    );
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    border: 1px solid rgba(var(--bc-rgb-white), 0.1);
+    border-radius: 14px;
+    box-shadow:
+      0 24px 48px rgba(var(--bc-rgb-black), 0.45),
+      0 0 0 1px rgba(var(--bc-rgb-text-color-2), 0.06),
+      inset 0 1px 0 rgba(var(--bc-rgb-white), 0.06);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(20px) scale(0.92);
+    transform-origin: top center;
+    filter: blur(10px);
+    transition:
+      opacity 0.35s $bc-ease-out-expo,
+      visibility 0.35s,
+      transform 0.45s $bc-ease-out-expo,
+      filter 0.45s $bc-ease-out-expo,
+      box-shadow 0.4s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -12px;
+      height: 12px;
+    }
+
+    /* Top accent line — draws in when open */
+    &::after {
+      content: '';
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      top: 0;
+      height: 2px;
+      border-radius: 0 0 2px 2px;
+      background: var(--bc-gradient-color-1);
+      transform: scaleX(0);
+      transform-origin: center;
+      opacity: 0.85;
+      transition: transform 0.55s $bc-ease-out-expo 0.08s;
+    }
+
+    li {
+      display: block;
+      margin: 0;
+      position: relative;
+    }
+
+    a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      margin: 0 0.4rem;
+      border-radius: 0;
+      font-family: var(--bc-heading-font);
+      font-size: var(--bc-fs-nav);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--bc-color-lightn);
+      text-decoration: none;
+      overflow: hidden;
+      isolation: isolate;
+      transition:
+        color 0.3s $bc-ease-out-expo,
+        background 0.35s $bc-ease-out-expo,
+        transform 0.35s $bc-ease-spring;
+
+      &::after {
+        display: none;
+      }
+
+      /* Sliding highlight */
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(
+          105deg,
+          var(--bc-accent-glass-18) 0%,
+          var(--bc-accent-glass-06) 45%,
+          transparent 75%
+        );
+        opacity: 0;
+        transform: translateX(-100%);
+        transition:
+          opacity 0.35s ease,
+          transform 0.45s $bc-ease-out-expo;
+        z-index: -1;
+      }
+
+      &:hover {
+        color: var(--bc-text-color-1);
+        transform: translateX(4px);
+
+        &::before {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+
+    .has-submenu > a {
+      padding-right: 0.85rem;
+
+      &::after {
+        display: block;
+        content: '';
+        width: 0.32em;
+        height: 0.32em;
+        margin-left: auto;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(-45deg);
+        opacity: 0.45;
+        transition:
+          opacity 0.3s ease,
+          transform 0.4s $bc-ease-spring;
+      }
+    }
+
+    .has-submenu:hover > a::after,
+    .has-submenu:focus-within > a::after {
+      opacity: 0.95;
+      transform: rotate(-45deg) translateX(3px);
+    }
+
+    .sub-menu {
+      top: 0;
+      left: calc(100% + 8px);
+      transform: translateX(-12px) scale(0.94);
+      transform-origin: top left;
+      filter: blur(8px);
+
+      &::before {
+        left: -16px;
+        right: auto;
+        top: 0;
+        width: 16px;
+        height: 100%;
+      }
+
+      &::after {
+        left: 0.75rem;
+        right: 0.75rem;
+      }
+    }
+
+    li:hover > .sub-menu,
+    li:focus-within > .sub-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(0) scale(1);
+      filter: blur(0);
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  nav > ul > li:hover > .sub-menu,
+  nav > ul > li:focus-within > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Stagger first-level dropdown links */
+  @for $i from 1 through 12 {
+    nav > ul > li:hover > .sub-menu > li:nth-child(#{$i}) > a,
+    nav > ul > li:focus-within > .sub-menu > li:nth-child(#{$i}) > a {
+      animation: bc-nav-item-down 0.42s $bc-ease-out-expo both;
+      animation-delay: #{0.05 + ($i - 1) * 0.045}s;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .sub-menu li:hover > .sub-menu > li:nth-child(#{$i}) > a,
+    .sub-menu li:focus-within > .sub-menu > li:nth-child(#{$i}) > a {
+      animation: bc-nav-item-side 0.4s $bc-ease-out-expo both;
+      animation-delay: #{0.04 + ($i - 1) * 0.04}s;
+    }
+  }
+
+  @media #{$lg, $md, $sm, $xs} {
+    .sub-menu {
+      display: none !important;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bc-mainmenu-nav {
+    nav > ul > li > a,
+    nav > ul > li > a::before,
+    nav > ul > li > a::after,
+    .sub-menu,
+    .sub-menu::after,
+    .sub-menu a,
+    .sub-menu a::before {
+      transition: none !important;
+      animation: none !important;
+    }
+
+    nav > ul > li > a:hover,
+    nav > ul > li > a:focus-visible {
+      transform: none !important;
+    }
+
+    nav > ul > li > a:hover::before,
+    nav > ul > li > a:focus-visible::before {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .sub-menu {
+      transform: none !important;
+      filter: none !important;
+    }
+
+    nav > ul > li:hover > .sub-menu,
+    nav > ul > li:focus-within > .sub-menu,
+    .sub-menu li:hover > .sub-menu,
+    .sub-menu li:focus-within > .sub-menu {
+      transform: none !important;
+      filter: none !important;
+    }
+
+    nav > ul > li:hover > .sub-menu::after,
+    nav > ul > li:focus-within > .sub-menu::after {
+      transform: scaleX(1) !important;
+      transition: none !important;
+    }
+
+    .sub-menu a:hover,
+    .sub-menu a:focus-visible {
+      transform: none !important;
+    }
+
+    .sub-menu a:hover::before,
+    .sub-menu a:focus-visible::before {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
+
+/*----------------------------------------*/
+/*  3.2 Mobile / offcanvas menu
 /*----------------------------------------*/
 
 .bc-offcanvas-menu ul {
-    list-style: none;
-    & li {
-        position: relative;
-        
-        & > a{
-            padding: 8px 0;
-            display: block;
-            font-size: 16px;
-            font-weight: 500;
-            &:hover{
-                color: var(--bc-text-color-2);
-            }
-        }
-        
-        &:not(:last-child){
-            & > a{
-                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            }
-        }
-        &.active{
-            & > a{
-                color: var(--bc-text-color-2);
-            }
-            & > .tp-menu-close{
-                border-color: var(--bc-text-color-2);
-                color: #fff;
-                background-color: var(--bc-text-color-2);
-                & i{
-                    @include transform(rotate(90deg));
-                }
-            }
-        }
-        & .sub-menu {
-            display: none;
-            padding-left: 20px;
-        }
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  & li {
+    position: relative;
+
+    & > a {
+      padding: 14px 44px 14px 0;
+      display: block;
+      font-size: 1rem; /* 16px */
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--bc-heading-color);
+      text-decoration: none;
+      transition:
+        color 0.3s $bc-ease-out-expo,
+        padding-left 0.4s $bc-ease-spring,
+        text-shadow 0.3s ease;
+
+      &:hover {
+        color: var(--bc-text-color-2);
+        padding-left: 8px;
+        text-shadow: 0 0 24px rgba(var(--bc-rgb-text-color-2), 0.2);
+      }
     }
+
+    &:not(:last-child) > a {
+      border-bottom: 1px solid var(--bc-divider-strong);
+    }
+
+    &.active > a {
+      color: var(--bc-text-color-2);
+    }
+
+    &.active > .bc-menu-close {
+      border-color: var(--bc-text-color-2);
+      color: var(--bc-text-color-1);
+      background-color: var(--bc-text-color-2);
+
+      & i {
+        @include transform(rotate(90deg));
+      }
+    }
+
+    & .sub-menu {
+      display: none;
+      padding: 0.35rem 0 0.5rem 1rem;
+      margin: 0;
+      border-left: 2px solid var(--bc-accent-line);
+      margin-left: 0.35rem;
+      margin-bottom: 0.35rem;
+
+      a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--bc-text-muted);
+
+        &:hover {
+          color: var(--bc-text-color-2);
+        }
+      }
+
+      .sub-menu {
+        border-left-color: var(--bc-divider-medium);
+        padding-left: 0.85rem;
+      }
+    }
+  }
 }
+
 .bc-menu-close {
-    position: absolute;
-    right: 0;
-    top: 7.5px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    height: 30px;
-    width: 30px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 29px;
-    &:hover{
-        background-color: var(--bc-text-color-2);
-        color: #fff;
-        border-color: var(--bc-text-color-2);
-    } 
-    & i{
-        @include transition(.3s);
-    }
+  position: absolute;
+  right: 0;
+  top: 7.5px;
+  border: 1px solid var(--bc-divider-strong);
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  font-size: var(--bc-fs-xs);
+  line-height: 29px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.3s $bc-ease-spring;
+
+  &:hover {
+    background-color: var(--bc-text-color-2);
+    color: var(--bc-text-color-1);
+    border-color: var(--bc-text-color-2);
+    transform: scale(1.05);
+  }
+
+  & i {
+    @include transition(0.3s);
+  }
 }

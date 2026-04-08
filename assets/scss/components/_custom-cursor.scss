@@ -50,5 +50,13 @@
     opacity: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 12px;
+    font-size: var(--bc-fs-xs);
+}
+
+/* Touch / coarse pointers: hide custom cursor (JS may still run; elements stay non-interactive) */
+@media (hover: none), (pointer: coarse) {
+    .mouseCursor {
+        display: none !important;
+        visibility: hidden !important;
+    }
 }

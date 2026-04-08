@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Design systems that scale — Blog — Zahan</title>
+    <title>Web development — Services — Zahan</title>
     <link rel="icon" href="assets/img/logo/zahan-icon.png" type="image/png">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -149,136 +149,105 @@
     <div id="smooth-wrapper">
         <div id="smooth-content">
             <main>
-                <section class="bc-page-hero jarallax bc-section-bg" data-background="assets/img/section-bg.jpg" aria-labelledby="blog-detail-heading">
+                <section class="bc-page-hero jarallax bc-section-bg" data-background="assets/img/section-bg.jpg" aria-labelledby="svc-detail-heading">
                     <div class="container bc-page-hero__inner">
-                        <h1 id="blog-detail-heading" class="bc-page-hero__title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">Design systems that scale</h1>
-                        <p class="bc-page-hero__lead wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Tokens, components, and governance patterns that keep UI consistent as products grow — without slowing teams down.</p>
+                        <h1 id="svc-detail-heading" class="bc-page-hero__title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">Web development</h1>
+                        <p class="bc-page-hero__lead wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Production-grade front ends, APIs, and deployments — optimized for speed, accessibility, and long-term maintainability.</p>
                         <div class="bc-page-hero__breadcrumb-shell wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.14s">
                             <nav class="bc-breadcrumb" aria-label="Breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Article</li>
+                                    <li class="breadcrumb-item"><a href="services.html">Services</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Web development</li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
                 </section>
 
-                <section class="bc-blog-detail pt-50 pb-100 bc-section-bg">
+                <section class="bc-service-detail pt-50 pb-100 bc-section-bg">
                     <div class="container">
+                        <div class="bc-service-detail__hero mb-50 mb-lg-60 wow bcFadeInUp" data-wow-duration="0.95s" data-wow-delay="0.06s">
+                            <div class="row bc-service-detail__hero-grid g-4 g-lg-5 align-items-center">
+                                <div class="col-lg-6 order-lg-2">
+                                    <div class="bc-service-detail__hero-visual">
+                                        <img src="assets/img/portfolio/portfolio-01.jpg" alt="Web development project preview" width="800" height="600" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 order-lg-1">
+                                    <div class="bc-service-detail__hero-content">
+                                        <span class="bc-service-detail__tag">Engagement · 4–12 weeks</span>
+                                        <h2 class="bc-service-detail__title">Ship a web product your team can own</h2>
+                                        <p class="bc-service-detail__lead">From marketing sites to authenticated dashboards, we agree on outcomes first, then deliver in milestones with clear handoff docs and component libraries where it matters.</p>
+                                        <div class="bc-service-detail__actions">
+                                            <a href="contact.html" class="bc-btn text-uppercase align-content-center"><span class="bc-btn-wrap"><span class="bc-btn-y-1">Start a project</span><span class="bc-btn-y-2">Start a project</span></span></a>
+                                            <a href="services.html" class="bc-service-detail__btn-ghost">All services</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row g-4 g-xl-5">
                             <div class="col-lg-8">
-                                <article class="bc-blog-detail__article wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.06s">
-                                    <figure class="bc-blog-detail__figure">
-                                        <img src="assets/img/blog/blog-01.jpg" alt="Team reviewing a design system on a wall" width="960" height="540" loading="lazy">
-                                    </figure>
-                                    <div class="bc-blog-detail__meta bc-blog-meta">
-                                        <span class="bc-blog-category"><i class="fas fa-layer-group" aria-hidden="true"></i> <a href="blog.html">Design systems</a></span>
-                                        <span class="bc-blog-time"><i class="far fa-clock" aria-hidden="true"></i><span>8 min read</span></span>
-                                        <span class="bc-blog-time"><i class="far fa-calendar-alt" aria-hidden="true"></i><time datetime="2025-03-12">Mar 12, 2025</time></span>
-                                    </div>
-                                    <p class="bc-blog-detail__lead">A practical look at how teams introduce tokens, document components, and set lightweight governance so shipping stays fast.</p>
-                                    <p>Most friction around design systems is not Figma files — it is decision fatigue. When every screen invents a new spacing value or button variant, reviews balloon and quality drifts. The fix is not more rules on day one; it is a thin, enforceable layer that grows with the product.</p>
-                                    <h2>Start with tokens, not libraries</h2>
-                                    <p>Semantic color, type, and spacing tokens give engineering and design a shared vocabulary. Name them for intent (<code>surface-elevated</code>, <code>text-muted</code>) rather than hex values so refactors do not break meaning.</p>
-                                    <blockquote class="bc-blog-detail__quote">
-                                        <p>“If a token change does not ripple predictably through the app, you still have magic numbers — they are just dressed up.”</p>
-                                    </blockquote>
-                                    <h2>Governance that ships</h2>
-                                    <p>Pair a short contribution guide with a visible changelog. Default new work to existing components; exceptions get a one-line rationale in the PR. That keeps velocity high while patterns stay honest.</p>
-                                    <ul class="bc-blog-detail__list">
-                                        <li>Document the happy path in Storybook (or equivalent) with accessibility notes.</li>
-                                        <li>Version breaking UI changes like any other dependency.</li>
-                                        <li>Run occasional UI audits against tokens, not subjective taste.</li>
+                                <article class="bc-service-detail__article wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.08s">
+                                    <p>Modern web work is rarely “just a page.” It is routing, data, edge performance, and design systems working together. This engagement covers the technical stack and collaboration rhythm so launches feel calm instead of chaotic.</p>
+                                    <h2>What you get</h2>
+                                    <ul>
+                                        <li>Architecture notes and repo structure suited to your team’s skill set</li>
+                                        <li>Responsive UI with semantic HTML and keyboard-friendly patterns</li>
+                                        <li>Performance budget checks (Core Web Vitals–aware)</li>
+                                        <li>Integration hooks for analytics, CMS, or auth providers you already use</li>
                                     </ul>
-                                    <footer class="bc-blog-detail__footer">
-                                        <p class="bc-blog-detail__tags-label">Tags</p>
-                                        <div class="bc-blog-detail__tags">
-                                            <a href="blog.html">Design systems</a>
-                                            <a href="blog.html">UI engineering</a>
-                                            <a href="blog.html">Tokens</a>
-                                            <a href="blog.html">Product design</a>
-                                        </div>
-                                    </footer>
+                                    <h2>Ideal when</h2>
+                                    <p>You are moving from a prototype to something customers pay for, or refactoring a legacy front end that slowed releases. If you only need a visual refresh, our web design track may be a lighter fit — still happy to advise.</p>
+                                    <h3>Tech flexibility</h3>
+                                    <p>Deliverables can target static hosting, SPA frameworks, or server-rendered stacks. The default is pragmatic: fewer dependencies, clearer upgrades, and documentation your future hires will thank you for.</p>
                                 </article>
+
+                                <div class="bc-service-detail__process wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">
+                                    <h2 class="mb-3">How we work</h2>
+                                    <div class="bc-svc-process">
+                                        <div class="bc-svc-process__step">
+                                            <span class="bc-svc-process__num">1</span>
+                                            <p class="bc-svc-process__label">Discover</p>
+                                            <p class="bc-svc-process__text">Goals, constraints, and success metrics locked in a short brief.</p>
+                                        </div>
+                                        <div class="bc-svc-process__step">
+                                            <span class="bc-svc-process__num">2</span>
+                                            <p class="bc-svc-process__label">Blueprint</p>
+                                            <p class="bc-svc-process__text">IA, key flows, and technical approach before pixels or commits pile up.</p>
+                                        </div>
+                                        <div class="bc-svc-process__step">
+                                            <span class="bc-svc-process__num">3</span>
+                                            <p class="bc-svc-process__label">Build</p>
+                                            <p class="bc-svc-process__text">Milestone demos, incremental deploys, and tight feedback loops.</p>
+                                        </div>
+                                        <div class="bc-svc-process__step">
+                                            <span class="bc-svc-process__num">4</span>
+                                            <p class="bc-svc-process__label">Handoff</p>
+                                            <p class="bc-svc-process__text">Docs, runbooks, and optional training so your team stays in control.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-lg-4">
-                                <aside class="bc-sidebar bc-blog-sidebar wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s" aria-label="Blog sidebar">
-                                    <div class="bc-widget bc-blog-sidebar__card">
-                                        <h3 class="bc-widget-title">Search</h3>
-                                        <div class="bc-search">
-                                            <form class="bc-search-form d-flex" action="blog.html" method="get" role="search">
-                                                <label class="visually-hidden" for="bc-blog-search">Search articles</label>
-                                                <input id="bc-blog-search" class="bc-search-input" type="search" name="q" placeholder="Search articles…" autocomplete="off">
-                                                <button class="bc-search-btn" type="submit" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></button>
-                                            </form>
+                                <aside class="bc-service-detail__aside wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.12s" aria-label="Service sidebar">
+                                    <div class="bc-service-detail__aside-inner">
+                                        <div class="bc-service-detail__cta">
+                                            <h3>Ready to talk?</h3>
+                                            <p>Tell me about your timeline and stack. I’ll reply with a lean proposal and optional call.</p>
+                                            <a href="contact.html" class="bc-btn text-uppercase"><span class="bc-btn-wrap"><span class="bc-btn-y-1">Contact</span><span class="bc-btn-y-2">Contact</span></span></a>
                                         </div>
-                                    </div>
-
-                                    <div class="bc-widget bc-blog-sidebar__card">
-                                        <h3 class="bc-widget-title">Categories</h3>
-                                        <div class="bc-categories">
-                                            <ul class="bc-category-list list-unstyled mb-0">
-                                                <li><a href="blog.html">Design systems <span>(4)</span></a></li>
-                                                <li><a href="blog.html">Front-end <span>(6)</span></a></li>
-                                                <li><a href="blog.html">Career <span>(3)</span></a></li>
-                                                <li><a href="blog.html">Performance <span>(2)</span></a></li>
-                                                <li><a href="blog.html">Accessibility <span>(3)</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="bc-widget bc-blog-sidebar__card">
-                                        <h3 class="bc-widget-title">Recent posts</h3>
-                                        <div class="bc-recent-news">
-                                            <div class="bc-news-item">
-                                                <a href="blog-details.html" class="bc-news-thumb-link"><img class="bc-news-thumb" src="assets/img/blog/blog-02.jpg" alt="" width="105" height="105" loading="lazy"></a>
-                                                <div class="bc-news-body">
-                                                    <span class="bc-news-category">Front-end</span>
-                                                    <h4 class="bc-news-title"><a href="blog-details.html">Shipping faster with CI you can trust</a></h4>
-                                                    <span class="bc-news-date">Mar 8, 2025</span>
-                                                </div>
-                                            </div>
-                                            <div class="bc-news-item">
-                                                <a href="blog-details.html" class="bc-news-thumb-link"><img class="bc-news-thumb" src="assets/img/blog/blog-03.jpg" alt="" width="105" height="105" loading="lazy"></a>
-                                                <div class="bc-news-body">
-                                                    <span class="bc-news-category">Performance</span>
-                                                    <h4 class="bc-news-title"><a href="blog-details.html">Lazy loading without layout shifts</a></h4>
-                                                    <span class="bc-news-date">Feb 26, 2025</span>
-                                                </div>
-                                            </div>
-                                            <div class="bc-news-item">
-                                                <a href="blog.html" class="bc-news-thumb-link"><img class="bc-news-thumb" src="assets/img/blog/blog-01.jpg" alt="" width="105" height="105" loading="lazy"></a>
-                                                <div class="bc-news-body">
-                                                    <span class="bc-news-category">Design systems</span>
-                                                    <h4 class="bc-news-title"><a href="blog-details.html">Design systems that scale</a></h4>
-                                                    <span class="bc-news-date">Mar 12, 2025</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="bc-widget bc-blog-sidebar__card">
-                                        <h3 class="bc-widget-title">Tags</h3>
-                                        <div class="bc-blog-sidebar-tags">
-                                            <a href="blog.html">figma</a>
-                                            <a href="blog.html">react</a>
-                                            <a href="blog.html">a11y</a>
-                                            <a href="blog.html">css</a>
-                                            <a href="blog.html">workflow</a>
-                                            <a href="blog.html">storybook</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="bc-widget bc-blog-sidebar__card bc-blog-sidebar__card--cta">
-                                        <h3 class="bc-widget-title">Newsletter</h3>
-                                        <p class="bc-blog-sidebar__cta-text">Occasional notes on UI craft and shipping — no spam.</p>
-                                        <form class="bc-blog-sidebar__newsletter" action="#" method="post">
-                                            <label class="visually-hidden" for="bc-sidebar-email">Email</label>
-                                            <input id="bc-sidebar-email" type="email" class="bc-blog-sidebar__newsletter-input" name="email" placeholder="you@example.com" autocomplete="email">
-                                            <button type="submit" class="bc-blog-sidebar__newsletter-btn">Subscribe</button>
-                                        </form>
+                                        <p class="bc-service-detail__nav-title">Explore more</p>
+                                        <ul class="bc-service-detail__nav-list">
+                                            <li><a href="service-details.html" class="is-active">Web development <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+                                            <li><a href="services.html">Business strategy <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+                                            <li><a href="services.html">App development <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+                                            <li><a href="services.html">Web design <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+                                            <li><a href="services.html">Digital marketing <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+                                            <li><a href="services.html">Content writing <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+                                        </ul>
                                     </div>
                                 </aside>
                             </div>

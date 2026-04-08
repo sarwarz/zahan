@@ -1,0 +1,92 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  Projects listing + project detail (inner pages)
+/*----------------------------------------*/
+
+.bc-project-page {
+  .bc-portfolio-lead {
+    max-width: 40rem;
+  }
+}
+
+/* Image grid on case study */
+.bc-project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.15rem);
+  margin: 2rem 0 0;
+
+  @media #{$xs} {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--bc-color-dark-five);
+    background: var(--bc-color-dark-two);
+    box-shadow: var(--bc-shadow-xs);
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+/* Sidebar meta (project facts) */
+.bc-project-meta-panel {
+  position: relative;
+  margin-bottom: 1.25rem;
+  padding: clamp(1.2rem, 2.5vw, 1.45rem);
+  border-radius: 16px;
+  border: 1px solid var(--bc-color-dark-five);
+  background: var(--bc-gradient-card);
+  box-shadow: var(--bc-shadow-xs);
+
+  h3 {
+    margin: 0 0 1rem;
+    font-size: var(--bc-fs-sm);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bc-text-color-2);
+  }
+
+  dl {
+    margin: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .bc-project-meta-panel__row {
+    display: grid;
+    gap: 0.2rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--bc-divider);
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  dt {
+    margin: 0;
+    font-size: var(--bc-fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bc-text-muted);
+  }
+
+  dd {
+    margin: 0;
+    font-size: var(--bc-fs-base);
+    font-weight: 500;
+    color: var(--bc-heading-color);
+  }
+}

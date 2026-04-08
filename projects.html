@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Projects — Zahan</title>
+    <link rel="icon" href="assets/img/logo/zahan-icon.png" type="image/png">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+    <div id="preloader" class="bc-preloader" role="status" aria-live="polite" aria-busy="true" aria-label="Loading site">
+        <div class="bc-preloader__ambient" aria-hidden="true"></div>
+        <div class="bc-preloader__grid" aria-hidden="true"></div>
+        <div class="bc-preloader__inner">
+            <div class="bc-preloader__visual" aria-hidden="true">
+                <div class="bc-preloader__orbit"></div>
+                <div class="bc-preloader__core"></div>
+            </div>
+            <p class="bc-preloader__brand">Zahan</p>
+            <div class="bc-preloader__track" aria-hidden="true">
+                <span class="bc-preloader__fill"></span>
+            </div>
+            <span class="bc-preloader__hint">Loading</span>
+        </div>
+    </div>
+
+    <header class="bc-header-wrapper bc-transparent-header bc-sticky-black" id="bc-sticky-header">
+        <div class="container">
+            <div class="bc-header-content d-flex justify-content-between align-items-center">
+                <div class="bc-logo-area align-content-center">
+                    <a class="bc-logo" href="index.html">
+                        <img src="assets/img/logo/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="bc-mainmenu-nav align-content-center d-none d-lg-block">
+                    <nav class="bc-mobile-menu-active" aria-label="Primary">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li class="has-submenu">
+                                <a href="services.html">Services</a>
+                                <ul class="sub-menu">
+                                    <li><a href="service-details.html">Web Development</a></li>
+                                    <li><a href="services.html">All services</a></li>
+                                    <li class="has-submenu">
+                                        <a href="services.html">More</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="bc-header-right-area align-content-center">
+                    <div class="bc-action-area">
+                        <ul class="bc-header-social" aria-label="Social links">
+                            <li><a href="#" class="bc-header-social__link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="bc-header-social__link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="bc-header-social__link" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="bc-header-social__link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <button type="button" class="bc-offcanvas-btn bc-offcanvas-toogle" aria-label="Toggle menu" aria-expanded="false" aria-controls="bc-offcanvas-panel">
+                            <span class="bc-offcanvas-btn__inner" aria-hidden="true">
+                                <span class="bc-offcanvas-btn__line"></span>
+                                <span class="bc-offcanvas-btn__line"></span>
+                                <span class="bc-offcanvas-btn__line"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bc-offcanvas_wrapper" id="bc-offcanvas-panel" role="dialog" aria-modal="true" aria-label="Menu and contact" aria-hidden="true">
+        <div class="bc-offcanvas">
+            <div class="bc-offcanvas__shine" aria-hidden="true"></div>
+            <div class="bc-offcanvas-header d-flex justify-content-between align-items-center mb-70">
+                <div class="bc-offcanvas-logo">
+                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="Zahan home"></a>
+                </div>
+                <div class="bc-offcanvas-close">
+                    <button type="button" class="bc-offcanvas-close-toggle" aria-label="Close menu">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="bc-offcanvas-menu mb-50 d-xl-none"><nav aria-label="Mobile"></nav></div>
+            <div class="bc-offcanvas-content mb-40 d-none d-lg-block">
+                <h2 class="bc-offcanvas-title">Hello there</h2>
+                <p>I’m Sarwar — thanks for visiting. Use the links to explore the site or reach out from the details below.</p>
+            </div>
+            <div class="bc-offcanvas-info">
+                <span class="subtile">Contact information</span>
+                <div class="bc-link-area">
+                    <ul class="bc-link">
+                        <li>
+                            <span class="bc-link-icon"><i class="far fa-envelope"></i></span>
+                            <div class="bc-link-wrap">
+                                <h4 class="bc-link-title">E-mail</h4>
+                                <a href="mailto:hello@zahan.com">hello@zahan.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="bc-link-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <div class="bc-link-wrap">
+                                <h4 class="bc-link-title">Location</h4>
+                                <div>3891 Ranchview Dr., Richardson</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="bc-link-icon"><i class="fas fa-phone-alt"></i></span>
+                            <div class="bc-link-wrap">
+                                <h4 class="bc-link-title">Phone</h4>
+                                <a href="tel:+8801780882316">+880 1780 882316</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bc-social-share-inner mt-50">
+                <span class="subtile">Find me online</span>
+                <ul class="bc-social-sahre">
+                    <li><a href="#" class="bc-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="bc-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" class="bc-social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="#" class="bc-social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bc-offcanvas-overlay" aria-hidden="true"></div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <main>
+                <section class="bc-page-hero jarallax bc-section-bg" data-background="assets/img/section-bg.jpg" aria-labelledby="projects-page-heading">
+                    <div class="container bc-page-hero__inner">
+                        <h1 id="projects-page-heading" class="bc-page-hero__title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">Projects</h1>
+                        <p class="bc-page-hero__lead wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Selected work across product, brand, and growth — case studies you can open for context, outcomes, and craft.</p>
+                        <div class="bc-page-hero__breadcrumb-shell wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.14s">
+                            <nav class="bc-breadcrumb" aria-label="Breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bc-portfolio-wrapper bc-project-page pt-50 pb-100 bc-section-bg" id="projects">
+                    <div class="container bc-portfolio-wrapper__inner">
+                        <header class="bc-section-title-wrapper text-center mb-50">
+                            <p class="bc-portfolio-lead wow bcFadeInUp mx-auto" data-wow-duration="0.9s" data-wow-delay="0.08s">Filter by focus area, then open a case study for the full story.</p>
+                        </header>
+                        <div class="bc-portfolio-content">
+                            <div class="bc-portfolio-filter-wrap wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.1s">
+                                <div class="bc-portfolio-filter" role="group" aria-label="Filter projects by category">
+                                    <button type="button" class="active" data-filter="*">All</button>
+                                    <button type="button" data-filter=".web">Web</button>
+                                    <button type="button" data-filter=".graphic">Brand &amp; graphic</button>
+                                    <button type="button" data-filter=".marketing">Content &amp; marketing</button>
+                                </div>
+                            </div>
+                            <div class="row grid g-4">
+                                <div class="col-xl-4 col-md-6 grid-item web">
+                                    <article class="bc-portfolio-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.05s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: Fintech dashboard &amp; design system"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-01.jpg" alt="Fintech dashboard project preview" width="600" height="450" loading="lazy">
+                                            </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">Fintech dashboard &amp; design system</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Unified analytics UI, tokens, and components that cut build time for new screens.</p>
+                                            <div class="bc-portfolio-action">
+                                                <div class="bc-portfolio-category">
+                                                    <span>Product</span>
+                                                    <span>UI / UX</span>
+                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-xl-4 col-md-6 grid-item graphic">
+                                    <article class="bc-portfolio-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.1s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: Identity &amp; visual language"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-02.jpg" alt="Brand identity project preview" width="600" height="450" loading="lazy">
+                                            </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">Identity &amp; visual language</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Logo, palette, and type system applied across web, print, and social touchpoints.</p>
+                                            <div class="bc-portfolio-action">
+                                                <div class="bc-portfolio-category">
+                                                    <span>Branding</span>
+                                                    <span>Guidelines</span>
+                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-xl-4 col-md-6 grid-item marketing">
+                                    <article class="bc-portfolio-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.15s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: SaaS launch &amp; content engine"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-03.jpg" alt="SaaS marketing project preview" width="600" height="450" loading="lazy">
+                                            </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">SaaS launch &amp; content engine</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Landing narrative, blog templates, and email flows for a coordinated go‑to‑market.</p>
+                                            <div class="bc-portfolio-action">
+                                                <div class="bc-portfolio-category">
+                                                    <span>Content</span>
+                                                    <span>Growth</span>
+                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-xl-4 col-md-6 grid-item web">
+                                    <article class="bc-portfolio-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.2s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: E‑commerce experience rebuild"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-04.jpg" alt="E-commerce project preview" width="600" height="450" loading="lazy">
+                                            </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">E‑commerce experience rebuild</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Checkout refinement, PDP structure, and faster loads without losing brand polish.</p>
+                                            <div class="bc-portfolio-action">
+                                                <div class="bc-portfolio-category">
+                                                    <span>Web app</span>
+                                                    <span>Performance</span>
+                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-xl-4 col-md-6 grid-item graphic">
+                                    <article class="bc-portfolio-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.25s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: Packaging &amp; campaign art"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-05.jpg" alt="Packaging design project preview" width="600" height="450" loading="lazy">
+                                            </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">Packaging &amp; campaign art</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Shelf‑ready packaging plus paid and organic assets tuned for each channel.</p>
+                                            <div class="bc-portfolio-action">
+                                                <div class="bc-portfolio-category">
+                                                    <span>Print</span>
+                                                    <span>Social</span>
+                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-xl-4 col-md-6 grid-item marketing">
+                                    <article class="bc-portfolio-item wow bcFadeInUp w-100" data-wow-duration="1s" data-wow-delay="0.3s">
+                                        <div class="bc-portfolio-item__glow" aria-hidden="true"></div>
+                                        <div class="bc-portfolio-item__media">
+                                            <a href="project-details.html" class="bc-portfolio-item__cover" aria-label="Open project: Editorial site &amp; SEO program"></a>
+                                            <div class="bc-portfolio-item__img">
+                                                <img src="assets/img/portfolio/portfolio-06.jpg" alt="Editorial and SEO project preview" width="600" height="450" loading="lazy">
+                                            </div>
+                                            <div class="bc-portfolio-item__overlay" aria-hidden="true">
+                                                <span class="bc-portfolio-item__view"><i class="fas fa-external-link-alt"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="bc-portfolio-item-text">
+                                            <h2 class="bc-portfolio-title">
+                                                <a href="project-details.html">Editorial site &amp; SEO program</a>
+                                            </h2>
+                                            <p class="bc-portfolio-excerpt">Topic clusters, schema, and a reading experience built for long‑form authority.</p>
+                                            <div class="bc-portfolio-action">
+                                                <div class="bc-portfolio-category">
+                                                    <span>Editorial</span>
+                                                    <span>SEO</span>
+                                                </div>
+                                                <a href="project-details.html" class="bc-portfolio-item__btn">
+                                                    <span class="bc-portfolio-item__btn-text">Case study</span>
+                                                    <span class="bc-portfolio-item__btn-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="bc-footer-wrapper pt-20 pb-20">
+                <div class="container">
+                    <div class="bc-footer text-center wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.05s">
+                        <p>© 2025. All rights reserved by <a href="https://beepcoder.com/">Beepcoder.</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <button type="button" id="back-to-top" class="bc-backtop" aria-label="Back to top">
+        <span class="bc-backtop__progress" aria-hidden="true"></span>
+        <span class="bc-backtop__inner"><i class="fas fa-arrow-up" aria-hidden="true"></i></span>
+    </button>
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/typed.js"></script>
+<script src="assets/js/magnific-popup.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/waypoints.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/scroll-trigger.js"></script>
+<script src="assets/js/scroll-smoother.js"></script>
+<script src="assets/js/jarallax.min.js"></script>
+<script src="assets/js/ajax-form.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

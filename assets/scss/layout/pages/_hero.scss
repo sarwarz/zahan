@@ -27,12 +27,20 @@
     & img{
         width: 75%;
         margin-left: 70px;
+
+        @media #{$xs} {
+            width: 90%;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
     }
     &-text{
         &-1{
-            color: #ffffff;
-            font-size: 90px;
-            line-height: 120px;
+            color: var(--bc-text-color-1);
+            font-size: var(--bc-fs-12xl);
+            line-height: var(--bc-lh-tight);
             position: absolute;
             top: 200px;
             z-index: -1;
@@ -40,28 +48,29 @@
             left: 15px;
 
             @media #{$xl}{
-                font-size: 80px;
+                font-size: var(--bc-fs-10xl);
                 top: 160px;
             }
 
             @media #{$lg}{
-                font-size: 60px;
+                font-size: var(--bc-fs-8xl);
                 top: 120px;
             }
 
             @media #{$sm}{
-                font-size: 75px;
+                font-size: var(--bc-fs-75);
                 top: 100px;
                 left: 80px;
             }
             @media #{$xs}{
-                font-size: 52px;
+                font-size: var(--bc-fs-52);
                 top: 75px;
+                left: 12px;
             }
         }
         &-2{
-            font-size: 90px;
-            line-height: 120px;
+            font-size: var(--bc-fs-12xl);
+            line-height: var(--bc-lh-tight);
             position: absolute;
             -webkit-text-stroke: 1px var(--bc-text-color-1);
             color: transparent;
@@ -73,19 +82,20 @@
             left: 15px;
 
             @media #{$xl}{
-                font-size: 80px;
+                font-size: var(--bc-fs-10xl);
             }
 
             @media #{$lg}{
-                font-size: 60px;
+                font-size: var(--bc-fs-8xl);
             }
 
             @media #{$sm}{
-                font-size: 75px;
+                font-size: var(--bc-fs-75);
                 left: 80px;
             }
             @media #{$xs}{
-                font-size: 52px;
+                font-size: var(--bc-fs-52);
+                left: 12px;
             }
         }
     }
@@ -94,6 +104,11 @@
         bottom: 0;
         z-index: -1;
         transform: translateX(-70px);
+
+        @media #{$xs} {
+            transform: translateX(-20px);
+        }
+
         & img{
             width: 100%;
         }
@@ -104,7 +119,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background: linear-gradient(180deg, rgba(6, 6, 6, 0) 46.14%, #010c13 100%);
+        background: var(--bc-overlay-hero);
         width: 100%;
         height: 580.327px;
         z-index: 0;
@@ -123,19 +138,23 @@
     }
 
     & p{
-        font-size: 16px;
-        line-height: 30px;
+        font-size: var(--bc-fs-section-lead);
+        line-height: var(--bc-lh-section-lead);
         color: var(--bc-color-lightn);
         padding-right: 16%;
         opacity: 0.9;
+
+        @media #{$xs} {
+            padding-right: 0;
+        }
     }
 }
 .bc-hero-subtitle{
-    font-size: 14px;
+    font-size: var(--bc-fs-sm);
     color: var(--bc-color-lightn);
     font-family: var(--bc-heading-font);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: var(--bc-track-overline);
     font-weight: 500;
     margin-bottom: 20px;
     display: block;
@@ -144,10 +163,10 @@
     }
 }
 .bc-hero-title{
-    color: #ffffff;
+    color: var(--bc-text-color-1);
     font-weight: 700;
-    font-size: 60px;
-    line-height: 75px;
+    font-size: var(--bc-fs-8xl);
+    line-height: var(--bc-lh-heading);
     margin-bottom: 22px;
     font-family: var(--bc-heading-font);
     &-color{
@@ -156,12 +175,16 @@
     }
 
     @media #{$xl}{
-        font-size: 50px;
+        font-size: var(--bc-fs-50);
     }
 
-    @media #{$lg,$xs}{
-        font-size: 40px;
+    @media #{$lg,$md,$sm,$xs}{
+        font-size: var(--bc-fs-6xl);
         margin-bottom: 10px;
+    }
+
+    @media #{$xs} {
+        font-size: clamp(1.75rem, 8vw, var(--bc-fs-6xl));
     }
 
 }
@@ -169,15 +192,20 @@
 #bc-animate-text {
   display: inline-block;
   white-space: nowrap;
-  
+
+  @media #{$xs} {
+    white-space: normal;
+    max-width: 100%;
+    word-break: break-word;
+  }
 }
 .bc-social-share-inner{
     & .subtile{
-        font-size: 14px;
+        font-size: var(--bc-fs-sm);
         color: var(--bc-color-lightn);
         font-family: var(--bc-heading-font);
         text-transform: uppercase;
-        letter-spacing: 3px;
+        letter-spacing: var(--bc-track-overline);
         font-weight: 500;
         margin-bottom: 20px;
         display: block;
@@ -206,8 +234,8 @@
             height: 50px;
             line-height: 50px;
             text-align: center;
-            font-size: 14px;
-            letter-spacing: 2px;
+            font-size: var(--bc-fs-sm);
+            letter-spacing: var(--bc-track-overline);
             text-transform: uppercase;
             border-radius: 6px;
             background: var(--bc-bg-black-1);
@@ -217,15 +245,15 @@
 
             & i{
                 color:var(--bc-color-lightn);
-                font-size: 16px;
+                font-size: var(--bc-fs-base);
             }
 
             &:hover{
                 
-                background: linear-gradient(to right bottom, #212428, #16181c);
+                background: var(--bc-gradient-card-alt);
 
                 & i{
-                    color: var(--bc-text-color-1);;
+                    color: var(--bc-text-color-1);
                 }
             }
 
@@ -235,6 +263,20 @@
 
 .bc-hero-button-wrap{
     padding: 35px 0px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+
+    @media #{$xs} {
+        padding: 24px 0 32px;
+        gap: 1rem;
+    }
+
+    .ml-50 {
+        @media #{$xs} {
+            margin-left: 0;
+        }
+    }
 }
 
 

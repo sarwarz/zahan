@@ -2,11 +2,11 @@
 
 
 
-    // Only process POST reqeusts.
+    // Only process POST requests.
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        // Get the form fields and remove MORALspace.
+        // Get the form fields and trim whitespace.
 
         $name = strip_tags(trim($_POST["name"]));
 
@@ -36,8 +36,6 @@
 
         // Set the recipient email address.
 
-        // FIXME: Update this to your desired email address.
-
         $recipient = "sarwarzahan16@gmail.com";
 
         // Set the email subject.
@@ -54,6 +52,8 @@
         $email_content = "$head\n\n\n";
 
         $email_content .= "Name: $name\n";
+
+        $email_content .= "Phone: $number\n";
 
         $email_content .= "Mail: $email\n\n";
 

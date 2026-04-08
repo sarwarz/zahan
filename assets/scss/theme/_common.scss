@@ -78,7 +78,8 @@
 }
 
 .bc-fs-40 {
-    font-size: 40px;
+    font-size: var(--bc-fs-6xl);
+    line-height: var(--bc-lh-heading);
 }
 
 

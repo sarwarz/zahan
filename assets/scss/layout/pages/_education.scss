@@ -1,130 +1,369 @@
 @use '../../utils' as *;
 
 /*----------------------------------------*/
-/*  6.6 Education css
+/*  6.6 Education — premium timeline cards
 /*----------------------------------------*/
-.bc-education {
-  &-item {
-    background: var(--bc-color-dark-four);
-    border: 1px solid var(--bc-color-dark-five);
+
+.bc-education-wrapper {
+  position: relative;
+  padding-top: clamp(3.5rem, 8vw, 5.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+  overflow: hidden;
+
+  /* Ambient gradient orbs */
+  &::before {
+    content: "";
+    position: absolute;
+    width: min(480px, 90vw);
+    height: min(480px, 90vw);
+    right: -12%;
+    top: 10%;
+    background: radial-gradient(
+      circle,
+      var(--bc-accent-glass-08) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: min(360px, 70vw);
+    height: min(360px, 70vw);
+    left: -8%;
+    bottom: 5%;
+    background: radial-gradient(
+      circle,
+      rgba(var(--bc-rgb-bg-color-2), 0.05) 0%,
+      transparent 65%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
     position: relative;
-    transition: 0.5s all ease-in-out;
+    z-index: 1;
+  }
+}
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      border: 1px solid transparent;
-      background: var(--bc-stroke-gr) border-box;
-      background-clip: border-box;
-      -webkit-mask: var(--bc-full) padding-box, var(--bc-full);
-      -webkit-mask-composite: xor;
-      mask: var(--bc-full) padding-box exclude, var(--bc-full);
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 0.5s ease, border-color 0.5s;
-      will-change: opacity;
-    }
+.bc-education-intro {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    &:hover {
-      cursor: pointer;
-      background: linear-gradient(to right bottom, #212428, #16181c);
+.bc-education-eyebrow {
+  font-family: var(--bc-heading-font);
+  font-size: var(--bc-fs-sm);
+  font-weight: 600;
+  letter-spacing: var(--bc-track-overline);
+  text-transform: uppercase;
+  color: var(--bc-text-color-2);
+  margin-bottom: 0.5rem;
+}
 
-      &::before {
-        opacity: 1;
-      }
+.bc-education-sub {
+  font-size: var(--bc-fs-base);
+  line-height: var(--bc-lh-relaxed);
+  color: var(--bc-color-lightn);
+  margin: 0 auto;
+  max-width: 34rem;
+}
 
-      .bc-education-link a {
-        background: var(--bc-gradient-color-1);
+/* Timeline list */
+.bc-education-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-        i {
-          color: var(--bc-bg-black-2);
-          transform: rotate(-65deg);
-        }
-      }
+.bc-education-card {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 0 1.25rem;
+  align-items: stretch;
+  margin-bottom: 1.25rem;
 
-      .bc-education-number {
-        padding: 25px 25px;
-        clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
-      }
-    }
-
-    @media #{$xs} {
-      justify-content: space-between;
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
 
-  &-number {
-    background: var(--bc-gradient-color-1);
-    color: var(--bc-bg-black-1);
-    font-size: 60px;
-    padding: 25px 20px;
-    font-family: var(--bc-heading-font);
-    line-height: 1;
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-    transition: 0.5s all ease-in-out;
-
-    @media #{$xs} {
-      font-size: 35px;
-    }
+  @media #{$xs} {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 0 1rem;
   }
+}
 
-  &-text {
-    width: 60%;
-    padding: 15px 5px;
+/* Rail + node */
+.bc-education-card__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.75rem;
+}
 
-    p {
-      margin: 0;
-      font-family: var(--bc-heading-font);
-    }
-  }
+.bc-education-card__dot {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bc-gradient-color-1);
+  box-shadow:
+    0 0 0 4px var(--bc-accent-glass-15),
+    0 0 20px var(--bc-accent-glass-35);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease;
+  z-index: 2;
+}
 
-  &-title span {
-    display: inline-block;
+.bc-education-card:hover .bc-education-card__dot {
+  transform: scale(1.2);
+  box-shadow:
+    0 0 0 6px var(--bc-accent-glass-20),
+    0 0 28px var(--bc-accent-glass-50);
+}
+
+.bc-education-card__line {
+  flex: 1;
+  width: 2px;
+  min-height: 1.5rem;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--bc-accent-line-strong) 0%,
+    rgba(var(--bc-rgb-color-lightn), 0.12) 100%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.bc-education-card:last-child .bc-education-card__line {
+  display: none;
+}
+
+.bc-education-card:hover .bc-education-card__line {
+  opacity: 1;
+  background: linear-gradient(
+    180deg,
+    var(--bc-accent-glass-65) 0%,
+    var(--bc-accent-glass-15) 100%
+  );
+}
+
+/* Card surface */
+.bc-education-card__surface {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--bc-gradient-education-surface);
+  border: 1px solid var(--bc-glass-07);
+  box-shadow: var(--bc-shadow-education-surface);
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease,
+    box-shadow 0.55s ease;
+  transform: translateY(0);
+}
+
+.bc-education-card:hover .bc-education-card__surface {
+  transform: translateY(-8px);
+  border-color: var(--bc-accent-glass-22);
+  box-shadow: var(--bc-shadow-education-surface-hover);
+}
+
+/* Shine sweep on hover */
+.bc-education-card__shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 35%,
+    var(--bc-glass-07) 50%,
+    transparent 65%
+  );
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bc-education-card:hover .bc-education-card__shine {
+  transform: translateX(120%) skewX(-12deg);
+}
+
+.bc-education-card__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(130px, 190px) minmax(0, 1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  padding: 1.35rem 1.5rem 1.35rem 1.35rem;
+
+  @media #{$md, $sm, $xs} {
+    grid-template-columns: 1fr;
     text-align: center;
-    font-family: var(--bc-heading-font);
+    padding: 1.25rem 1.25rem 1.35rem;
+  }
+}
+
+.bc-education-card__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+
+  @media #{$md, $sm, $xs} {
+    align-items: center;
+  }
+}
+
+.bc-education-card__index {
+  font-family: var(--bc-heading-font);
+  font-size: var(--bc-fs-3xl);
+  font-weight: 700;
+  line-height: 1;
+  background: var(--bc-gradient-color-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bc-education-card:hover .bc-education-card__index {
+  transform: scale(1.05);
+}
+
+.bc-education-card__credential {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+
+  @media #{$md, $sm, $xs} {
+    text-align: center;
+  }
+}
+
+.bc-education-card__degree {
+  font-family: var(--bc-heading-font);
+  font-size: var(--bc-fs-md);
+  font-weight: 600;
+  color: var(--bc-text-color-1);
+  line-height: var(--bc-lh-heading);
+}
+
+.bc-education-card__years {
+  font-size: var(--bc-fs-sm);
+  color: var(--bc-color-lightn);
+  font-weight: 400;
+}
+
+.bc-education-card__content {
+  min-width: 0;
+}
+
+.bc-education-card__school {
+  font-family: var(--bc-heading-font);
+  font-size: var(--bc-fs-2xl);
+  font-weight: 600;
+  line-height: var(--bc-lh-heading);
+  color: var(--bc-text-color-1);
+  margin: 0 0 0.5rem;
+
+  @media #{$lg} {
+    font-size: var(--bc-fs-25);
   }
 
-  &-institute h2 {
-    font-size: 30px;
-    margin: 0;
+  @media #{$md, $sm, $xs} {
+    font-size: var(--bc-fs-lg);
+  }
+}
 
-    @media #{$xl, $lg} {
-      font-size: 25px;
-    }
+.bc-education-card__excerpt {
+  font-size: var(--bc-fs-base);
+  line-height: var(--bc-lh-relaxed);
+  color: var(--bc-color-lightn);
+  margin: 0;
+}
 
-    @media #{$md} {
-      font-size: 19px;
-    }
+/* CTA */
+.bc-education-card__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: var(--bc-text-color-2);
+  text-decoration: none;
+  border: 1px solid var(--bc-glass-10);
+  background: var(--bc-glass-03);
+  transition:
+    color 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    background 0.35s ease;
 
-    @media #{$xs} {
-      font-size: 18px;
-    }
+  i {
+    font-size: var(--bc-fs-md);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  &-link {
-    margin-right: 20px;
+  @media #{$md, $sm, $xs} {
+    margin: 0.25rem auto 0;
+  }
+}
 
-    a {
-      display: inline-block;
-      width: 70px;
-      height: 70px;
-      padding: 5px;
-      border-radius: 50%;
-      background: var(--bc-color-dark-four);
-      border: 1px solid var(--bc-color-dark-five);
-      transition: 0.5s all ease-in-out;
+.bc-education-card__cta-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 28px var(--bc-accent-glass-40);
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
 
-      i {
-        color: var(--bc-text-color-2);
-        line-height: 58px;
-        font-weight: 400;
-        font-size: 20px;
-        transition: 0.5s all ease-in-out;
-      }
-    }
+.bc-education-card:hover .bc-education-card__cta {
+  color: var(--bc-bg-black-2);
+  background: var(--bc-gradient-color-1);
+  border-color: transparent;
+  transform: scale(1.06);
+}
+
+.bc-education-card:hover .bc-education-card__cta-ring {
+  opacity: 1;
+}
+
+.bc-education-card:hover .bc-education-card__cta i {
+  transform: translateX(3px);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .bc-education-card,
+  .bc-education-card__surface,
+  .bc-education-card__shine,
+  .bc-education-card__dot,
+  .bc-education-card__cta,
+  .bc-education-card__cta i,
+  .bc-education-card__index {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .bc-education-card:hover .bc-education-card__surface {
+    transform: none;
+  }
+
+  .bc-education-card:hover .bc-education-card__shine {
+    transform: none;
   }
 }
