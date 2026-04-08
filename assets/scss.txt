@@ -1,0 +1,2 @@
+sass --watch /Users/mdsarwarzahan/Web\ Project\ Files/HTML\ Template\ Projects/zahan/assets/scss/main.scss:/Users/mdsarwarzahan/Web\ Project\ Files/HTML\ Template\ Projects/zahan/assets/css/style.css
+

@@ -1,0 +1,84 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  6.3 Service css
+/*----------------------------------------*/
+
+.bc-service {
+  text-align: left;
+  padding: 50px 50px 35px;
+  transition: 0.5s all ease-in-out;
+  border-radius: 10px;
+  background: var(--bc-color-dark-four);
+  border: 1px solid var(--bc-color-dark-five);
+  z-index: 1;
+  height: 100%;
+  position: relative;
+
+  @media #{$xl, $lg, $md} {
+    padding: 25px 30px;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+  }
+
+  &-icon {
+    margin-bottom: 25px;
+
+    i {
+      font-size: 35px;
+      color: var(--bc-text-color-2);
+    }
+  }
+
+  &-title {
+    color: var(--bc-text-color-1);
+
+    @media #{$xl} {
+      font-size: 32px;
+    }
+
+    @media #{$lg, $md, $xs} {
+      font-size: 25px;
+    }
+  }
+
+  p {
+    color: var(--bc-color-lightn);
+  }
+
+  &-btn {
+    margin-top: 50px;
+    opacity: 0;
+    transition: 0.5s all ease-in-out;
+
+    i {
+      color: var(--bc-text-color-2);
+      transform: rotate(-45deg);
+      font-size: 25px;
+    }
+
+    @media #{$lg, $md, $sm, $xs} {
+      margin-top: 30px;
+    }
+  }
+
+  &-over-link {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover {
+    background: linear-gradient(to right bottom, #212428, #16181c);
+    padding-top: 35px;
+
+    .bc-service-btn {
+      opacity: 1;
+      margin-top: 35px;
+    }
+  }
+}

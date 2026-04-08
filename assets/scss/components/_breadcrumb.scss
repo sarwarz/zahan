@@ -1,0 +1,32 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.2 Breadcrumb
+/*----------------------------------------*/
+.bc-breadcrumb {
+    font-size: 16px;
+    a {
+        color: var(--bc-color-lightn);
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .breadcrumb-item{
+        
+        &::before{
+            color: var(--bc-color-lightn);
+        }
+
+        &.active {
+            color: var(--bc-text-color-2);
+        }
+
+    }
+
+    ul.breadcrumb {
+        background: transparent;
+        margin-bottom: 0;
+    }
+}

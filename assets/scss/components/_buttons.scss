@@ -1,0 +1,126 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.3 Buttons
+/*----------------------------------------*/
+.bc-btn {
+    color: #070721;
+    background: var(--bc-gradient-color-1);
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 50px;
+    display: inline-block;
+    font-family: var(--bc-heading-font);
+    transition: 0.5s all ease-in-out;
+    text-align: center;
+    position: relative;
+	overflow: hidden;
+    & i{
+        padding-left: 6px;
+        display: inline-block;
+        top: 2px;
+        position: relative;
+        font-size: 17px;
+    }
+
+    &-wrap{
+		position: relative;
+		overflow: hidden;
+		display: block;
+		& span{
+			@include transition(.2s);
+			display: block;
+			& i{
+				font-size: 15px;
+				@include transform(rotate(-40deg));
+				margin-left: 5px;
+			}
+		}
+	}
+
+    &-y-2 {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		@include transform(translateY(100%));
+	}
+
+
+    &:hover {
+       color: var(--bc-bg-black-2);
+
+        & .bc-btn-y-1{
+            @include transform(translateY(-100%));
+        }
+        & .bc-btn-y-2{
+            @include transform(translateY(0));
+        }
+
+    }
+}
+
+
+.bc-video-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Segoe UI', sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.bc-video-btn-circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #56ff81, #2bdf5d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.bc-video-btn-circle::before,
+.bc-video-btn-circle::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(145, 255, 105, 0.3);
+  animation: wave 2s infinite ease-out;
+}
+
+.bc-video-btn-circle::after {
+  animation-delay: 1s;
+}
+
+.bc-play-icon {
+  color: black;
+  font-size: 20px;
+  z-index: 2;
+}
+
+.bc-video-btn-text {
+  font-family: var(--bc-heading-font);
+  text-transform: uppercase;
+  @media #{$xs}{
+    display: none;
+  }
+}
+
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

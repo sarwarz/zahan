@@ -1,0 +1,159 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  4.1 Main menu css
+/*----------------------------------------*/
+.bc-mainmenu-nav{
+    & ul{
+
+        & li{
+            display: inline-block; 
+            position: relative;
+            & .sub-menu{
+                position: absolute;
+                top: 105%;
+                width: 170px;
+                left: 0;
+                background: #fff;
+                padding: 16px 0;
+                opacity: 0;
+                visibility: hidden;
+                @include transition(.3s);
+                box-shadow: 0px 20px 30px rgba(1, 15, 28, 0.1);
+                z-index: 999;
+
+                & li{
+                    margin-right: 0px;
+                    padding: 5px 15px;
+                    display: block;
+                    & a{
+                        padding: 0;
+                        color: var(--bc-bg-black-1);
+                        &:hover{
+                            color:var(--bc-bg-color-1);
+                        }
+                    }
+
+                    & .sub-menu{
+                        left: 100%;
+                        top: 105%;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    &:hover{
+                        & > a{
+                            color: var(--bc-bg-color-1);
+                        }
+                        & > .sub-menu{
+                            opacity: 1;
+                            visibility: visible;
+                            top:0;
+                        }
+                    }
+                }
+            }
+
+            list-style: none;
+            margin-right: 42px;
+
+            & a{
+                color: var(--bc-text-color-1);
+                font-family: var(--bc-heading-font);
+                padding: 36px 0px;
+                font-weight: 700;
+                transition: 0.5s all ease-in-out;
+                font-size: 18px;
+                &:hover{
+                    color:var(--bc-bg-color-1);
+                }
+            }
+
+            &:hover{
+
+                 & .sub-menu{
+                    opacity: 1;
+                    visibility: visible;
+                    top: 60px;
+                }
+            }
+
+        
+        }
+
+        @media #{$xl} {
+            li .sub-menu {
+                width: 170px;
+            }
+        }
+
+        @media #{$lg} {
+            li .sub-menu {
+                width: 150px;
+            }
+        }
+    }
+}
+
+/*----------------------------------------*/
+/*  3.2 Mobile Menu
+/*----------------------------------------*/
+
+.bc-offcanvas-menu ul {
+    list-style: none;
+    & li {
+        position: relative;
+        
+        & > a{
+            padding: 8px 0;
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            &:hover{
+                color: var(--bc-text-color-2);
+            }
+        }
+        
+        &:not(:last-child){
+            & > a{
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            }
+        }
+        &.active{
+            & > a{
+                color: var(--bc-text-color-2);
+            }
+            & > .tp-menu-close{
+                border-color: var(--bc-text-color-2);
+                color: #fff;
+                background-color: var(--bc-text-color-2);
+                & i{
+                    @include transform(rotate(90deg));
+                }
+            }
+        }
+        & .sub-menu {
+            display: none;
+            padding-left: 20px;
+        }
+    }
+}
+.bc-menu-close {
+    position: absolute;
+    right: 0;
+    top: 7.5px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 29px;
+    &:hover{
+        background-color: var(--bc-text-color-2);
+        color: #fff;
+        border-color: var(--bc-text-color-2);
+    } 
+    & i{
+        @include transition(.3s);
+    }
+}

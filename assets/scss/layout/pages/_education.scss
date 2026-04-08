@@ -1,0 +1,130 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.6 Education css
+/*----------------------------------------*/
+.bc-education {
+  &-item {
+    background: var(--bc-color-dark-four);
+    border: 1px solid var(--bc-color-dark-five);
+    position: relative;
+    transition: 0.5s all ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid transparent;
+      background: var(--bc-stroke-gr) border-box;
+      background-clip: border-box;
+      -webkit-mask: var(--bc-full) padding-box, var(--bc-full);
+      -webkit-mask-composite: xor;
+      mask: var(--bc-full) padding-box exclude, var(--bc-full);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.5s ease, border-color 0.5s;
+      will-change: opacity;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(to right bottom, #212428, #16181c);
+
+      &::before {
+        opacity: 1;
+      }
+
+      .bc-education-link a {
+        background: var(--bc-gradient-color-1);
+
+        i {
+          color: var(--bc-bg-black-2);
+          transform: rotate(-65deg);
+        }
+      }
+
+      .bc-education-number {
+        padding: 25px 25px;
+        clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+      }
+    }
+
+    @media #{$xs} {
+      justify-content: space-between;
+    }
+  }
+
+  &-number {
+    background: var(--bc-gradient-color-1);
+    color: var(--bc-bg-black-1);
+    font-size: 60px;
+    padding: 25px 20px;
+    font-family: var(--bc-heading-font);
+    line-height: 1;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    transition: 0.5s all ease-in-out;
+
+    @media #{$xs} {
+      font-size: 35px;
+    }
+  }
+
+  &-text {
+    width: 60%;
+    padding: 15px 5px;
+
+    p {
+      margin: 0;
+      font-family: var(--bc-heading-font);
+    }
+  }
+
+  &-title span {
+    display: inline-block;
+    text-align: center;
+    font-family: var(--bc-heading-font);
+  }
+
+  &-institute h2 {
+    font-size: 30px;
+    margin: 0;
+
+    @media #{$xl, $lg} {
+      font-size: 25px;
+    }
+
+    @media #{$md} {
+      font-size: 19px;
+    }
+
+    @media #{$xs} {
+      font-size: 18px;
+    }
+  }
+
+  &-link {
+    margin-right: 20px;
+
+    a {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      padding: 5px;
+      border-radius: 50%;
+      background: var(--bc-color-dark-four);
+      border: 1px solid var(--bc-color-dark-five);
+      transition: 0.5s all ease-in-out;
+
+      i {
+        color: var(--bc-text-color-2);
+        line-height: 58px;
+        font-weight: 400;
+        font-size: 20px;
+        transition: 0.5s all ease-in-out;
+      }
+    }
+  }
+}

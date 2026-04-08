@@ -1,0 +1,155 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.5 Testimonial css
+/*----------------------------------------*/
+.bc-testimonial-wrapper{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bc-testimonial-item{
+    margin: 0px 100px;
+    padding: 0px 50px;
+    min-height: 380px;
+
+     @media #{$md,$sm,$xs}{
+       margin: 0;
+       padding: 10px;
+    }
+}
+
+.testimoinal-thumb{
+    & img{
+        width: 550px;
+        border-radius: 10px;
+    }
+
+    &-bg{
+        position: absolute;
+        top: 20px;
+        background-color: var(--bc-text-color-2);
+        width: 212px;
+        bottom: 0;
+        right: 20px;
+        border-radius: 10px;
+        z-index: -1;
+        height: 253px;
+
+        @media #{$xl}{
+            width: 170px;
+            height: 200px;
+        }
+    }
+}
+
+.testimoinal-content{
+    padding-left: 50px;
+
+    @media #{$xs}{
+       padding-left: 0px;
+    }
+
+    & img{
+         @media #{$xl}{
+            width: 60px;
+        }
+    }
+}
+
+.testimoinal-author-name{
+    @media #{$xl,$lg,$md,$sm,$xs}{
+        font-size: 25px;
+    }
+}
+
+.bc-testimonial-btn{
+    position: absolute;
+    top: 87px;
+    right: 184px;
+    z-index: 2;
+
+    @media #{$xl}{
+        top: 70px;
+        right: 140px;
+    }
+
+    @media #{$lg}{
+        top: 50px;
+        right: 160px;
+    }
+
+    @media #{$md,$sm}{
+        top: 40px;
+        right: 35px;
+    }
+
+    @media #{$xs}{
+        top: 36px;
+        right: 0px;
+    }
+
+    
+
+    &-next{
+       background: var(--bc-color-dark-four);
+       border: 1px solid var(--bc-color-dark-five);
+        padding: 10px 20px;
+        
+        width: 100%;
+        height: 100%;
+        & i{
+            color: var(--bc-text-color-2);
+        }
+    }
+    &-prev{
+
+        background: var(--bc-color-dark-four);
+        border: 1px solid var(--bc-color-dark-five);
+        padding: 10px 20px;
+        width: 100%;
+        height: 100%;
+        margin-right: 10px;
+        & i{
+            color: var(--bc-text-color-2);
+        }
+
+    }
+}
+
+.bc-testimonial-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.bc-testimonial-pagination .swiper-pagination-bullet-active {
+  background-color: var(--bc-text-color-2);
+}
+
+.jarallax {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+
+  /* Black overlay */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .jarallax-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+  }
+}

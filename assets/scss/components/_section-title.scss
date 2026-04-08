@@ -1,0 +1,31 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.8 Section Title
+/*----------------------------------------*/
+.bc-section{
+    &-title-wrapper{
+        & p{
+            font-weight: 400;
+            font-size: 16px;
+            color: var(--bc-color-lightn);
+        }
+    }
+    &-title{
+        font-weight: 700;
+        font-size: 48px;
+        margin-bottom: 15px;
+        color: var(--bc-text-color-1);
+
+        @media #{$lg,$md,$sm,$xs}{
+            font-size: 34px;
+        }
+    }
+}
+
+.bc-page-title-wrapper{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}

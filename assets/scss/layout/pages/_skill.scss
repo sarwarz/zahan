@@ -1,0 +1,53 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.7 Skill css
+/*----------------------------------------*/
+.bc-skill-wrapper{
+  background-repeat: no-repeat;
+}
+.bc-progress {
+  height: 15px;
+  overflow: visible;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 3px;
+  background: #212428;
+  box-shadow:
+    inset 8px 8px 16px rgba(0, 0, 0, 0.46),
+    inset -8px -8px 16px rgba(56, 62, 69, 0.46);
+
+  &-item {
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    h6 {
+      margin-bottom: 15px;
+      color: #c3cedd;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+  }
+
+  &-bar {
+    overflow: visible;
+    position: relative;
+    border-radius: 14px;
+    background: var(--bc-gradient-color-1);
+  }
+
+  &-label {
+    position: absolute;
+    right: -7px;
+    top: -26px;
+    font-weight: 400;
+    color: #c3cedd;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.9;
+  }
+}

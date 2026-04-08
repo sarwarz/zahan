@@ -1,0 +1,243 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.1 Hero css
+/*----------------------------------------*/
+.bc-hero-wrapper{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+
+    @media #{$md,$sm,$xs}{
+      padding-bottom: 50px;
+    }
+}
+.bc-hero-right-area{
+    padding-top: 40px;
+}
+
+.bc-hero-thumbnail{
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    z-index: 0;
+    position: relative;
+    & img{
+        width: 75%;
+        margin-left: 70px;
+    }
+    &-text{
+        &-1{
+            color: #ffffff;
+            font-size: 90px;
+            line-height: 120px;
+            position: absolute;
+            top: 200px;
+            z-index: -1;
+            font-family: var(--bc-body-font);
+            left: 15px;
+
+            @media #{$xl}{
+                font-size: 80px;
+                top: 160px;
+            }
+
+            @media #{$lg}{
+                font-size: 60px;
+                top: 120px;
+            }
+
+            @media #{$sm}{
+                font-size: 75px;
+                top: 100px;
+                left: 80px;
+            }
+            @media #{$xs}{
+                font-size: 52px;
+                top: 75px;
+            }
+        }
+        &-2{
+            font-size: 90px;
+            line-height: 120px;
+            position: absolute;
+            -webkit-text-stroke: 1px var(--bc-text-color-1);
+            color: transparent;
+            font-family: var(--bc-body-font);
+            font-weight: 700;
+            bottom: 50px;
+            z-index: 1;
+            margin-bottom: 0;
+            left: 15px;
+
+            @media #{$xl}{
+                font-size: 80px;
+            }
+
+            @media #{$lg}{
+                font-size: 60px;
+            }
+
+            @media #{$sm}{
+                font-size: 75px;
+                left: 80px;
+            }
+            @media #{$xs}{
+                font-size: 52px;
+            }
+        }
+    }
+    &-bg-img{
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        transform: translateX(-70px);
+        & img{
+            width: 100%;
+        }
+    }
+
+    &::after{
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(6, 6, 6, 0) 46.14%, #010c13 100%);
+        width: 100%;
+        height: 580.327px;
+        z-index: 0;
+    }
+}
+.bc-hero-left-area{
+
+    padding-top: 150px;
+
+    @media #{$xl}{
+        padding-top: 60px;
+    }
+
+    @media #{$lg,$md,$sm,$xs}{
+        padding-top: 40px;
+    }
+
+    & p{
+        font-size: 16px;
+        line-height: 30px;
+        color: var(--bc-color-lightn);
+        padding-right: 16%;
+        opacity: 0.9;
+    }
+}
+.bc-hero-subtitle{
+    font-size: 14px;
+    color: var(--bc-color-lightn);
+    font-family: var(--bc-heading-font);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+    @media #{$lg}{
+        margin-bottom: 5px;
+    }
+}
+.bc-hero-title{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 75px;
+    margin-bottom: 22px;
+    font-family: var(--bc-heading-font);
+    &-color{
+        color:var(--bc-text-color-2);
+
+    }
+
+    @media #{$xl}{
+        font-size: 50px;
+    }
+
+    @media #{$lg,$xs}{
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+}
+
+#bc-animate-text {
+  display: inline-block;
+  white-space: nowrap;
+  
+}
+.bc-social-share-inner{
+    & .subtile{
+        font-size: 14px;
+        color: var(--bc-color-lightn);
+        font-family: var(--bc-heading-font);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    @media #{$lg}{
+        margin-top: 5px;
+    }
+
+    @media #{$md,$sm,$xs}{
+        margin-top: 10px;
+        padding-bottom: 40px;
+    }
+}
+
+
+.bc-social-sahre{
+    display: flex;
+    & li{
+        list-style: none;
+        margin-right: 12px;
+
+        & a{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            background: var(--bc-bg-black-1);
+            position: relative;
+            color: var(--bc-text-color-1);
+            transition: 0.5s all ease-in-out;
+
+            & i{
+                color:var(--bc-color-lightn);
+                font-size: 16px;
+            }
+
+            &:hover{
+                
+                background: linear-gradient(to right bottom, #212428, #16181c);
+
+                & i{
+                    color: var(--bc-text-color-1);;
+                }
+            }
+
+        }
+    }
+}
+
+.bc-hero-button-wrap{
+    padding: 35px 0px;
+}
+
+
+
+
+

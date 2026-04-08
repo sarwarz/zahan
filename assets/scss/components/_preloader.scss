@@ -1,0 +1,52 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  2.7 Preloader
+/*----------------------------------------*/
+
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s;
+  overflow: visible; /* Make sure it's not hiding scaling text */
+}
+
+.loader-text {
+  font-family: var(--bc-heading-font);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 10px 20px;
+  background: var(--bc-gradient-color-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: textFlash 1.2s ease-in-out infinite alternate;
+  display: inline-block;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+
+/* Text animation */
+@keyframes textFlash {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+

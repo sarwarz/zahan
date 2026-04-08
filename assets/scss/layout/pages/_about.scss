@@ -1,0 +1,177 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.2 About css
+/*----------------------------------------*/
+.bc-about-wrapper {
+  background: {
+    size: cover;
+    repeat: no-repeat;
+    position: center;
+  }
+}
+
+.bc-about {
+  &-img-box-wrap {
+    background: var(--bc-color-dark-four);
+    border: 1px solid var(--bc-color-dark-five);
+    padding: 28px;
+    border-radius: 10px;
+    font-family: var(--bc-heading-font);
+  }
+
+  &-thumb {
+    width: 100%;
+
+    img {
+      width: 320px;
+      border-radius: 20px;
+    }
+    
+  }
+
+  &-author {
+    &-name {
+      margin: 0;
+    }
+
+    &-degi {
+      font-size: 18px;
+      font-family: var(--bc-heading-font);
+    }
+
+    &-email {
+      display: block;
+      font-size: 18px;
+      text-decoration: underline;
+    }
+
+    &-address {
+      display: block;
+      font-size: 14px;
+      line-height: 1;
+    }
+  }
+
+  &-social-share {
+    .bc-social-btn {
+      line-height: 50px;
+      border-radius: 50%;
+      background: var(--bc-color-dark-four);
+      border: 1px solid var(--bc-color-dark-five);
+    }
+  }
+
+  &-expart {
+    &-area {
+      background: var(--bc-color-dark-four);
+      border: 1px solid var(--bc-color-dark-five);
+      padding: 25px;
+      border-radius: 10px;
+
+      p {
+        color: var(--bc-color-lightn);
+        margin: 0;
+      }
+
+      @media #{$xl} {
+        padding: 10px 25px;
+      }
+
+      @media #{$lg} {
+        padding: 25px;
+      }
+
+      @media #{$md, $sm, $xs} {
+        margin-bottom: 30px;
+      }
+    }
+
+    &-text {
+      span {
+        font-size: 80px;
+        display: block;
+        color: var(--bc-text-color-2);
+        font-family: var(--bc-heading-font);
+        font-weight: 700;
+        line-height: 1.2;
+
+        @media #{$lg} {
+          font-size: 65px;
+        }
+
+        @media #{$xs} {
+          font-size: 82px;
+        }
+      }
+
+      h3 {
+        font-size: 40px;
+        color: var(--bc-text-color-1);
+        margin-left: 25px;
+
+        @media #{$lg} {
+          font-size: 32px;
+        }
+
+        @media #{$xs} {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}
+
+.bc-fact {
+  background: var(--bc-color-dark-four);
+  border: 1px solid var(--bc-color-dark-five);
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.5s all ease-in-out;
+
+  p {
+    color: var(--bc-color-lightn);
+    margin-bottom: 0;
+
+    @media #{$xl} {
+      font-size: 15px;
+    }
+
+    @media #{$md} {
+      font-size: 14px;
+    }
+  }
+
+  &:nth-last-of-type(3),
+  &:nth-last-of-type(4) {
+    margin-bottom: 0;
+  }
+
+  @media #{$xl} {
+    padding: 25px 5px;
+  }
+
+  @media #{$lg} {
+    padding: 25px;
+  }
+
+  &-count {
+    font-family: var(--bc-heading-font);
+    font-size: 40px;
+    color: var(--bc-text-color-1);
+    margin-bottom: 5px;
+
+    @media #{$xl, $md} {
+      font-size: 35px;
+    }
+  }
+}
+
+.bc-cta-area {
+  background: var(--bc-color-dark-four);
+  border: 1px solid var(--bc-color-dark-five);
+  border-radius: 10px;
+  padding: 20px;
+}

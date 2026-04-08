@@ -1,0 +1,157 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.4 Portfolio css
+/*----------------------------------------*/
+.bc-portfolio {
+  &-filter {
+    @media #{$xs} {
+      display: block;
+    }
+
+    button {
+      background: var(--bc-color-dark-four);
+      border: 1px solid var(--bc-color-dark-five);
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-right: 15px;
+      font-family: var(--bc-heading-font);
+      color: var(--bc-color-lightn);
+      font-size: 18px;
+      font-weight: 700;
+      transition: 0.5s all ease-in-out;
+
+      &.active,
+      &:hover {
+        background: var(--bc-gradient-color-1);
+        color: var(--bc-bg-black-2);
+      }
+
+      @media #{$sm} {
+        padding: 6px 18px;
+        font-size: 15px;
+      }
+
+      @media #{$xs} {
+        margin-bottom: 20px;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  &-item {
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--bc-color-dark-four);
+    border: 1px solid var(--bc-color-dark-five);
+    overflow: hidden;
+    min-height: 500px;
+    transition: 0.5s all ease-in-out;
+
+    img {
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover {
+      background: linear-gradient(to right bottom, #212428, #16181c);
+    }
+
+    @media #{$lg, $md, $xs} {
+      min-height: 450px;
+    }
+  }
+
+  &-title {
+    font-size: 30px;
+
+    @media #{$xl} {
+      font-size: 25px;
+    }
+
+    @media #{$lg, $md, $xs} {
+      font-size: 20px;
+    }
+  }
+
+  &-category {
+    span {
+      padding: 10px 15px;
+      border-radius: 25px;
+      margin-right: 5px;
+      font-size: 15px;
+      background: var(--bc-color-dark-four);
+      border: 1px solid var(--bc-color-dark-five);
+      color: var(--bc-color-lightn);
+
+      @media #{$xl, $lg, $md} {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+    }
+
+    @media #{$lg, $md} {
+      display: block;
+    }
+  }
+
+  &-thumb {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    transition: all 0.5s ease-in-out;
+
+    &:first-child {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      transform: translateX(50%) scaleX(2);
+      opacity: 0;
+      filter: blur(10px);
+
+      img {
+        transform: scale(1);
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    &:hover {
+      transform: translateX(0) scaleX(1);
+      opacity: 1;
+      filter: blur(0);
+    }
+
+    &-wrapper {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      display: block;
+    }
+  }
+
+  &-btn {
+    .bc-btn {
+      padding: 5px 20px;
+      font-size: 15px;
+      text-align: center;
+
+      @media #{$lg, $md, $xs} {
+        width: 100%;
+      }
+    }
+
+    @media #{$lg, $md, $xs} {
+      width: 100%;
+    }
+
+    @media #{$xs} {
+      margin-top: 20px;
+    }
+  }
+}
