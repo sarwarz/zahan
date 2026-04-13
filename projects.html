@@ -37,22 +37,22 @@
         <div class="container">
             <div class="bc-header-content d-flex justify-content-between align-items-center">
                 <div class="bc-logo-area align-content-center">
-                    <a class="bc-logo" href="index.html">
+                    <a class="bc-logo" href="index.html#home">
                         <img src="assets/img/logo/logo.png" alt="logo">
                     </a>
                 </div>
                 <div class="bc-mainmenu-nav align-content-center d-none d-lg-block">
                     <nav class="bc-mobile-menu-active" aria-label="Primary">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#home">Home</a></li>
                             <li><a href="about.html">About</a></li>
                             <li class="has-submenu">
-                                <a href="services.html">Services</a>
+                                <a href="services.html">Services<span class="bc-nav-chevron" aria-hidden="true"></span></a>
                                 <ul class="sub-menu">
                                     <li><a href="service-details.html">Web Development</a></li>
                                     <li><a href="services.html">All services</a></li>
                                     <li class="has-submenu">
-                                        <a href="services.html">More</a>
+                                        <a href="services.html">More<span class="bc-nav-chevron" aria-hidden="true"></span></a>
                                         <ul class="sub-menu">
                                             <li><a href="blog.html">Blog</a></li>
                                             <li><a href="contact.html">Contact</a></li>
@@ -92,7 +92,7 @@
             <div class="bc-offcanvas__shine" aria-hidden="true"></div>
             <div class="bc-offcanvas-header d-flex justify-content-between align-items-center mb-70">
                 <div class="bc-offcanvas-logo">
-                    <a href="index.html"><img src="assets/img/logo/logo.png" alt="Zahan home"></a>
+                    <a href="index.html#home"><img src="assets/img/logo/logo.png" alt="Zahan home"></a>
                 </div>
                 <div class="bc-offcanvas-close">
                     <button type="button" class="bc-offcanvas-close-toggle" aria-label="Close menu">
@@ -156,7 +156,7 @@
                         <div class="bc-page-hero__breadcrumb-shell wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.14s">
                             <nav class="bc-breadcrumb" aria-label="Breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="index.html#home">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Projects</li>
                                 </ol>
                             </nav>
@@ -367,8 +367,13 @@
 
             <footer class="bc-footer-wrapper pt-20 pb-20">
                 <div class="container">
-                    <div class="bc-footer text-center wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.05s">
-                        <p>© 2025. All rights reserved by <a href="https://beepcoder.com/">Beepcoder.</a></p>
+                    <div class="bc-footer bc-footer-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
+                        <p class="bc-footer__copy mb-0">&copy; 2026 Zahan. All rights reserved.</p>
+                        <nav class="bc-footer__nav bc-footer__nav--legal d-flex flex-wrap align-items-center gap-3" aria-label="Legal">
+                            <a href="privacy-policy.html" class="bc-footer__link">Privacy Policy</a>
+                            <span class="bc-footer__sep" aria-hidden="true">·</span>
+                            <a href="terms-and-conditions.html" class="bc-footer__link">Terms &amp; Conditions</a>
+                        </nav>
                     </div>
                 </div>
             </footer>

@@ -172,29 +172,32 @@
     });
   }
 
-  // Data background image
+  // Data background image (skip jarallax elements — jarallax handles those itself)
   $("[data-background]").each(function () {
-    $(this).css("background-image", "url(" + $(this).attr("data-background") + ")");
+    if (!$(this).hasClass("jarallax")) {
+      $(this).css("background-image", "url(" + $(this).attr("data-background") + ")");
+    }
   });
 
   // 06. Testimonial Swiper Slider
   if (document.querySelector(".bc-testimonial-active")) {
     new Swiper(".bc-testimonial-active", {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 24,
       slidesPerGroup: 1,
-      centeredSlides: false,
       loop: true,
-      speed: 500,
+      speed: 600,
       keyboard: { enabled: true },
       watchOverflow: true,
-      pagination: {
-        el: ".bc-testimonial-pagination",
-        clickable: true,
-      },
       navigation: {
         nextEl: ".bc-testimonial-btn-next",
         prevEl: ".bc-testimonial-btn-prev",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
       },
     });
   }
@@ -433,12 +436,17 @@
   }
 
   //14. Jarallax
-
-  if( $('.jarallax').length ){
-      $('.jarallax').jarallax({
-        speed: 0.2,
+  if ($('.jarallax').length) {
+    $('.jarallax').each(function () {
+      var $el = $(this);
+      var speed = parseFloat($el.data('jarallax-speed')) || 0.3;
+      var imgSrc = $el.data('background') || null;
+      $el.jarallax({
+        speed: speed,
+        imgSrc: imgSrc || undefined,
       });
-    }
+    });
+  }
 
   //15. Preloader
    windowOn.on('load', function () {

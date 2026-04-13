@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,22 +42,22 @@
         <div class="container">
             <div class="bc-header-content d-flex justify-content-between align-items-center">
                 <div class="bc-logo-area align-content-center">
-                    <a class="bc-logo" href="#home">
+                    <a class="bc-logo" href="index.html#home">
                         <img src="assets/img/logo/logo.png" alt="logo">
                     </a>
                 </div>
                 <div class="bc-mainmenu-nav align-content-center d-none d-lg-block">
                     <nav class="bc-mobile-menu-active onepage" aria-label="Primary">
                         <ul>
-                            <li><a href="#home">Home</a></li>
+                            <li><a href="index.html#home">Home</a></li>
                             <li><a href="about.html">About</a></li>
                             <li class="has-submenu">
-                                <a href="services.html">Services</a>
+                                <a href="services.html">Services<span class="bc-nav-chevron" aria-hidden="true"></span></a>
                                 <ul class="sub-menu">
                                     <li><a href="service-details.html">Web Development</a></li>
                                     <li><a href="services.html">All services</a></li>
                                     <li class="has-submenu">
-                                        <a href="services.html">More</a>
+                                        <a href="services.html">More<span class="bc-nav-chevron" aria-hidden="true"></span></a>
                                         <ul class="sub-menu">
                                             <li><a href="blog.html">Blog</a></li>
                                             <li><a href="contact.html">Contact</a></li>
@@ -98,7 +98,7 @@
             <div class="bc-offcanvas__shine" aria-hidden="true"></div>
             <div class="bc-offcanvas-header d-flex justify-content-between align-items-center mb-70">
                 <div class="bc-offcanvas-logo">
-                    <a href="#home"><img src="assets/img/logo/logo.png" alt="Zahan home"></a>
+                    <a href="index.html#home"><img src="assets/img/logo/logo.png" alt="Zahan home"></a>
                 </div>
                 <div class="bc-offcanvas-close">
                     <button type="button" class="bc-offcanvas-close-toggle" aria-label="Close menu">
@@ -157,37 +157,117 @@
         <div id="smooth-content">
             <main>
                 <!-- Hero Start -->
-                <section class="bc-hero-wrapper pt-90" data-background="assets/img/texture.png" id="home">
+                <section class="bc-hero-wrapper jarallax" data-jarallax-speed="0.4" data-background="assets/img/hero/hero-banner.png" id="home">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-6 order-lg-2">
+                            <div class="col-lg-6 order-1 order-lg-2">
                                 <div class="bc-hero-right-area">
-                                    <div class="bc-hero-thumbnail-wrapper">
-                                        <div class="bc-hero-thumbnail wow img-custom-anim-top" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                                            <img src="assets/img/hero/banner-01.png" alt="hero image">
-                                            <h2 class="bc-hero-thumbnail-text-1 bc-up-down-2">Web Designer</h2>
-                                            <h2 class="bc-hero-thumbnail-text-2 bc-up-down">Web Designer</h2>
-                                            <div class="bc-hero-thumbnail-bg-img">
-                                                <img src="assets/img/hero/hero-banner-bg-01.png" alt="">
+                                    <div class="bc-hero-visual-wrapper">
+                                        <figure class="bc-hero-visual wow img-custom-anim-top" data-wow-duration="1.2s" data-wow-delay="0.2s">
+                                            <!-- ambient glow -->
+                                            <div class="bc-hero-visual__ambient" aria-hidden="true"></div>
+                                            <!-- concentric rings centered on figure -->
+                                            <div class="bc-hero-visual__rings" aria-hidden="true">
+                                                <span class="bc-hero-visual__ring-line"></span>
+                                                <span class="bc-hero-visual__ring-line"></span>
+                                                <span class="bc-hero-visual__ring-line"></span>
+                                                <span class="bc-hero-visual__ring-line"></span>
+                                                <span class="bc-hero-visual__ring-line"></span>
                                             </div>
-                                        </div>
+                                            <!-- animated shapes -->
+                                            <div class="bc-hero-shapes" aria-hidden="true">
+                                                <!-- centre glow orb -->
+                                                <span class="bc-hs bc-hs--orb"></span>
+                                                <!-- rotating hexagon outline -->
+                                                <span class="bc-hs bc-hs--hex"></span>
+                                                <!-- large slow-rotating ring -->
+                                                <span class="bc-hs bc-hs--ring-lg"></span>
+                                                <!-- small dashed ring -->
+                                                <span class="bc-hs bc-hs--ring-sm"></span>
+                                                <!-- floating triangles -->
+                                                <span class="bc-hs bc-hs--tri bc-hs--tri-1"></span>
+                                                <span class="bc-hs bc-hs--tri bc-hs--tri-2"></span>
+                                                <!-- floating dots cluster -->
+                                                <span class="bc-hs bc-hs--dot bc-hs--dot-1"></span>
+                                                <span class="bc-hs bc-hs--dot bc-hs--dot-2"></span>
+                                                <span class="bc-hs bc-hs--dot bc-hs--dot-3"></span>
+                                                <span class="bc-hs bc-hs--dot bc-hs--dot-4"></span>
+                                                <!-- bracket decorators -->
+                                                <span class="bc-hs bc-hs--bracket bc-hs--bracket-l">{</span>
+                                                <span class="bc-hs bc-hs--bracket bc-hs--bracket-r">}</span>
+                                                <!-- vertical scan line -->
+                                                <span class="bc-hs bc-hs--scan"></span>
+                                            </div>
+                                            <!-- floating stats -->
+                                            <div class="bc-hero-visual__chip bc-hero-visual__chip--exp wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.55s">
+                                                <span class="bc-hero-visual__chip-icon" aria-hidden="true"><i class="fas fa-code"></i></span>
+                                                <div>
+                                                    <strong class="bc-hero-visual__chip-num">10+</strong>
+                                                    <span class="bc-hero-visual__chip-label">Years Experience</span>
+                                                </div>
+                                            </div>
+                                            <div class="bc-hero-visual__chip bc-hero-visual__chip--proj wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                                <span class="bc-hero-visual__chip-icon" aria-hidden="true"><i class="fas fa-layer-group"></i></span>
+                                                <div>
+                                                    <strong class="bc-hero-visual__chip-num">7K+</strong>
+                                                    <span class="bc-hero-visual__chip-label">Projects Done</span>
+                                                </div>
+                                            </div>
+                                            <!-- available dot -->
+                                            <span class="bc-hero-visual__status" aria-hidden="true" title="Available for projects"></span>
+                                        </figure>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 order-lg-1">
+                            <div class="col-lg-6 order-2 order-lg-1">
                                 <div class="bc-hero-left-area">
                                     <div class="bc-hero-left-content">
-                                        <span class="bc-hero-subtitle wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.1s">Welcome to my world</span>
-                                        <h1 class="bc-hero-title wow img-custom-anim-right" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                                            Hi, I’m <span class="bc-hero-title-color bc-gradient-text-color">Sarwar Zahan</span><br>
-                                            <span id="bc-animate-text"></span>
+                                    <div class="bc-hero-left-content">
+
+                                        <!-- eyebrow badge -->
+                                        <div class="bc-hero-eyebrow wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.05s">
+                                            <span class="bc-hero-eyebrow__pulse" aria-hidden="true"></span>
+                                            <span class="bc-hero-eyebrow__text">Available for hire</span>
+                                        </div>
+
+                                        <!-- headline -->
+                                        <h1 class="bc-hero-title wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.18s">
+                                            Hi, I am<br>
+                                            <span class="bc-hero-title__name bc-gradient-text-color">Sarwar Zahan</span>
                                         </h1>
-                                        <p class="wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.5s">I use animation as a third dimension by which to simplify and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.</p>
-                                        <div class="bc-hero-button-wrap mt-10 d-flex wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.62s">
+
+                                        <!-- animated profession -->
+                                        <div class="bc-hero-profession wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.28s">
+                                            <span class="bc-hero-profession__prefix">I am a </span><span id="bc-animate-text" class="bc-hero-profession__typed"></span>
+                                        </div>
+
+                                        <!-- description -->
+                                        <p class="bc-hero-desc wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.38s">I craft purposeful digital experiences — clean code, thoughtful design, and interactions that feel natural. Helping brands ship products people love.</p>
+
+                                        <!-- inline stats -->
+                                        <div class="bc-hero-kpi wow bcFadeInUp" data-wow-duration="0.85s" data-wow-delay="0.46s" aria-label="Key stats">
+                                            <div class="bc-hero-kpi__item">
+                                                <strong class="bc-hero-kpi__num">10<span>+</span></strong>
+                                                <span class="bc-hero-kpi__label">Years Exp.</span>
+                                            </div>
+                                            <div class="bc-hero-kpi__sep" aria-hidden="true"></div>
+                                            <div class="bc-hero-kpi__item">
+                                                <strong class="bc-hero-kpi__num">7K<span>+</span></strong>
+                                                <span class="bc-hero-kpi__label">Projects</span>
+                                            </div>
+                                            <div class="bc-hero-kpi__sep" aria-hidden="true"></div>
+                                            <div class="bc-hero-kpi__item">
+                                                <strong class="bc-hero-kpi__num">100<span>%</span></strong>
+                                                <span class="bc-hero-kpi__label">Satisfaction</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- CTA row - popup-video untouched -->
+                                        <div class="bc-hero-button-wrap d-flex wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.55s">
                                             <a href="assets/cv.pdf" class="bc-btn text-uppercase align-content-center" download>
                                                 <span class="bc-btn-wrap">
-                                                    <span class="bc-btn-y-1">DOWNLOAD CV</span>
-                                                    <span class="bc-btn-y-2">DOWNLOAD CV</span>
+                                                    <span class="bc-btn-y-1">Download CV</span>
+                                                    <span class="bc-btn-y-2">Download CV</span>
                                                 </span>
                                             </a>
                                             <a class="popup-video" href="https://www.youtube.com/watch?v=FTdNCmpxc-U">
@@ -199,6 +279,7 @@
                                                 </div>
                                             </a>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -215,7 +296,7 @@
                                     <div class="bc-about-profile__shine" aria-hidden="true"></div>
                                     <div class="bc-about-profile__media">
                                         <div class="bc-about-profile__img-ring wow img-custom-anim-top" data-wow-duration="1.2s" data-wow-delay="0.2s">
-                                            <img src="assets/img/testimonial/testimonal-03.jpg" class="bc-about-profile__img" width="280" height="302" alt="Portrait of Md Sarwar Zahan" loading="lazy">
+                                            <img src="assets/img/about/about.jpg" class="bc-about-profile__img" width="280" height="302" alt="Portrait of Md Sarwar Zahan" loading="lazy">
                                             <span class="bc-about-profile__status" title="Available for projects" aria-hidden="true"></span>
                                         </div>
                                     </div>
@@ -697,112 +778,87 @@
                 </section>
                 <!-- Portfolio End --> 
                 <!-- Testimonial Start -->
-                <section class="bc-testimonial-wrapper jarallax" data-background="assets/img/section-bg.jpg" id="testimonial" aria-labelledby="testimonial-heading">
-                    <div class="container position-relative z-index-1">
-                        <div class="bc-section-title-wrapper text-center bc-testimonial-header">
-                            <h2 id="testimonial-heading" class="bc-section-title bc-gradient-text-color wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.05s">What clients say</h2>
-                            <p class="bc-testimonial-lead wow bcFadeInUp" data-wow-duration="0.9s" data-wow-delay="0.1s">Trusted feedback from partners and teams we’ve shipped products with — clear communication, reliable delivery, and thoughtful craft.</p>
+                <!-- Testimonial Start -->
+                <section class="bc-testimonial-wrapper" id="testimonial" aria-labelledby="testimonial-heading">
+                    <div class="container">
+                        <!-- Section header row -->
+                        <div class="bc-testi-head d-flex align-items-end justify-content-between gap-3 wow bcFadeInUp" data-wow-duration="0.8s" data-wow-delay="0.05s">
+                            <div>
+                                <p class="bc-testi-eyebrow">Testimonial</p>
+                                <h2 id="testimonial-heading" class="bc-testi-title">What Our Clients<br>Say?</h2>
+                            </div>
+                            <div class="bc-testi-nav d-flex align-items-center gap-2 flex-shrink-0">
+                                <button class="bc-testimonial-btn-prev bc-testi-arrow" type="button" aria-label="Previous testimonial"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                                <button class="bc-testimonial-btn-next bc-testi-arrow" type="button" aria-label="Next testimonial"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                            </div>
                         </div>
 
-                        <div class="bc-testimonial-slider-wrap wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.12s">
-                        <div class="swiper bc-testimonial-active">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <article class="bc-testimonial-item">
-                                        <div class="bc-testimonial-card">
-                                            <div class="row g-0 align-items-stretch">
-                                                <div class="col-lg-4 d-none d-lg-block">
-                                                    <div class="bc-testimonial-photo-frame">
-                                                        <img src="assets/img/testimonial/testimonal-03.jpg" alt="Portrait of John Copper" width="400" height="480" loading="lazy">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="bc-testimonial-body">
-                                                        <div class="bc-testimonial-photo bc-testimonial-photo--mobile d-lg-none">
-                                                            <img src="assets/img/testimonial/testimonal-03.jpg" alt="" width="72" height="72" loading="lazy">
-                                                        </div>
-                                                        <div class="bc-testimonial-quote-icon" aria-hidden="true"><i class="fas fa-quote-left"></i></div>
-                                                        <blockquote class="bc-testimonial-quote">
-                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci autem sunt debitis, blanditiis eveniet odit ad repudiandae excepturi distinctio quidem itaque accusamus hic, quo impedit reiciendis alias tempora illum ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                                            <footer class="bc-testimonial-author">
-                                                                <cite class="bc-testimonial-name">John Copper</cite>
-                                                                <span class="bc-testimonial-role">UI/UX Designer</span>
-                                                            </footer>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
+                        <!-- Slider -->
+                        <div class="bc-testimonial-slider-wrap wow bcFadeInUp" data-wow-duration="1s" data-wow-delay="0.15s">
+                            <div class="swiper bc-testimonial-active">
+                                <div class="swiper-wrapper">
+                                    <!-- Slide 1 -->
+                                    <div class="swiper-slide">
+                                        <article class="bc-testi-card">
+                                            <div class="bc-testi-card__avatar">
+                                                <img src="assets/img/testimonial/testimonal-01.jpg" alt="Eleanor Pena" width="80" height="80" loading="lazy">
                                             </div>
-                                        </div>
-                                    </article>
-                                </div>
-                                <div class="swiper-slide">
-                                    <article class="bc-testimonial-item">
-                                        <div class="bc-testimonial-card">
-                                            <div class="row g-0 align-items-stretch">
-                                                <div class="col-lg-4 d-none d-lg-block">
-                                                    <div class="bc-testimonial-photo-frame">
-                                                        <img src="assets/img/testimonial/testimonal-03.jpg" alt="Portrait of John Copper" width="400" height="480" loading="lazy">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="bc-testimonial-body">
-                                                        <div class="bc-testimonial-photo bc-testimonial-photo--mobile d-lg-none">
-                                                            <img src="assets/img/testimonial/testimonal-03.jpg" alt="" width="72" height="72" loading="lazy">
-                                                        </div>
-                                                        <div class="bc-testimonial-quote-icon" aria-hidden="true"><i class="fas fa-quote-left"></i></div>
-                                                        <blockquote class="bc-testimonial-quote">
-                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci autem sunt debitis, blanditiis eveniet odit ad repudiandae excepturi distinctio quidem itaque accusamus hic, quo impedit reiciendis alias tempora illum ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                                            <footer class="bc-testimonial-author">
-                                                                <cite class="bc-testimonial-name">John Copper</cite>
-                                                                <span class="bc-testimonial-role">UI/UX Designer</span>
-                                                            </footer>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
+                                            <div class="bc-testi-card__body">
+                                                <cite class="bc-testi-card__name">Eleanor Pena</cite>
+                                                <span class="bc-testi-card__role">Marketing Coordinator</span>
+                                                <p class="bc-testi-card__text">Financial planners help people to understand how to invest and save their money the most efficient way. Planners help people know the best ledge in about how.</p>
                                             </div>
-                                        </div>
-                                    </article>
-                                </div>
-                                <div class="swiper-slide">
-                                    <article class="bc-testimonial-item">
-                                        <div class="bc-testimonial-card">
-                                            <div class="row g-0 align-items-stretch">
-                                                <div class="col-lg-4 d-none d-lg-block">
-                                                    <div class="bc-testimonial-photo-frame">
-                                                        <img src="assets/img/testimonial/testimonal-03.jpg" alt="Portrait of John Copper" width="400" height="480" loading="lazy">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="bc-testimonial-body">
-                                                        <div class="bc-testimonial-photo bc-testimonial-photo--mobile d-lg-none">
-                                                            <img src="assets/img/testimonial/testimonal-03.jpg" alt="" width="72" height="72" loading="lazy">
-                                                        </div>
-                                                        <div class="bc-testimonial-quote-icon" aria-hidden="true"><i class="fas fa-quote-left"></i></div>
-                                                        <blockquote class="bc-testimonial-quote">
-                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci autem sunt debitis, blanditiis eveniet odit ad repudiandae excepturi distinctio quidem itaque accusamus hic, quo impedit reiciendis alias tempora illum ea! Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                                            <footer class="bc-testimonial-author">
-                                                                <cite class="bc-testimonial-name">John Copper</cite>
-                                                                <span class="bc-testimonial-role">UI/UX Designer</span>
-                                                            </footer>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
+                                            <span class="bc-testi-card__qmark" aria-hidden="true">"</span>
+                                        </article>
+                                    </div>
+                                    <!-- Slide 2 -->
+                                    <div class="swiper-slide">
+                                        <article class="bc-testi-card">
+                                            <div class="bc-testi-card__avatar">
+                                                <img src="assets/img/testimonial/testimonial_2.jpg" alt="Robert Fox" width="80" height="80" loading="lazy">
                                             </div>
-                                        </div>
-                                    </article>
+                                            <div class="bc-testi-card__body">
+                                                <cite class="bc-testi-card__name">Robert Fox</cite>
+                                                <span class="bc-testi-card__role">Senior Developer</span>
+                                                <p class="bc-testi-card__text">Working with this team was an outstanding experience. Deliverables were on time, communication was crystal clear, and the quality of work exceeded every expectation.</p>
+                                            </div>
+                                            <span class="bc-testi-card__qmark" aria-hidden="true">"</span>
+                                        </article>
+                                    </div>
+                                    <!-- Slide 3 -->
+                                    <div class="swiper-slide">
+                                        <article class="bc-testi-card">
+                                            <div class="bc-testi-card__avatar">
+                                                <img src="assets/img/testimonial/testimonal-01.jpg" alt="Jenny Wilson" width="80" height="80" loading="lazy">
+                                            </div>
+                                            <div class="bc-testi-card__body">
+                                                <cite class="bc-testi-card__name">Jenny Wilson</cite>
+                                                <span class="bc-testi-card__role">Product Designer</span>
+                                                <p class="bc-testi-card__text">Incredibly professional and skilled. The attention to detail in every design decision made our product stand out. Highly recommended for any frontend project.</p>
+                                            </div>
+                                            <span class="bc-testi-card__qmark" aria-hidden="true">"</span>
+                                        </article>
+                                    </div>
+                                    <!-- Slide 4 -->
+                                    <div class="swiper-slide">
+                                        <article class="bc-testi-card">
+                                            <div class="bc-testi-card__avatar">
+                                                <img src="assets/img/testimonial/testimonial_2.jpg" alt="Cameron Williamson" width="80" height="80" loading="lazy">
+                                            </div>
+                                            <div class="bc-testi-card__body">
+                                                <cite class="bc-testi-card__name">Cameron Williamson</cite>
+                                                <span class="bc-testi-card__role">CEO, TechStart</span>
+                                                <p class="bc-testi-card__text">A true professional who delivers results. The project was completed ahead of schedule with remarkable quality. Our clients love the new interface.</p>
+                                            </div>
+                                            <span class="bc-testi-card__qmark" aria-hidden="true">"</span>
+                                        </article>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="bc-testimonial-toolbar d-flex flex-wrap align-items-center justify-content-between gap-3">
-                                <div class="bc-testimonial-pagination"></div>
-                                <div class="bc-testimonial-btn d-flex align-items-center gap-2">
-                                    <div class="bc-testimonial-btn-prev" role="button" tabindex="0" aria-label="Previous testimonial"><i class="fas fa-arrow-left" aria-hidden="true"></i></div>
-                                    <div class="bc-testimonial-btn-next" role="button" tabindex="0" aria-label="Next testimonial"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
-                                </div>
-                            </div>
-                        </div>
                         </div>
                     </div>
                 </section>
+                <!-- Testimonial End -->
                 <!-- Testimonial End -->
                 <!-- Education Start -->
                 <section class="bc-education-wrapper bc-section-bg" id="education" aria-labelledby="education-heading">
@@ -825,13 +881,13 @@
                                         <div class="bc-education-card__badge">
                                             <span class="bc-education-card__index">01</span>
                                             <div class="bc-education-card__credential">
-                                                <span class="bc-education-card__degree">BSc in CSE</span>
-                                                <time class="bc-education-card__years" datetime="2020/2025">2020 — 2025</time>
+                                                <span class="bc-education-card__degree">B.Sc. in Computer Science &amp; Engineering</span>
+                                                <time class="bc-education-card__years" datetime="2020-01/2023-12">2020 — 2023</time>
                                             </div>
                                         </div>
                                         <div class="bc-education-card__content">
-                                            <h3 class="bc-education-card__school">Bangladesh University of Business &amp; Technology</h3>
-                                            <p class="bc-education-card__excerpt d-none d-lg-block">Core focus on software engineering, data structures, and modern web systems — with active participation in tech communities and coursework projects.</p>
+                                            <h3 class="bc-education-card__school">Bangladesh University of Business and Technology (BUBT)</h3>
+                                            <p class="bc-education-card__excerpt d-none d-lg-block">Undergraduate programme in CSE — software engineering, algorithms, databases, and project work aligned with industry practice.</p>
                                         </div>
                                         <a href="about.html" class="bc-education-card__cta" aria-label="View full profile on About">
                                             <span class="bc-education-card__cta-ring" aria-hidden="true"></span>
@@ -852,13 +908,13 @@
                                         <div class="bc-education-card__badge">
                                             <span class="bc-education-card__index">02</span>
                                             <div class="bc-education-card__credential">
-                                                <span class="bc-education-card__degree">BSc in CSE</span>
-                                                <time class="bc-education-card__years" datetime="2020/2025">2020 — 2025</time>
+                                                <span class="bc-education-card__degree">Diploma in Computer Technology</span>
+                                                <time class="bc-education-card__years" datetime="2015-01/2019-12">2015 — 2019</time>
                                             </div>
                                         </div>
                                         <div class="bc-education-card__content">
-                                            <h3 class="bc-education-card__school">Bangladesh University of Business &amp; Technology</h3>
-                                            <p class="bc-education-card__excerpt d-none d-lg-block">Core focus on software engineering, data structures, and modern web systems — with active participation in tech communities and coursework projects.</p>
+                                            <h3 class="bc-education-card__school">Chapainawabganj Polytechnic Institute</h3>
+                                            <p class="bc-education-card__excerpt d-none d-lg-block">Four-year diploma with practical labs in programming, networking, and systems — the bridge into degree-level computer science.</p>
                                         </div>
                                         <a href="about.html" class="bc-education-card__cta" aria-label="View full profile on About">
                                             <span class="bc-education-card__cta-ring" aria-hidden="true"></span>
@@ -878,13 +934,13 @@
                                         <div class="bc-education-card__badge">
                                             <span class="bc-education-card__index">03</span>
                                             <div class="bc-education-card__credential">
-                                                <span class="bc-education-card__degree">BSc in CSE</span>
-                                                <time class="bc-education-card__years" datetime="2020/2025">2020 — 2025</time>
+                                                <span class="bc-education-card__degree">SSC (Secondary School Certificate)</span>
+                                                <time class="bc-education-card__years" datetime="2010-01/2015-12">2010 — 2015</time>
                                             </div>
                                         </div>
                                         <div class="bc-education-card__content">
-                                            <h3 class="bc-education-card__school">Bangladesh University of Business &amp; Technology</h3>
-                                            <p class="bc-education-card__excerpt d-none d-lg-block">Core focus on software engineering, data structures, and modern web systems — with active participation in tech communities and coursework projects.</p>
+                                            <h3 class="bc-education-card__school">Rokonpur High School</h3>
+                                            <p class="bc-education-card__excerpt d-none d-lg-block">Secondary education — foundation in science and mathematics before moving into technical and university study.</p>
                                         </div>
                                         <a href="about.html" class="bc-education-card__cta" aria-label="View full profile on About">
                                             <span class="bc-education-card__cta-ring" aria-hidden="true"></span>
@@ -1149,8 +1205,13 @@
             <!-- Footer Start -->
             <footer class="bc-footer-wrapper pt-20 pb-20">
                 <div class="container">
-                    <div class="bc-footer text-center wow bcFadeInUp" data-wow-duration="0.75s" data-wow-delay="0.05s">
-                        <p>© 2025. All rights reserved by <a href="https://beepcoder.com/">Beepcoder.</a></p>
+                    <div class="bc-footer bc-footer-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
+                        <p class="bc-footer__copy mb-0">&copy; 2026 Zahan. All rights reserved.</p>
+                        <nav class="bc-footer__nav bc-footer__nav--legal d-flex flex-wrap align-items-center gap-3" aria-label="Legal">
+                            <a href="privacy-policy.html" class="bc-footer__link">Privacy Policy</a>
+                            <span class="bc-footer__sep" aria-hidden="true">·</span>
+                            <a href="terms-and-conditions.html" class="bc-footer__link">Terms &amp; Conditions</a>
+                        </nav>
                     </div>
                 </div>
             </footer>

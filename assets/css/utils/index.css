@@ -1,0 +1,260 @@
+@charset "UTF-8";
+/* ============================================
+   Global color system — edit here for sitewide theme
+   Use var(--bc-*) in all components; avoid raw hex in partials.
+   ============================================ */
+:root {
+  /* ----- Core palette ----- */
+  --bc-text-color-1: #ffffff;
+  --bc-heading-color: var(--bc-text-color-1);
+  --bc-common-black: #0d0d0d;
+  --bc-text-color-2: #2ce97a;
+  --bc-rgb-text-color-2: 44, 233, 122;
+  --bc-text-color-3: #04060c;
+  --bc-rgb-text-color-3: 4, 6, 12;
+  --bc-bg-color-1: #2ce97a;
+  --bc-bg-color-2: #c8f31d;
+  --bc-rgb-bg-color-2: 200, 243, 29;
+  --bc-background-color-1: linear-gradient(145deg, #1e2024, #23272b);
+  --bc-bg-black-1: #212428;
+  --bc-bg-black-2: #010a10;
+  --bc-color-lightn: #c4cfde;
+  --bc-rgb-color-lightn: 196, 207, 222;
+  --bc-gradient-color-1: linear-gradient(90deg, var(--bc-bg-color-1) 0%, var(--bc-bg-color-2) 100%);
+  --bc-stroke-gr: linear-gradient(90deg, var(--bc-bg-color-1), var(--bc-bg-color-2));
+  --bc-full: linear-gradient(white, white);
+  --bc-shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+  --Bg-linear-2: linear-gradient(
+    123.51deg,
+    rgba(215, 237, 237, 0.1) -61.8%,
+    rgba(204, 235, 235, 0.01) 100%
+  );
+  --bc-color-dark-one: #151515;
+  --bc-color-dark-two: #171717;
+  --bc-color-dark-four: #1e1e1e;
+  --bc-color-dark-five: #2c2c2c;
+  --bc-color-deep: #020508;
+  /* ----- RGB helpers (for rgba(var(--bc-rgb-*), alpha) in SCSS/CSS) ----- */
+  --bc-rgb-white: 255, 255, 255;
+  --bc-rgb-black: 0, 0, 0;
+  /* ----- Secondary text (derived; adjust with palette) ----- */
+  --bc-text-muted: #9aacbf;
+  --bc-text-muted-2: #7d8fa3;
+  --bc-text-dim: #8e8e8e;
+  --bc-text-dim-2: #b0b0b0;
+  --bc-border-neutral: #57595c;
+  /* ----- UI chrome on dark backgrounds ----- */
+  --bc-divider: rgba(var(--bc-rgb-white), 0.08);
+  --bc-divider-medium: rgba(var(--bc-rgb-white), 0.12);
+  --bc-divider-strong: rgba(var(--bc-rgb-white), 0.15);
+  --bc-accent-line-soft: rgba(var(--bc-rgb-text-color-2), 0.12);
+  --bc-accent-line: rgba(var(--bc-rgb-text-color-2), 0.28);
+  --bc-accent-line-strong: rgba(var(--bc-rgb-text-color-2), 0.45);
+  /* ----- Glass / frosted fills (white tint) ----- */
+  --bc-glass-01: rgba(var(--bc-rgb-white), 0.01);
+  --bc-glass-02: rgba(var(--bc-rgb-white), 0.02);
+  --bc-glass-03: rgba(var(--bc-rgb-white), 0.03);
+  --bc-glass-035: rgba(var(--bc-rgb-white), 0.035);
+  --bc-glass-04: rgba(var(--bc-rgb-white), 0.04);
+  --bc-glass-045: rgba(var(--bc-rgb-white), 0.045);
+  --bc-glass-05: rgba(var(--bc-rgb-white), 0.05);
+  --bc-glass-06: rgba(var(--bc-rgb-white), 0.06);
+  --bc-glass-07: rgba(var(--bc-rgb-white), 0.07);
+  --bc-glass-08: rgba(var(--bc-rgb-white), 0.08);
+  --bc-glass-09: rgba(var(--bc-rgb-white), 0.09);
+  --bc-glass-10: rgba(var(--bc-rgb-white), 0.1);
+  --bc-glass-12: rgba(var(--bc-rgb-white), 0.12);
+  --bc-glass-20: rgba(var(--bc-rgb-white), 0.2);
+  --bc-glass-22: rgba(var(--bc-rgb-white), 0.22);
+  --bc-glass-25: rgba(var(--bc-rgb-white), 0.25);
+  /* ----- High-opacity text on dark (quotes, emphasis) ----- */
+  --bc-text-on-dark-strong: rgba(var(--bc-rgb-white), 0.92);
+  /* ----- Accent-tinted glass ----- */
+  --bc-accent-glass-04: rgba(var(--bc-rgb-text-color-2), 0.04);
+  --bc-accent-glass-06: rgba(var(--bc-rgb-text-color-2), 0.06);
+  --bc-accent-glass-08: rgba(var(--bc-rgb-text-color-2), 0.08);
+  --bc-accent-glass-10: rgba(var(--bc-rgb-text-color-2), 0.1);
+  --bc-accent-glass-12: rgba(var(--bc-rgb-text-color-2), 0.12);
+  --bc-accent-glass-14: rgba(var(--bc-rgb-text-color-2), 0.14);
+  --bc-accent-glass-15: rgba(var(--bc-rgb-text-color-2), 0.15);
+  --bc-accent-glass-18: rgba(var(--bc-rgb-text-color-2), 0.18);
+  --bc-accent-glass-20: rgba(var(--bc-rgb-text-color-2), 0.2);
+  --bc-accent-glass-25: rgba(var(--bc-rgb-text-color-2), 0.25);
+  --bc-accent-glass-35: rgba(var(--bc-rgb-text-color-2), 0.35);
+  --bc-accent-glass-38: rgba(var(--bc-rgb-text-color-2), 0.38);
+  --bc-accent-glass-40: rgba(var(--bc-rgb-text-color-2), 0.4);
+  --bc-accent-glass-45: rgba(var(--bc-rgb-text-color-2), 0.45);
+  --bc-accent-glass-50: rgba(var(--bc-rgb-text-color-2), 0.5);
+  --bc-accent-glass-55: rgba(var(--bc-rgb-text-color-2), 0.55);
+  --bc-accent-glass-65: rgba(var(--bc-rgb-text-color-2), 0.65);
+  --bc-accent-glass-95: rgba(var(--bc-rgb-text-color-2), 0.95);
+  /* ----- Shadows ----- */
+  --bc-shadow-xs: 0 4px 16px rgba(var(--bc-rgb-black), 0.25);
+  --bc-shadow-sm: 0 8px 22px rgba(var(--bc-rgb-black), 0.2);
+  --bc-shadow-md: 0 12px 28px rgba(var(--bc-rgb-black), 0.25);
+  --bc-shadow-card: 0 20px 44px rgba(var(--bc-rgb-black), 0.28);
+  --bc-shadow-card-lg: 0 24px 48px rgba(var(--bc-rgb-black), 0.35);
+  --bc-shadow-card-hover: 0 28px 56px rgba(var(--bc-rgb-black), 0.38);
+  --bc-shadow-header: 0 12px 40px rgba(var(--bc-rgb-black), 0.45);
+  --bc-shadow-offcanvas: -32px 0 64px rgba(var(--bc-rgb-black), 0.55);
+  --bc-shadow-accent-hover: 0 10px 28px rgba(var(--bc-rgb-text-color-2), 0.18);
+  --bc-shadow-accent-glow-sm: 0 0 20px rgba(var(--bc-rgb-text-color-2), 0.22);
+  --bc-shadow-accent-glow-md: 0 0 28px rgba(var(--bc-rgb-text-color-2), 0.38);
+  --bc-shadow-accent-lift: 0 8px 24px rgba(var(--bc-rgb-text-color-2), 0.25);
+  --bc-shadow-filter-active: 0 6px 20px rgba(var(--bc-rgb-text-color-2), 0.25);
+  --bc-shadow-inset-dark: inset 0 2px 6px rgba(var(--bc-rgb-black), 0.45);
+  /* ----- Overlays / scrims ----- */
+  --bc-overlay-scrim: rgba(var(--bc-rgb-black), 0.55);
+  --bc-overlay-thumb: rgba(var(--bc-rgb-black), 0.45);
+  --bc-overlay-photo-bottom: rgba(var(--bc-rgb-text-color-3), 0.65);
+  /* ----- Section-specific surfaces (tweak in one place) ----- */
+  --bc-gradient-education-surface: linear-gradient(
+    155deg,
+    rgba(38, 40, 46, 0.92) 0%,
+    rgba(20, 22, 26, 0.96) 50%,
+    rgba(14, 16, 20, 0.98) 100%
+  );
+  --bc-shadow-education-surface: 0 4px 24px rgba(var(--bc-rgb-black), 0.25),
+    inset 0 1px 0 var(--bc-glass-05);
+  --bc-shadow-education-surface-hover: 0 24px 48px rgba(var(--bc-rgb-black), 0.4),
+    0 0 0 1px var(--bc-accent-glass-10), inset 0 1px 0 var(--bc-glass-08);
+  --bc-gradient-testimonial-card: linear-gradient(145deg, rgba(34, 36, 40, 0.72) 0%, rgba(22, 24, 28, 0.85) 100%);
+  --bc-gradient-skill-panel: linear-gradient(155deg, rgba(38, 40, 46, 0.88) 0%, rgba(22, 24, 28, 0.95) 100%);
+  --bc-skill-track-bg: rgba(var(--bc-rgb-black), 0.35);
+  --bc-overlay-scrim-strong: rgba(var(--bc-rgb-black), 0.8);
+  --bc-overlay-hero: linear-gradient(180deg, rgba(6, 6, 6, 0) 46.14%, var(--bc-bg-black-2) 100%);
+  /* ----- Card & panel surfaces ----- */
+  --bc-gradient-card: linear-gradient(
+    155deg,
+    var(--bc-glass-04) 0%,
+    var(--bc-glass-01) 45%,
+    var(--bc-color-dark-four) 100%
+  );
+  --bc-gradient-card-alt: linear-gradient(to right bottom, var(--bc-bg-black-1), #16181c);
+  --bc-gradient-offcanvas: linear-gradient(
+    165deg,
+    rgba(20, 24, 30, 0.98) 0%,
+    rgba(4, 6, 12, 0.99) 55%,
+    var(--bc-color-deep) 100%
+  );
+  --bc-gradient-backtop-inner: linear-gradient(160deg, #22252c 0%, #16181e 100%);
+  --bc-gradient-backtop-inner-hover: linear-gradient(160deg, var(--bc-accent-glass-14) 0%, #16181e 62%);
+  /* ----- Header (sticky) ----- */
+  --bc-header-sticky-bg: rgba(1, 10, 16, 0.88);
+  /* Social + menu trigger: shared circle size */
+  --bc-header-control-size: 40px;
+  /* ----- Forms & focus ----- */
+  --bc-input-text: var(--bc-text-color-1);
+  --bc-input-bg: var(--bc-glass-03);
+  --bc-input-bg-focus: rgba(30, 30, 30, 0.55);
+  --bc-focus-ring: 0 0 0 3px rgba(var(--bc-rgb-text-color-2), 0.18);
+  --bc-focus-ring-strong: 0 0 0 3px rgba(var(--bc-rgb-text-color-2), 0.35);
+  /* ----- State ----- */
+  --bc-color-error: #ff6b6b;
+  --bc-color-success: var(--bc-text-color-2);
+  /* ----- Light surfaces (global form defaults in theme) ----- */
+  --bc-form-surface: #ffffff;
+  --bc-form-border-default: #e0e2e3;
+  /* ----- Buttons (primary on dark) ----- */
+  --bc-btn-primary-fg: #070721;
+  --bc-btn-primary-bg-start: #56ff81;
+  --bc-btn-primary-bg-end: #2bdf5d;
+  --bc-btn-primary-glow: rgba(145, 255, 105, 0.3);
+  /* ----- Modals (Bootstrap dialogs) ----- */
+  --bc-modal-backdrop-bg: rgba(var(--bc-rgb-black), 0.72);
+  --bc-modal-surface-bg: linear-gradient(
+    165deg,
+    rgba(24, 28, 34, 0.97) 0%,
+    rgba(10, 12, 18, 0.98) 48%,
+    var(--bc-color-deep) 100%
+  );
+  --bc-modal-shadow: 0 36px 96px rgba(var(--bc-rgb-black), 0.58), 0 0 0 1px var(--bc-accent-glass-10),
+    0 0 120px rgba(var(--bc-rgb-text-color-2), 0.07);
+  --bc-modal-radius: 22px;
+  --bc-modal-accent-bar: linear-gradient(90deg, var(--bc-bg-color-1) 0%, var(--bc-bg-color-2) 100%);
+  /* ----- Preloader ----- */
+  --bc-preloader-bg: radial-gradient(ellipse 130% 90% at 50% 110%, var(--bc-accent-glass-15) 0%, transparent 52%),
+    radial-gradient(circle at 18% 22%, rgba(var(--bc-rgb-bg-color-2), 0.08) 0%, transparent 42%),
+    radial-gradient(circle at 82% 18%, var(--bc-accent-glass-08) 0%, transparent 38%),
+    linear-gradient(168deg, var(--bc-color-deep) 0%, var(--bc-bg-black-2) 45%, #0a1218 100%);
+  --bc-preloader-grid: rgba(var(--bc-rgb-white), 0.04);
+  --bc-preloader-ring: conic-gradient(
+    from 220deg,
+    var(--bc-accent-glass-25),
+    var(--bc-text-color-2),
+    var(--bc-bg-color-2),
+    transparent 55%
+  );
+  /* ----- Page / viewport scrollbar ----- */
+  --bc-scrollbar-size: 11px;
+  --bc-scrollbar-track-bg: rgba(var(--bc-rgb-white), 0.05);
+  --bc-scrollbar-track-border: rgba(var(--bc-rgb-white), 0.06);
+  --bc-scrollbar-thumb-gradient: linear-gradient(
+    180deg,
+    rgba(var(--bc-rgb-text-color-2), 0.65) 0%,
+    rgba(var(--bc-rgb-bg-color-2), 0.5) 55%,
+    rgba(var(--bc-rgb-text-color-2), 0.45) 100%
+  );
+  --bc-scrollbar-thumb-fallback: rgba(var(--bc-rgb-text-color-2), 0.5);
+  --bc-scrollbar-thumb-hover-gradient: linear-gradient(
+    180deg,
+    var(--bc-text-color-2) 0%,
+    var(--bc-bg-color-2) 50%,
+    rgba(var(--bc-rgb-text-color-2), 0.85) 100%
+  );
+  --bc-scrollbar-thumb-hover-fallback: rgba(var(--bc-rgb-text-color-2), 0.75);
+  --bc-scrollbar-thumb-glow: 0 0 14px rgba(var(--bc-rgb-text-color-2), 0.35);
+}
+
+/*----------------------------------------
+  Typography scale (rem @ 16px root)
+  Use these tokens sitewide for consistent sizing.
+----------------------------------------*/
+:root {
+  --bc-heading-font: "Federo", sans-serif;
+  --bc-body-font: "Figtree", sans-serif;
+  /* Core steps */
+  --bc-fs-xs: 0.75rem; /* 12 */
+  --bc-fs-sm: 0.875rem; /* 14 */
+  --bc-fs-base: 1rem; /* 16 — default body & UI copy */
+  --bc-fs-md: 1.125rem; /* 18 */
+  --bc-fs-lg: 1.25rem; /* 20 */
+  --bc-fs-xl: 1.5rem; /* 24 */
+  --bc-fs-28: 1.75rem; /* 28 — h3 */
+  --bc-fs-2xl: 1.875rem; /* 30 */
+  --bc-fs-3xl: 2rem; /* 32 */
+  --bc-fs-4xl: 2.25rem; /* 36 */
+  --bc-fs-5xl: 2.375rem; /* 38 — h2 */
+  --bc-fs-6xl: 2.5rem; /* 40 — display / post titles */
+  --bc-fs-7xl: 3rem; /* 48 — h1 / section heroes */
+  --bc-fs-8xl: 3.75rem; /* 60 */
+  --bc-fs-9xl: 4.0625rem; /* 65 */
+  --bc-fs-10xl: 5rem; /* 80 */
+  --bc-fs-11xl: 5.125rem; /* 82 */
+  --bc-fs-12xl: 5.625rem; /* 90 */
+  /* Mid-step (common in legacy layout) */
+  --bc-fs-25: 1.5625rem; /* 25 */
+  --bc-fs-35: 2.1875rem; /* 35 — large icons / stats */
+  --bc-fs-50: 3.125rem; /* 50 — hero title xl */
+  --bc-fs-52: 3.25rem; /* 52 — hero decorative mobile */
+  --bc-fs-75: 4.6875rem; /* 75 — hero decorative sm */
+  /* Line height */
+  --bc-lh-heading: 1.15;
+  --bc-lh-tight: 1.2;
+  --bc-lh-body: 1.625;
+  --bc-lh-relaxed: 1.75;
+  --bc-lh-ui: 1.5;
+  /* Overlines / labels (subtitle, eyebrow) */
+  --bc-track-overline: 0.18em;
+  /* Semantic sizes — map sections & UI to scale (change scale above to affect all) */
+  --bc-fs-section-title: var(--bc-fs-7xl);
+  --bc-fs-section-title-down: var(--bc-fs-4xl);
+  --bc-fs-section-lead: var(--bc-fs-md);
+  --bc-fs-nav: var(--bc-fs-base); /* 16px — primary nav */
+  --bc-fs-nav-mobile: var(--bc-fs-lg);
+  --bc-fs-card-title: var(--bc-fs-2xl);
+  --bc-fs-card-meta: var(--bc-fs-xs);
+  --bc-fs-ui-label: var(--bc-fs-xs);
+  --bc-lh-section-lead: var(--bc-lh-body);
+  --bc-fs-icon-sm: 1.0625rem; /* compact icon buttons (e.g. back-to-top) */
+}

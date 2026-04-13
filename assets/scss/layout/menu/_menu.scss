@@ -50,78 +50,106 @@ $bc-ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
       position: relative;
       display: inline-flex;
       align-items: center;
-      color: rgba(var(--bc-rgb-white), 0.88);
+      color: rgba(var(--bc-rgb-white), 0.82);
       font-family: var(--bc-heading-font);
-      padding: 0.5rem 1rem;
+      padding: 0.45rem 0.75rem;
       margin: 1.15rem 0;
       font-weight: 500;
       letter-spacing: 0.03em;
       font-size: var(--bc-fs-nav);
       text-decoration: none;
-      border-radius: 0;
+      border-radius: 8px;
       overflow: hidden;
       isolation: isolate;
       transition:
-        color 0.3s $bc-ease-out-expo,
-        transform 0.35s $bc-ease-spring;
+        color 0.28s $bc-ease-out-expo,
+        background 0.28s ease;
 
-      /* Match .sub-menu a — sliding accent wash */
+      /* Hover fill — subtle accent wash */
       &::before {
         content: '';
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        background: linear-gradient(
-          105deg,
-          var(--bc-accent-glass-18) 0%,
-          var(--bc-accent-glass-06) 45%,
-          transparent 75%
-        );
+        background: rgba(var(--bc-rgb-text-color-2), 0.1);
         opacity: 0;
-        transform: translateX(-100%);
-        transition:
-          opacity 0.35s ease,
-          transform 0.45s $bc-ease-out-expo;
+        transition: opacity 0.28s ease;
         z-index: -1;
+      }
+
+      /* Brand underline — grows in on hover/active */
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 4px;
+        height: 2px;
+        width: 0;
+        border-radius: 2px;
+        background: var(--bc-gradient-color-1);
+        transform: translateX(-50%);
+        transition: width 0.35s $bc-ease-out-expo;
+        z-index: 1;
       }
 
       &:hover,
       &:focus-visible {
         color: var(--bc-text-color-1);
-        transform: translateX(4px);
 
-        &::before {
-          opacity: 1;
-          transform: translateX(0);
-        }
+        &::before { opacity: 1; }
+        &::after  { width: calc(100% - 1.5rem); }
       }
 
       &:focus-visible {
         outline: none;
+        box-shadow: var(--bc-focus-ring);
+      }
+    }
+
+    // active page link
+    &.active > a,
+    &.current > a {
+      color: var(--bc-text-color-2);
+
+      &::after {
+        width: calc(100% - 1.5rem);
+        background: var(--bc-gradient-color-1);
       }
     }
 
     &.has-submenu > a {
+      // hide the underline pseudo on items that have a dropdown arrow
       &::after {
-        content: '';
-        display: inline-block;
-        width: 0.4em;
-        height: 0.4em;
-        margin-left: 0.45em;
-        border-right: 2px solid currentColor;
-        border-bottom: 2px solid currentColor;
-        transform: rotate(45deg) translateY(-0.08em);
-        opacity: 0.5;
-        flex-shrink: 0;
-        transition:
-          transform 0.45s $bc-ease-spring,
-          opacity 0.3s ease;
+        display: none !important;
       }
 
-      &:hover::after {
-        transform: rotate(225deg) translateY(0.1em);
-        opacity: 1;
+      // use a real inline element for the chevron
+      > .bc-nav-chevron,
+      &::before {
+        // chevron via a sibling span added by JS; fallback via pseudo on parent
       }
+    }
+
+    // chevron drawn via a dedicated span (no pseudo conflict)
+    &.has-submenu > a > .bc-nav-chevron {
+      display: inline-block;
+      width: 0.38em;
+      height: 0.38em;
+      margin-left: 0.4em;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translateY(-0.06em);
+      opacity: 0.5;
+      flex-shrink: 0;
+      transition:
+        transform 0.4s $bc-ease-spring,
+        opacity 0.28s ease;
+    }
+
+    &.has-submenu:hover > a > .bc-nav-chevron,
+    &.has-submenu:focus-within > a > .bc-nav-chevron {
+      transform: rotate(225deg) translateY(0.08em);
+      opacity: 1;
     }
   }
 
